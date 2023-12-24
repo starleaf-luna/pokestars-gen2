@@ -244,6 +244,9 @@ MainMenuJoypadLoop:
 	ld a, [w2DMenuFlags1]
 	set 5, a
 	ld [w2DMenuFlags1], a
+	ld a, [hJoyPressed]
+	cp SELECT
+	jr z, .changelog_menu
 	call GetScrollingMenuJoypad
 	ld a, [wMenuJoypad]
 	cp B_BUTTON
@@ -260,6 +263,13 @@ MainMenuJoypadLoop:
 .b_button
 	scf
 	ret
+	
+.changelog_menu:
+	call PlayClickSFX
+	;call RotatePalettesRight
+	farcall ChangelogRoom
+	; there's no reason to add a ret here, because
+	; there will be no return to this function
 
 MainMenu_PrintCurrentTimeAndDay:
 	ld a, [wSaveFileExists]

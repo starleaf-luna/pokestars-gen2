@@ -43,7 +43,7 @@ RotateThreePalettesRight::
 .dmg
 	ld hl, IncGradGBPalTable_13
 	ld b, 3
-RotatePalettesRight::
+RotatePalettesRight:: ; acts as fade in
 ; Rotate palettes to the right and fill with loaded colors from the left
 ; If we're already at the leftmost color, fill with the leftmost color
 	push de
@@ -85,7 +85,7 @@ RotateThreePalettesLeft::
 .dmg
 	ld hl, IncGradGBPalTable_15 - 1
 	ld b, 3
-RotatePalettesLeft::
+RotatePalettesLeft:: ; acts as fade out
 ; Rotate palettes to the left and fill with loaded colors from the right
 ; If we're already at the rightmost color, fill with the rightmost color
 	push de
