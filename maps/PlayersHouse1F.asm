@@ -211,38 +211,26 @@ MomWalksBackMovement:
 	step_end
 
 ElmsLookingForYouText:
-	text "Oh, <PLAYER>…! Our"
-	line "neighbor, PROF."
-
-	para "ELM, was looking"
-	line "for you."
-
-	para "He said he wanted"
-	line "you to do some-"
-	cont "thing for him."
-
-	para "Oh! I almost for-"
-	line "got! Your #MON"
-
-	para "GEAR is back from"
-	line "the repair shop."
-
-	para "Here you go!"
+	text "Hey! <PLAYER>!"
+	line "Here's your #-"
+	para "GEAR! You'll"
+	line "need it! Oh,"
+	para "by the way, it's"
+	line "been reset back"
+	para "to its factory"
+	line "settings."
 	done
 
 MomGivesPokegearText:
-	text "#MON GEAR, or"
-	line "just #GEAR."
-
-	para "It's essential if"
-	line "you want to be a"
-	cont "good trainer."
-
-	para "Oh, the day of the"
-	line "week isn't set."
-
-	para "You mustn't forget"
-	line "that!"
+	text "...Hmm...."
+	line "The time seems"
+	cont "right...but..."
+	
+	para "Oh, the day of"
+	line "the week is"
+	cont "not set!"
+	
+	para "What day is it?"
 	done
 
 IsItDSTText:
@@ -263,11 +251,11 @@ ComeHomeForDSTText:
 	done
 
 KnowTheInstructionsText:
-	text "Don't you just"
-	line "turn the #GEAR"
+	text "You just turn on"
+	line "the #GEAR and"
 
-	para "on and select the"
-	line "PHONE icon?"
+	para "select the PHONE"
+	line "icon, no?"
 	done
 
 DontKnowTheInstructionsText:
@@ -286,69 +274,95 @@ InstructionsNextText:
 	para "Just choose a name"
 	line "you want to call."
 
-	para "Gee, isn't that"
+	para "Isn't that"
 	line "convenient?"
 	done
 
 HurryUpElmIsWaitingText:
-	text "PROF.ELM is wait-"
-	line "ing for you."
+	text "Hey, where're you"
+	line "going today?"
 
-	para "Hurry up, baby!"
+	para "You know how dan-"
+	line "gerous it is now"
+	
+	para "that TEAM C. took"
+	line "over!"
 	done
 
 SoWhatWasProfElmsErrandText:
-	text "So, what was PROF."
-	line "ELM's errand?"
+	text "So, what did you"
+	line "do?"
 
 	para "…"
 
-	para "That does sound"
-	line "challenging."
+	para "Hmm... You met a"
+	line "nice man, you say?"
 
-	para "But, you should be"
-	line "proud that people"
-	cont "rely on you."
+	para "...What's that? His"
+	line "name is PROF.OAK?"
+	
+	para "<PLAYER>, don't be"
+	line "so trusting! You"
+	
+	para "know he's in KANTO's"
+	line "PALLET TOWN!"
+	
+	para "You say, he gave"
+	line "you a #MON?"
+	
+	para "Oh, which one?"
+	line "Aww, what a cute"
+	cont "one!"
+	
+	para "<PLAYER>! Stay"
+	line "cautious!"
 	done
 
 ImBehindYouText:
-	text "<PLAYER>, do it!"
+	text "<PLAYER>, stay"
+	line "cautious!"
 
-	para "I'm behind you all"
-	line "the way!"
+	para "Don't give away"
+	line "your #MON like"
+	cont "those cowards!"
 	done
 
 NeighborMornIntroText:
 	text "Good morning,"
-	line "<PLAY_G>!"
+	line "<PLAYER>!"
 
 	para "I'm visiting!"
 	done
 
 NeighborDayIntroText:
-	text "Hello, <PLAY_G>!"
+	text "Hello, <PLAYER>!"
 	line "I'm visiting!"
 	done
 
 NeighborNiteIntroText:
 	text "Good evening,"
-	line "<PLAY_G>!"
+	line "<PLAYER>!"
 
 	para "I'm visiting!"
 	done
 
 NeighborText:
-	text "<PLAY_G>, have you"
+	text "<PLAYER>, have you"
 	line "heard?"
 
-	para "My daughter is"
-	line "adamant about"
-
-	para "becoming PROF."
-	line "ELM's assistant."
-
-	para "She really loves"
-	line "#MON!"
+	para "TEAM C. is adamant"
+	line "about #MON"
+	
+	para "TRAINERS giving"
+	line "their #MON to"
+	cont "them."
+	
+	para "It's for their"
+	line "safety. If you"
+	
+	para "care about your"
+	line "#MON, I think"
+	cont "you should comply."
 	done
 
 PlayersHouse1FStoveText:
@@ -373,14 +387,22 @@ PlayersHouse1FFridgeText:
 	done
 
 PlayersHouse1FTVText:
-	text "There's a movie on"
-	line "TV: Stars dot the"
+	text "BREAKING! Every"
+	line "TRAINER is now"
 
-	para "sky as two boys"
-	line "ride on a train…"
+	para "expected to"
+	line "deposit their"
+	
+	para "#MON in the"
+	line "#HOSPITAL PCs,"
+	
+	para "in the TEAM C."
+	line "OFFICIAL #MON"
+	cont "DEPOSIT PC."
 
-	para "I'd better get"
-	line "rolling too!"
+	para "TEAM C. works for"
+	line "the safety and"
+	cont "future of #MON!"
 	done
 
 PlayersHouse1F_MapEvents:
@@ -392,8 +414,8 @@ PlayersHouse1F_MapEvents:
 	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
 
 	def_coord_events
-	coord_event  8,  4, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomLeftScript
-	coord_event  9,  4, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomRightScript
+	coord_event  9,  3, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomLeftScript
+	coord_event  8,  3, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomRightScript
 
 	def_bg_events
 	bg_event  0,  1, BGEVENT_READ, PlayersHouse1FStoveScript
@@ -404,6 +426,6 @@ PlayersHouse1F_MapEvents:
 	def_object_events
 	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
 	object_event  2,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event 15, -6, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, 0, EVENT_PLAYERS_HOUSE_MOM_1,
 	object_event  0,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  4,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
+	object_event  4,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR

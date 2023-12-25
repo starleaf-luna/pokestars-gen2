@@ -5,6 +5,7 @@
 	const ELMSLAB_POKE_BALL2
 	const ELMSLAB_POKE_BALL3
 	const ELMSLAB_OFFICER
+	const ELMSLAB_RIVAL
 
 ElmsLab_MapScripts:
 	def_scene_scripts
@@ -51,6 +52,12 @@ ElmsLabWalkUpToElmScript:
 	turnobject ELMSLAB_ELM, RIGHT
 	opentext
 	writetext ElmText_Intro
+	promptbutton
+	closetext
+	applymovement ELMSLAB_RIVAL, ElmsLab_WalkUpToElmMovement
+	opentext
+	writetext ElmText_RivalShowsUp
+	
 .MustSayYes:
 	yesorno
 	iftrue .ElmGetsEmail
@@ -60,21 +67,6 @@ ElmsLabWalkUpToElmScript:
 .ElmGetsEmail:
 	writetext ElmText_Accepted
 	promptbutton
-	writetext ElmText_ResearchAmbitions
-	waitbutton
-	closetext
-	playsound SFX_GLASS_TING
-	pause 30
-	showemote EMOTE_SHOCK, ELMSLAB_ELM, 10
-	turnobject ELMSLAB_ELM, DOWN
-	opentext
-	writetext ElmText_GotAnEmail
-	waitbutton
-	closetext
-	opentext
-	turnobject ELMSLAB_ELM, RIGHT
-	writetext ElmText_MissionFromMrPokemon
-	waitbutton
 	closetext
 	applymovement ELMSLAB_ELM, ElmsLab_ElmToDefaultPositionMovement1
 	turnobject PLAYER, UP
@@ -724,28 +716,39 @@ AfterChikoritaMovement:
 	step_end
 
 ElmText_Intro:
-	text "ELM: <PLAY_G>!"
+	text "OAK: <PLAYER>!"
 	line "There you are!"
 
+	para "Let's wait..."
+	
+ElmText_RivalShowsUp:
+	text "Oh, you're here,"
+	line "too! Fantastic!"
+	
 	para "I needed to ask"
 	line "you a favor."
 
 	para "I'm conducting new"
-	line "#MON research"
+	line "research into TEAM"
 
-	para "right now. I was"
-	line "wondering if you"
-
-	para "could help me with"
-	line "it, <PLAY_G>."
+	para "C. I'm not one to"
+	line "just accept what"
+	cont "is given to me."
 
 	para "You see…"
 
-	para "I'm writing a"
-	line "paper that I want"
+	para "It turns out that"
+	line "TEAM C. doesn't"
 
-	para "to present at a"
-	line "conference."
+	para "care about the"
+	line "safety of your"
+	
+	para "#MON. They just"
+	line "want your #MON"
+	
+	para "so they could sell"
+	line "them off to be"
+	cont "richer."
 
 	para "But there are some"
 	line "things I don't"
@@ -753,49 +756,72 @@ ElmText_Intro:
 	para "quite understand"
 	line "yet."
 
-	para "So!"
-
-	para "I'd like you to"
-	line "raise a #MON"
-
-	para "that I recently"
-	line "caught."
+	para "So, I'd like you"
+	line "to raise some"
+	
+	para "#MON as a line"
+	line "of defense, and"
+	cont "destroy TEAM C."
 	done
 
 ElmText_Accepted:
-	text "Thanks, <PLAY_G>!"
+	text "Thanks, you two!"
 
 	para "You're a great"
 	line "help!"
 	done
 
 ElmText_Refused:
-	text "But… Please, I"
-	line "need your help!"
+	text "But, it's for the"
+	line "good!"
 	done
 
 ElmText_ResearchAmbitions:
-	text "When I announce my"
-	line "findings, I'm sure"
-
-	para "we'll delve a bit"
-	line "deeper into the"
-
-	para "many mysteries of"
-	line "#MON."
-
-	para "You can count on"
-	line "it!"
+	text "I'll even give you"
+	line "some hints about"
+	cont "how to do it!"
+	
+	para "The most important"
+	line "thing is to rip"
+	
+	para "them apart from"
+	line "the inside."
+	
+	para "I don't mean to"
+	line "join TEAM C., but"
+	
+	para "masquerade as a"
+	line "supporter, to gain"
+	
+	para "access to their"
+	line "inside system, and"
+	
+	para "turn the members"
+	line "against eachother."
+	
+	para "Because, while"
+	line "they can spend so"
+	
+	para "much money on"
+	line "external defenses,"
+	
+	para "on the inside they"
+	line "are just as weak"
+	
+	para "as you two are"
+	line "right now."
 	done
 
 ElmText_GotAnEmail:
-	text "Oh, hey! I got an"
-	line "e-mail!"
+	text "<RIVAL>: Hey! I'm"
+	line "not weak!"
 
-	para "<……><……><……>"
-	line "Hm… Uh-huh…"
+	para "I'll show you"
+	line "that I'm not weak!"
 
-	para "Okay…"
+	para "<PLAYER>! Get ready"
+	line "to visit the"
+	cont "#HOSPITAL!"
 	done
 
 ElmText_MissionFromMrPokemon:
@@ -1410,3 +1436,4 @@ ElmsLab_MapEvents:
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	object_event  5,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CopScript, EVENT_COP_IN_ELMS_LAB
+	object_event 25,  3, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ElmsLabRivalScript, EVENT_RIVAL_IN_ELMS_LAB

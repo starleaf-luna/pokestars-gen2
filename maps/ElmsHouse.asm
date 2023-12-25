@@ -20,17 +20,27 @@ ElmsHouseBookshelf:
 	jumpstd DifficultBookshelfScript
 
 ElmsWifeText:
-	text "Hi, <PLAY_G>! My"
-	line "husband's always"
+	text "Hi, <PLAYER>! My"
+	line "husband was always"
 
-	para "so busy--I hope"
-	line "he's OK."
+	para "so busy. It's"
+	line "sad to see his"
+	
+	para "sickness finally"
+	line "getting to him..."
 
 	para "When he's caught"
 	line "up in his #MON"
 
 	para "research, he even"
 	line "forgets to eat."
+	
+	para "That's probably why"
+	line "he fell so sick."
+	
+	para "What's going on"
+	line "in GOLINA has also"
+	cont "made him worry."
 	done
 
 ElmsSonText:
@@ -41,6 +51,12 @@ ElmsSonText:
 	para "I'm going to be a"
 	line "great #MON"
 	cont "professor!"
+	
+	para "What's more? I'll"
+	line "even go down in"
+	
+	para "history as the"
+	line "#MON MESSIAH!"
 	done
 
 ElmsHouseLabFoodText: ; unreferenced
@@ -56,27 +72,39 @@ ElmsHousePokemonFoodText: ; unreferenced
 	done
 
 ElmsHousePCText:
-	text "#MON. Where do"
-	line "they come from? "
-
-	para "Where are they"
-	line "going?"
-
-	para "Why has no one"
-	line "ever witnessed a"
-	cont "#MON's birth?"
-
-	para "I want to know! I"
-	line "will dedicate my"
-
-	para "life to the study"
-	line "of #MON!"
+	text "Mail is open on"
+	line "the PC screen."
 
 	para "…"
+	line "…"
+	
+	para "To my wife."
+	line "How are you?"
 
-	para "It's a part of"
-	line "PROF.ELM's re-"
-	cont "search papers."
+	para "I'm currently in"
+	line "KANTO at PROF.OAK's"
+	cont "LAB."
+
+	para "I'm talking with"
+	line "PROF.OAK. He's so"
+	cont "nice!"
+
+	para "I asked him if"
+	line "he's ever been"
+	cont "here. He said no."
+	
+	para "Well, how's life"
+	line "in GOLINA? I'll"
+	cont "see you soon!"
+	
+	para "      ELM"
+	
+	para "…"
+	line "…"
+
+	para "It's a mail to"
+	line "ELM's wife,"
+	cont "dated MARCH."
 	done
 
 ElmsHouse_MapEvents:
