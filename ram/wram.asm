@@ -1451,10 +1451,15 @@ wcd8c:: ds 1
 wcd8d:: ds 11
 ENDU
 
+UNION
 wDefaultSGBLayout:: db
-
 wPlayerHPPal:: db
 wEnemyHPPal:: db
+NEXTU
+wTitleScrollCounter:: db
+wTitleScrollAccel:: db
+wTitleScrollAccelCounter:: db
+ENDU
 
 wHPPals:: ds PARTY_LENGTH
 wCurHPPal:: db

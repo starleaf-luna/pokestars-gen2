@@ -6,6 +6,7 @@ _TitleScreen:
 ; Turn BG Map update off
 	xor a
 	ldh [hBGMapMode], a
+	ld [hSCX], a
 
 ; Reset timing variables
 	ld hl, wJumptableIndex
@@ -30,6 +31,11 @@ _TitleScreen:
 	hlbgcoord 0, 0
 	ld bc, 20 * BG_MAP_WIDTH
 	xor a
+	call ByteFill
+	
+	hlbgcoord 0, $a
+	ld bc, BG_MAP_WIDTH
+	ld a, 0 | VRAM_BANK_1
 	call ByteFill
 
 ; Fill tile palettes:
@@ -83,7 +89,7 @@ _TitleScreen:
 	ld bc, 6 * BG_MAP_WIDTH ; the rest of the screen
 	ld a, 0 | VRAM_BANK_1
 	call ByteFill
-
+	
 ; Back to VRAM bank 0
 	ld a, 0
 	ldh [rVBK], a
@@ -111,19 +117,13 @@ _TitleScreen:
 	ld e, 20
 	call DrawTitleGraphic
 
-; Draw copyright text
-	hlbgcoord 3, 0, vBGMap1
-	lb bc, 1, 13
-	ld d, $c
-	ld e, 16
-	call DrawTitleGraphic
-
 ; Initialize running Suicune?
 	ld d, $0
 	call LoadSuicuneFrame
+	call LoadCopyrightGfx
 
 ; Initialize background crystal
-	call InitializeBackground
+	;call InitializeBackground
 
 ; Update palette colors
 	ldh a, [rSVBK]
@@ -146,39 +146,39 @@ _TitleScreen:
 
 ; LY/SCX trickery starts here
 
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wLYOverrides)
-	ldh [rSVBK], a
+	; ldh a, [rSVBK]
+	; push af
+	; ld a, BANK(wLYOverrides)
+	; ldh [rSVBK], a
 
 ; Make alternating lines come in from opposite sides
 
 ; (This part is actually totally pointless, you can't
 ;  see anything until these values are overwritten!)
 
-	ld b, 80 / 2 ; alternate for 80 lines
-	ld hl, wLYOverrides
-.loop
+	; ld b, 80 / 2 ; alternate for 80 lines
+	; ld hl, wLYOverrides
+; .loop
 ; $00 is the middle position
-	ld [hl], +112 ; coming from the left
-	inc hl
-	ld [hl], -112 ; coming from the right
-	inc hl
-	dec b
-	jr nz, .loop
+	; ld [hl], +112 ; coming from the left
+	; inc hl
+	; ld [hl], -112 ; coming from the right
+	; inc hl
+	; dec b
+	; jr nz, .loop
 
 ; Make sure the rest of the buffer is empty
-	ld hl, wLYOverrides + 80
-	xor a
-	ld bc, wLYOverridesEnd - (wLYOverrides + 80)
-	call ByteFill
+	; ld hl, wLYOverrides + 80
+	; xor a
+	; ld bc, wLYOverridesEnd - (wLYOverrides + 80)
+	; call ByteFill
 
 ; Let LCD Stat know we're messing around with SCX
-	ld a, LOW(rSCX)
-	ldh [hLCDCPointer], a
+	; ld a, LOW(rSCX)
+	; ldh [hLCDCPointer], a
 
-	pop af
-	ldh [rSVBK], a
+	; pop af
+	; ldh [rSVBK], a
 
 ; Reset audio
 	call ChannelsOff
@@ -189,9 +189,9 @@ _TitleScreen:
 	set rLCDC_SPRITE_SIZE, a
 	ldh [rLCDC], a
 
-	ld a, +112
-	ldh [hSCX], a
-	ld a, 8
+	;ld a, +112
+	;ldh [hSCX], a
+	ld a, -104
 	ldh [hSCY], a
 	ld a, 7
 	ldh [hWX], a
@@ -200,21 +200,73 @@ _TitleScreen:
 
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
+	
+	;ld a, [rLCDC]
+	;res 6, a ; window 9800-9bff
+	;set 5, a ; window on
+	;ld [rLCDC], a
 
 ; Update BG Map 0 (bank 0)
 	ldh [hBGMapMode], a
-
-	xor a
-	ld [wSuicuneFrame], a
-
+	;xor a
+	;ld [wSuicuneFrame], a
+	
 ; Play starting sound effect
 	call SFXChannelsOff
 	ld de, SFX_TITLE_SCREEN_ENTRANCE
 	call PlaySFX
-
+	
+	hlcoord 6, $b ; location
+	ld bc, $0808 ; width, height
+	ld de, $8008 ; start tile, how many to advance
+	call DrawTitleGraphic
+	
+	xor a
+	ld [wTitleScrollCounter], a
+	ld b, 4
+.loopScrollLogo:
+	ld c, 1
+	call DelayFrames
+	ld a, [hSCY]
+	add b
+	ld [hSCY], a
+	ld a, [wTitleScrollCounter]
+	inc a
+	ld [wTitleScrollCounter], a
+	cp 20
+	jr z, .setSpeed1
+	cp 38
+	jr z, .setSpeed2
+	cp 50
+	jr nz, .loopScrollLogo
 	ret
+.setSpeed1:
+	ld b, 2
+	jr .loopScrollLogo
+.setSpeed2:
+	ld b, 1
+	jr .loopScrollLogo
+	
+LoadCopyrightGfx:
+	; Draw copyright text
+	hlbgcoord 3, 0, vBGMap1
+	ld de, GameFreakText
+	di
+.loop:
+	ld a, [de]
+	ld [hli], a
+	inc de
+	ld a, [de]
+	cp "@"
+	jr nz, .loop
+	ei
+	ret
+	
+GameFreakText:
+	db $c, $d, $e, $f, $10, $11, $12, $13, $14, $15, $16, $17, $18, "@"
 
 SuicuneFrameIterator:
+	ret
 	ld hl, wSuicuneFrame
 	ld a, [hl]
 	ld c, a

@@ -1,6 +1,6 @@
 # Pokémon Stars
 
-Pokémon Stars is a hack of the Pokémon Crystal engine. It introduces a whole new storyline, characters, and 2 new Pokémon, as well as various bugfixes.
+Pokémon Stars is a hack of the Pokémon Crystal engine. It introduces a whole new storyline, characters, and a new Pokémon (Jirachi), as well as various bugfixes.
 
 To set up the repository, see [INSTALL.md](INSTALL.md).
 
