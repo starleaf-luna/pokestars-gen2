@@ -22,8 +22,8 @@ _TitleScreen:
 	ld a, 1
 	ldh [rVBK], a
 
-; Decompress running Suicune gfx
-	ld hl, TitleSuicuneGFX
+; init Jirachi
+	ld hl, TitleJirachiGFX
 	ld de, vTiles1
 	call Decompress
 
@@ -79,12 +79,12 @@ _TitleScreen:
 	call ByteFill
 
 ; 'CRYSTAL VERSION'
-	hlbgcoord 5, 9
+	hlbgcoord 6, 9
 	ld bc, 11 ; length of version text
 	ld a, 1
 	call ByteFill
 
-; Suicune gfx
+; Jirachi gfx
 	hlbgcoord 0, 12
 	ld bc, 6 * BG_MAP_WIDTH ; the rest of the screen
 	ld a, 0 | VRAM_BANK_1
@@ -216,9 +216,10 @@ _TitleScreen:
 	ld de, SFX_TITLE_SCREEN_ENTRANCE
 	call PlaySFX
 	
-	hlcoord 6, $b ; location
-	ld bc, $0808 ; width, height
-	ld de, $8008 ; start tile, how many to advance
+	; initialise Jirachi
+	hlcoord 7, $c ; location
+	ld bc, $0706 ; width, height
+	ld de, $8006 ; start tile, how many to advance
 	call DrawTitleGraphic
 	
 	xor a
@@ -239,6 +240,8 @@ _TitleScreen:
 	jr z, .setSpeed2
 	cp 50
 	jr nz, .loopScrollLogo
+	xor a
+	ld [wTitleScrollCounter], a
 	ret
 .setSpeed1:
 	ld b, 2
@@ -249,7 +252,7 @@ _TitleScreen:
 	
 LoadCopyrightGfx:
 	; Draw copyright text
-	hlbgcoord 3, 0, vBGMap1
+	hlbgcoord 4, 0, vBGMap1
 	ld de, GameFreakText
 	di
 .loop:
@@ -324,7 +327,7 @@ LoadSuicuneFrame:
 	jr nz, .bgrows
 	ret
 
-DrawTitleGraphic:
+DrawTitleGraphic::
 ; input:
 ;   hl: draw location
 ;   b: height
@@ -413,7 +416,7 @@ endr
 
 	ret
 
-TitleSuicuneGFX:
+TitleJirachiGFX:
 INCBIN "gfx/title/suicune.2bpp.lz"
 
 TitleLogoGFX:
@@ -424,3 +427,6 @@ INCBIN "gfx/title/crystal.2bpp.lz"
 
 TitleScreenPalettes:
 INCLUDE "gfx/title/title.pal"
+
+TitleScreenShinePalettes:
+INCLUDE "gfx/title/title_shine.pal"

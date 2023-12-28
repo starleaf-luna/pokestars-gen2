@@ -549,7 +549,7 @@ Continue_LoadMenuHeader:
 	db 4 ; items
 	db "PLAYER <PLAYER>@"
 	db "BADGES@"
-	db " @"
+	db "@"
 	db "TIME@"
 
 Continue_DisplayBadgesDexPlayerName:
@@ -785,12 +785,12 @@ NamePlayer:
 	db "KRIS@@@@@@@"
 
 GSShowPlayerNamingChoices: ; unreferenced
-	call LoadMenuHeader
-	call VerticalMenu
-	ld a, [wMenuCursorY]
-	dec a
-	call CopyNameFromMenu
-	call CloseWindow
+	; call LoadMenuHeader
+	; call VerticalMenu
+	; ld a, [wMenuCursorY]
+	; dec a
+	; call CopyNameFromMenu
+	; call CloseWindow
 	ret
 
 StorePlayerName:
@@ -963,6 +963,9 @@ Intro_PlacePlayerSprite:
 	const TITLESCREENOPTION_RESTART
 	const TITLESCREENOPTION_UNUSED
 	const TITLESCREENOPTION_RESET_CLOCK
+IF DEF(_DEBUG)
+	const TITLESCREENOPTION_DEBUGMENU
+ENDC
 DEF NUM_TITLESCREENOPTIONS EQU const_value
 
 IntroSequence:
@@ -979,9 +982,13 @@ StartTitleScreen:
 	ldh [rSVBK], a
 
 	call .TitleScreen
+	xor a
+	; ld [wTitleJirachiFrame], a
+	; ld [wTitleJirachiSubframe], a
 	call DelayFrame
 .loop
 	call RunTitleScreen
+	halt
 	jr nc, .loop
 
 	call ClearSprites
@@ -1026,6 +1033,9 @@ StartTitleScreen:
 	dw IntroSequence
 	dw IntroSequence
 	dw ResetClock
+IF DEF(_DEBUG)
+	dw DebugMenu
+ENDC
 
 .TitleScreen:
 	farcall _TitleScreen
@@ -1036,7 +1046,8 @@ RunTitleScreen:
 	bit 7, a
 	jr nz, .done_title
 	call TitleScreenScene
-	farcall SuicuneFrameIterator
+	;farcall SuicuneFrameIterator
+	call AnimateJirachi
 	call DelayFrame
 	and a
 	ret
@@ -1044,6 +1055,20 @@ RunTitleScreen:
 .done_title
 	scf
 	ret
+	
+AnimateJirachi:
+; animate Jirachi
+	ld a, 88
+	ld [rLYC], a
+	ld a, %01001000
+	ld [rSTAT], a
+	ret
+	
+;JirachiFrames:
+	; dw AnimateJirachi.frame1
+	; dw AnimateJirachi.frame2
+	; dw AnimateJirachi.frame3
+	; dw AnimateJirachi.frame4
 
 UnusedTitlePerspectiveScroll: ; unreferenced
 ; Similar behavior to Intro_PerspectiveScrollBG.
@@ -1158,6 +1183,10 @@ TitleScreenMain:
 	call GetJoypad
 	ld hl, hJoyDown
 	ld a, [hl]
+IF DEF(_DEBUG)
+	cp SELECT
+	jr z, .debug
+ENDC
 	and D_UP + B_BUTTON + SELECT
 	cp  D_UP + B_BUTTON + SELECT
 	jr z, .delete_save_data
@@ -1205,6 +1234,12 @@ TitleScreenMain:
 
 .delete_save_data
 	ld a, TITLESCREENOPTION_DELETE_SAVE_DATA
+IF DEF(_DEBUG)	
+	jr .done
+
+.debug:
+	ld a, TITLESCREENOPTION_DEBUGMENU
+ENDC
 
 .done
 	ld [wTitleScreenSelectedOption], a
@@ -1264,6 +1299,12 @@ DeleteSaveData:
 ResetClock:
 	farcall _ResetClock
 	jp Init
+	
+IF DEF(_DEBUG)
+DebugMenu:
+	farcall _DebugMenu
+	ret
+ENDC
 
 UpdateTitleTrailSprite: ; unreferenced
 	; If bit 0 or 1 of [wTitleScreenTimer] is set, we don't need to be here.

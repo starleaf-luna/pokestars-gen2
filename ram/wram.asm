@@ -114,13 +114,20 @@ SECTION "WRAM", WRAM0
 wLZAddress:: dw
 wLZBank::    db
 
-	ds 1
+wIsTitleScreen:: db
 
 wBoxAlignment:: db
 
+UNION
 wInputType::        db
 wAutoInputAddress:: dw
 wAutoInputBank::    db
+NEXTU
+wTitleScrollCounter::	db
+wTitleJirachiX::		db
+wTitleJirachiY::		db
+wTitleJirachiTile::		db
+ENDU
 wAutoInputLength::  db
 
 wDebugFlags:: db
@@ -1451,15 +1458,9 @@ wcd8c:: ds 1
 wcd8d:: ds 11
 ENDU
 
-UNION
 wDefaultSGBLayout:: db
 wPlayerHPPal:: db
 wEnemyHPPal:: db
-NEXTU
-wTitleScrollCounter:: db
-wTitleScrollAccel:: db
-wTitleScrollAccelCounter:: db
-ENDU
 
 wHPPals:: ds PARTY_LENGTH
 wCurHPPal:: db

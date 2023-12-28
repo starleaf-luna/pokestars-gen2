@@ -15,6 +15,13 @@ LCD::
 	and a
 	jr z, .done
 
+	; ld a, [wTitleJirachiFrame]
+	; add a
+	; ld b, a
+	; ld a, [rSCX]
+	; add b
+	; ld [rSCX], a
+
 ; At this point it's assumed we're in BANK(wLYOverrides)!
 	push bc
 	ldh a, [rLY]

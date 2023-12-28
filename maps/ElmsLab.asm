@@ -54,9 +54,9 @@ ElmsLabWalkUpToElmScript:
 	writetext ElmText_Intro
 	promptbutton
 	closetext
-	applymovement ELMSLAB_RIVAL, ElmsLab_WalkUpToElmMovement
-	opentext
-	writetext ElmText_RivalShowsUp
+	;applymovement ELMSLAB_RIVAL, ElmsLab_WalkUpToElmMovement
+	;opentext
+	;writetext ElmText_RivalShowsUp
 	
 .MustSayYes:
 	yesorno
@@ -153,8 +153,8 @@ CyndaquilPokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	refreshscreen
-	pokepic CYNDAQUIL
-	cry CYNDAQUIL
+	pokepic JIRACHI
+	cry JIRACHI
 	waitbutton
 	closepokepic
 	opentext
@@ -166,12 +166,12 @@ CyndaquilPokeBallScript:
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
-	getmonname STRING_BUFFER_3, CYNDAQUIL
+	getmonname STRING_BUFFER_3, JIRACHI
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke CYNDAQUIL, 5, BERRY
+	givepoke JIRACHI, 5, BERRY
 	closetext
 	readvar VAR_FACING
 	ifequal RIGHT, ElmDirectionsScript
@@ -720,6 +720,7 @@ ElmText_Intro:
 	line "There you are!"
 
 	para "Let's wait..."
+	done
 	
 ElmText_RivalShowsUp:
 	text "Oh, you're here,"

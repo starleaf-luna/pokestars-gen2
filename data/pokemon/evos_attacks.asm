@@ -3355,3 +3355,14 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+	
+JirachiEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, CONFUSION
+	db 5, REST
+	db 10, SWIFT
+	db 20, PSYCHIC_M
+	db 35, DOUBLE_EDGE
+	db 40, FUTURE_SIGHT
+	db 0 ; no more level-up moves
+	

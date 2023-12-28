@@ -96,6 +96,7 @@ AlphabeticalPokedexOrder:
 	db IGGLYBUFF
 	db IVYSAUR
 	db JIGGLYPUFF
+	db JIRACHI
 	db JOLTEON
 	db JUMPLUFF
 	db JYNX

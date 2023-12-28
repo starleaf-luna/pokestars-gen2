@@ -82,8 +82,7 @@ MACRO dab ; dwb address, bank
 ENDM
 
 MACRO dba_pic ; dbw bank, address
-	db BANK(\1) - PICS_FIX
-	dw \1
+	dba \1
 ENDM
 
 MACRO bcd

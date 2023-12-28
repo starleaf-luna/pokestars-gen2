@@ -9,6 +9,7 @@
 	const MAINMENU_MYSTERY                ; 6
 	const MAINMENU_MYSTERY_STUDIUM        ; 7
 	const MAINMENU_STUDIUM                ; 8
+	const MAINMENU_DEBUG_ROOM			  ; 9
 
 	; MainMenu.Strings and MainMenu.Jumptable indexes
 	const_def
@@ -91,9 +92,12 @@ MainMenuItems:
 ; entries correspond to MAINMENU_* constants
 
 	; MAINMENU_NEW_GAME
-	db 2
+	db 2 + DEF(_DEBUG)
 	db MAINMENUITEM_NEW_GAME
 	db MAINMENUITEM_OPTION
+IF DEF(_DEBUG)
+	db MAINMENU_DEBUG_ROOM
+ENDC
 	db -1
 
 	; MAINMENU_CONTINUE
@@ -392,3 +396,4 @@ MainMenu_Continue:
 MainMenu_MysteryGift:
 	farcall MysteryGift
 	ret
+	
