@@ -1291,31 +1291,55 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_31
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-	; morn
-	db 4, LEDYBA
-	db 4, CATERPIE
-	db 5, BELLSPROUT
-	db 5, PIDGEY
-	db 4, WEEDLE
-	db 5, HOPPIP
-	db 5, HOPPIP
-	; day
-	db 4, PIDGEY
-	db 4, CATERPIE
-	db 5, BELLSPROUT
-	db 5, PIDGEY
-	db 4, WEEDLE
-	db 5, HOPPIP
-	db 5, HOPPIP
-	; nite
-	db 4, SPINARAK
-	db 4, POLIWAG
-	db 5, BELLSPROUT
-	db 5, HOOTHOOT
-	db 4, ZUBAT
-	db 5, GASTLY
-	db 5, GASTLY
+	db 100 percent, 100 percent, 100 percent
+	db 5, JIRACHI
+	db 5, JIRACHI
+	db 5, JIRACHI
+	db 5, JIRACHI
+	db 5, JIRACHI
+	db 5, JIRACHI
+	db 5, JIRACHI
+	
+	db 5, JIRACHI
+	db 5, JIRACHI
+	db 5, JIRACHI
+	db 5, JIRACHI
+	db 5, JIRACHI
+	db 5, JIRACHI
+	db 5, JIRACHI
+	
+	db 5, JIRACHI
+	db 5, JIRACHI
+	db 5, JIRACHI
+	db 5, JIRACHI
+	db 5, JIRACHI
+	db 5, JIRACHI
+	db 5, JIRACHI
+	; db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; ; morn
+	; db 4, LEDYBA
+	; db 4, CATERPIE
+	; db 5, BELLSPROUT
+	; db 5, PIDGEY
+	; db 4, WEEDLE
+	; db 5, HOPPIP
+	; db 5, HOPPIP
+	; ; day
+	; db 4, PIDGEY
+	; db 4, CATERPIE
+	; db 5, BELLSPROUT
+	; db 5, PIDGEY
+	; db 4, WEEDLE
+	; db 5, HOPPIP
+	; db 5, HOPPIP
+	; ; nite
+	; db 4, SPINARAK
+	; db 4, POLIWAG
+	; db 5, BELLSPROUT
+	; db 5, HOOTHOOT
+	; db 4, ZUBAT
+	; db 5, GASTLY
+	; db 5, GASTLY
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_32
