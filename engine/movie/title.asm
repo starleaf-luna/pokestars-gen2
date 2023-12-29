@@ -26,6 +26,12 @@ _TitleScreen:
 	ld hl, TitleJirachiGFX
 	ld de, vTiles1
 	call Decompress
+	
+	ld c, 14
+	ld de, TitleVersionFontGFX
+	ld b, BANK(TitleVersionFontGFX)
+	ld hl, $8a40
+	call Get1bpp
 
 ; Clear screen palettes
 	hlbgcoord 0, 0
@@ -47,6 +53,12 @@ _TitleScreen:
 	ld bc, BG_MAP_WIDTH
 	ld a, 7 ; palette
 	call ByteFill
+	
+	; ld c, 1
+	; ld de, TitleStarGFX
+	; ld b, BANK(TitleStarGFX)
+	; ld hl, $8b30
+	; call Get1bpp
 
 ; BG Map 0:
 
@@ -80,13 +92,18 @@ _TitleScreen:
 
 ; 'CRYSTAL VERSION'
 	hlbgcoord 6, 9
-	ld bc, 11 ; length of version text
+	ld bc, 10 ; length of version text
 	ld a, 1
 	call ByteFill
 
 ; Jirachi gfx
 	hlbgcoord 0, 12
 	ld bc, 6 * BG_MAP_WIDTH ; the rest of the screen
+	ld a, 0 | VRAM_BANK_1
+	call ByteFill
+	
+	hlbgcoord 0, $13
+	ld bc, BG_MAP_WIDTH
 	ld a, 0 | VRAM_BANK_1
 	call ByteFill
 	
@@ -109,6 +126,10 @@ _TitleScreen:
 	ld bc, 64 * BG_MAP_WIDTH
 	ld a, " "
 	call ByteFill
+	
+	; di
+	; call PlaceStars
+	; ei
 
 ; Draw Pokemon logo
 	hlcoord 0, 3
@@ -140,6 +161,10 @@ _TitleScreen:
 	ld de, wBGPals2
 	ld bc, 16 palettes
 	call CopyBytes
+	
+	di
+	call DisplayVersionText
+	ei
 
 	pop af
 	ldh [rSVBK], a
@@ -252,9 +277,8 @@ _TitleScreen:
 	
 LoadCopyrightGfx:
 	; Draw copyright text
-	hlbgcoord 4, 0, vBGMap1
+	hlbgcoord 2, 0, vBGMap1
 	ld de, GameFreakText
-	di
 .loop:
 	ld a, [de]
 	ld [hli], a
@@ -262,11 +286,35 @@ LoadCopyrightGfx:
 	ld a, [de]
 	cp "@"
 	jr nz, .loop
-	ei
+	ret
+	
+PlaceStars:
+	ld a, $b3 ; temporary
+	hlcoord 3, $d
+	ld [hl], a
+	hlcoord $f, $b
+	ld [hl], a
+	hlcoord $d, $12
+	ld [hl], a
+	hlcoord $13, $13
+	ld [hl], a
+	ld a, 1
+	ld [rVBK], a
+	ld a, 0 | VRAM_BANK_1
+	hlcoord 3, $d
+	ld [hl], a
+	hlcoord $f, $b
+	ld [hl], a
+	hlcoord $d, $12
+	ld [hl], a
+	hlcoord $13, $13
+	ld [hl], a
+	ld a, 0
+	ld [rVBK], a
 	ret
 	
 GameFreakText:
-	db $c, $d, $e, $f, $10, $11, $12, $13, $14, $15, $16, $17, $18, "@"
+	db $c, $d, $e, $f, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $1a, $1b, "@"
 
 SuicuneFrameIterator:
 	ret
@@ -416,6 +464,42 @@ endr
 
 	ret
 
+DisplayVersionText:
+	hlbgcoord 1, $13, vBGMap0
+	ld de, VersionText
+.loop:
+	ld a, [de]
+	cp "@"
+	jr z, .done
+	ld [hli], a
+	inc de
+	ld a, [de]
+	jr .loop
+.done
+	ret
+
+pushc
+	charmap "A",	$a4
+	charmap "B",	$a5
+	charmap "C",	$a6
+	charmap "D",	$a7
+	charmap "E",	$a8
+	charmap "H",	$a9
+	charmap "I",	$aa
+	charmap "L",	$ab
+	charmap "N",	$ac
+	charmap "P",	$ad
+	charmap "R",	$ae
+	charmap "S",	$af
+	charmap "T",	$b0
+	charmap "V",	$b1
+	charmap " ",	$b2
+	charmap "@",	$50
+	
+VersionText:
+	db "{STARS_STATUS} VER@"
+popc
+
 TitleJirachiGFX:
 INCBIN "gfx/title/suicune.2bpp.lz"
 
@@ -425,8 +509,11 @@ INCBIN "gfx/title/logo.2bpp.lz"
 TitleCrystalGFX:
 INCBIN "gfx/title/crystal.2bpp.lz"
 
+TitleVersionFontGFX:
+INCBIN "gfx/title/version_font.1bpp"
+
 TitleScreenPalettes:
 INCLUDE "gfx/title/title.pal"
 
-TitleScreenShinePalettes:
-INCLUDE "gfx/title/title_shine.pal"
+; TitleStarGFX:
+; INCBIN "gfx/title/star.1bpp"

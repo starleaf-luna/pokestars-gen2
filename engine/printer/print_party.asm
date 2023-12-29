@@ -149,7 +149,7 @@ PrintPartyMonPage1:
 	call Request1bpp
 
 	ld de, StatsScreenPageTilesGFX + 14 tiles ; shiny icon
-	ld hl, vTiles2 tile "⁂"
+	ld hl, vTiles2 tile 0
 	lb bc, BANK(StatsScreenPageTilesGFX), 1
 	call Get2bpp
 

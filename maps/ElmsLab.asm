@@ -38,6 +38,9 @@ ElmsLabNoop4Scene:
 
 ElmsLabNoop5Scene:
 	end
+	
+ElmsLabRivalScript:
+	end
 
 ElmsLabMoveElmCallback:
 	checkscene
@@ -47,6 +50,8 @@ ElmsLabMoveElmCallback:
 	endcallback
 
 ElmsLabWalkUpToElmScript:
+	;setevent EVENT_SHOW_RIVAL_IN_ELMS_LAB
+	disappear ELMSLAB_RIVAL
 	applymovement PLAYER, ElmsLab_WalkUpToElmMovement
 	showemote EMOTE_SHOCK, ELMSLAB_ELM, 15
 	turnobject ELMSLAB_ELM, RIGHT
@@ -54,9 +59,10 @@ ElmsLabWalkUpToElmScript:
 	writetext ElmText_Intro
 	promptbutton
 	closetext
-	;applymovement ELMSLAB_RIVAL, ElmsLab_WalkUpToElmMovement
-	;opentext
-	;writetext ElmText_RivalShowsUp
+	appear ELMSLAB_RIVAL
+	applymovement ELMSLAB_RIVAL, ElmsLab_WalkUpToElmRivalMovement
+	opentext
+	writetext ElmText_RivalShowsUp
 	
 .MustSayYes:
 	yesorno
@@ -603,6 +609,15 @@ ElmsLabBookshelf:
 ElmsLab_WalkUpToElmMovement:
 	step UP
 	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	turn_head LEFT
+	step_end
+	
+ElmsLab_WalkUpToElmRivalMovement:
 	step UP
 	step UP
 	step UP
@@ -1437,4 +1452,4 @@ ElmsLab_MapEvents:
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	object_event  5,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CopScript, EVENT_COP_IN_ELMS_LAB
-	;object_event 25,  3, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ElmsLabRivalScript, EVENT_RIVAL_IN_ELMS_LAB
+	object_event  5,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ElmsLabRivalScript, -1

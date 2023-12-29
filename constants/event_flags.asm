@@ -1246,6 +1246,7 @@
 	const EVENT_ELMS_AIDE_IN_VIOLET_POKEMON_CENTER
 	const EVENT_ELMS_AIDE_IN_LAB
 	const EVENT_COP_IN_ELMS_LAB
+	const EVENT_SHOW_RIVAL_IN_ELMS_LAB
 	const EVENT_RUINS_OF_ALPH_OUTSIDE_SCIENTIST
 	const EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_SCIENTIST
 	const EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
@@ -1355,7 +1356,7 @@
 ; (In pokegold the previous 4 event flags were not defined,
 ; but in pokecrystal the 'const_next 1900' is redundant.)
 
-	const_next 1900
+	;const_next 1900
 ; Kanto people
 	const EVENT_ROUTE_24_ROCKET
 	const EVENT_CERULEAN_GYM_ROCKET
