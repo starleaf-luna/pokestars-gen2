@@ -479,6 +479,7 @@ DisplayVersionText:
 	ret
 
 pushc
+	newcharmap vertext
 	charmap "A",	$a4
 	charmap "B",	$a5
 	charmap "C",	$a6

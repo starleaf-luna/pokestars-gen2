@@ -156,8 +156,8 @@ endif
 pokecrystal_opt         = -Cjv -t "POKE STARS" -n 0 -k 01 -l 0x33 -m 0x10 -r 5 -p 0
 pokecrystal11_opt       = -Cjv -t "POKE STARS" -n 0 -k 01 -l 0x33 -m 0x10 -r 5 -p 0
 pokecrystal_au_opt      = -Cjv -t "POKE STARS" -n 0 -k 01 -l 0x33 -m 0x10 -r 5 -p 0
-pokecrystal_debug_opt   = -Cjv -t "POKE STARS" -n 0 -k 01 -l 0x33 -m 0x10 -r 5 -p 0
-pokecrystal11_debug_opt = -Cjv -t "POKE STARS" -n 0 -k 01 -l 0x33 -m 0x10 -r 5 -p 0
+pokecrystal_debug_opt   = -Cjv -t "POKE STARS DBG" -n 0 -k 01 -l 0x33 -m 0x10 -r 5 -p 0
+pokecrystal11_debug_opt = -Cjv -t "POKE STARS DBG" -n 0 -k 01 -l 0x33 -m 0x10 -r 5 -p 0
 pokecrystal11_vc_opt    = -Cjv -t "POKE STARS" -n 0 -k 01 -l 0x33 -m 0x10 -r 5 -p 0
 
 %.gbc: $$(%_obj) layout.link
