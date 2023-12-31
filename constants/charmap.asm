@@ -10,6 +10,9 @@
 	charmap "<LF>",      $22
 	charmap "<POKE>",    $24 ; "<PO><KE>"
 	charmap "<WBR>",     $25 ; word-break opportunity (usually skipped, or "<LF>" on the Town Map)
+	charmap "<DELAY>",	 $2a ; delay char
+	charmap "<WAIT>",	 $2b ; wait for btn press
+	charmap "<SCRL>",	 $2c ; "para" for gbc_only.asm
 	charmap "<RED>",     $38 ; wRedsName
 	charmap "<GREEN>",   $39 ; wGreensName
 	charmap "<ENEMY>",   $3f

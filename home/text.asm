@@ -242,6 +242,7 @@ ENDM
 	dict "<USER>",    PlaceMoveUsersName
 	dict "<ENEMY>",   PlaceEnemysName
 	dict "<PLAY_G>",  PlaceGenderedPlayerName
+	dict "<DELAY>",	  DelayText
 	; dict "ﾟ",         .place ; should be .diacritic
 	; dict "ﾞ",         .place ; should be .diacritic
 	; jr .not_diacritic
@@ -287,6 +288,11 @@ ENDM
 ; .place
 	ld [hli], a
 	call PrintLetterDelay
+	jp NextChar
+
+DelayText::
+	ld c, $10
+	call DelayFrames
 	jp NextChar
 
 MobileScriptChar::

@@ -289,6 +289,9 @@ gfx/font/unused_bold_font.1bpp: tools/gfx += --trim-whitespace
 gfx/sgb/sgb_border.2bpp: tools/gfx += --trim-whitespace
 gfx/sgb/sgb_border.sgb.tilemap: gfx/sgb/sgb_border.bin ; tr < $< -d '\000' > $@
 
+gfx/sgb/gbc_only.2bpp: rgbgfx += -u -Z
+gfx/sgb/gbc_only_logo.2bpp: rgbgfx += -u -Z
+
 gfx/mobile/ascii_font.2bpp: tools/gfx += --trim-whitespace
 gfx/mobile/dialpad.2bpp: tools/gfx += --trim-whitespace
 gfx/mobile/dialpad_cursor.2bpp: tools/gfx += --trim-whitespace

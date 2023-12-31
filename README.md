@@ -4,6 +4,8 @@ Pokémon Stars is a hack of the Pokémon Crystal engine. It introduces a whole n
 
 To set up the repository, see [INSTALL.md](INSTALL.md).
 
+To see what still needs to be done, see [WIP.md](WIP.md).
+
 
 ## See also
 

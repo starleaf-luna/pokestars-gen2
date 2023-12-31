@@ -114,6 +114,8 @@ SECTION "WRAM", WRAM0
 wLZAddress:: dw
 wLZBank::    db
 
+wGBCOnlyDecompressBuffer:: ; a $540-byte buffer that continues past this SECTION
+
 wIsTitleScreen:: db
 
 wBoxAlignment:: db
@@ -1831,8 +1833,6 @@ wDaysSince:: db
 
 
 SECTION "WRAM 1", WRAMX
-
-wGBCOnlyDecompressBuffer:: ; a $540-byte buffer that continues past this SECTION
 
 wBetaTitleSequenceOpeningType::
 ; This selected the title screen animation (fire/notes) in pokegold-spaceworld.

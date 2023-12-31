@@ -45,6 +45,9 @@ ChangelogRoom_IsFinalisedString:
 ChangelogRoom_ChangelogStartString:
 	db "-CHANGELOG START-@"
 ChangelogRoom_Changelog:
-	db "- added Changelog"
-	next "- changed title"
-	next "- removed intro@"
+	db "- changed title"
+	next "- added JIRACHI"
+	next "- changed starter"
+	next "  event in NEW"
+	next "  BARK TOWN"
+	next "last upd. 31/12/23@"

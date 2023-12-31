@@ -223,7 +223,6 @@ INCLUDE "engine/events/battle_tower/get_trainer_class.asm"
 INCLUDE "engine/battle/sliding_intro.asm"
 INCLUDE "mobile/print_opp_message.asm"
 INCLUDE "engine/battle/check_battle_scene.asm"
-INCLUDE "engine/movie/gbc_only.asm"
 INCLUDE "engine/events/poke_seer.asm"
 
 
@@ -687,3 +686,7 @@ INCLUDE "engine/events/odd_egg.asm"
 SECTION "Changelog Room", ROMX
 
 INCLUDE "engine/menus/changelog_menu.asm"
+
+SECTION "GBC Only", ROMX
+
+INCLUDE "engine/movie/gbc_only.asm"

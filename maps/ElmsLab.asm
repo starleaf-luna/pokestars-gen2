@@ -40,6 +40,10 @@ ElmsLabNoop5Scene:
 	end
 	
 ElmsLabRivalScript:
+	opentext
+	writetext ElmText_RivalPassive
+	promptbutton
+	closetext
 	end
 
 ElmsLabMoveElmCallback:
@@ -159,8 +163,8 @@ CyndaquilPokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	refreshscreen
-	pokepic JIRACHI
-	cry JIRACHI
+	pokepic CYNDAQUIL
+	cry CYNDAQUIL
 	waitbutton
 	closepokepic
 	opentext
@@ -172,15 +176,16 @@ CyndaquilPokeBallScript:
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
-	getmonname STRING_BUFFER_3, JIRACHI
+	getmonname STRING_BUFFER_3, CYNDAQUIL
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke JIRACHI, 5, BERRY
+	givepoke CYNDAQUIL, 5, BERRY
 	closetext
 	readvar VAR_FACING
 	ifequal RIGHT, ElmDirectionsScript
+	sjump RivalGetTotodile
 	applymovement PLAYER, AfterCyndaquilMovement
 	sjump ElmDirectionsScript
 
@@ -209,6 +214,7 @@ TotodilePokeBallScript:
 	promptbutton
 	givepoke TOTODILE, 5, BERRY
 	closetext
+	sjump RivalGetChikorita
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
 
@@ -237,8 +243,56 @@ ChikoritaPokeBallScript:
 	promptbutton
 	givepoke CHIKORITA, 5, BERRY
 	closetext
+	sjump RivalGetCyndaquil
 	applymovement PLAYER, AfterChikoritaMovement
 	sjump ElmDirectionsScript
+
+RivalGetChikorita:
+	applymovement ELMSLAB_RIVAL, RivalGetChikoritaMovement
+	opentext
+	writetext ElmText_RivalIllTakeThisOne
+	closetext
+	disappear ELMSLAB_POKE_BALL3
+	sjump RivalGetStarter
+RivalGetTotodile:
+	applymovement ELMSLAB_RIVAL, RivalGetTotodileMovement
+	opentext
+	writetext ElmText_RivalIllTakeThisOne
+	closetext
+	disappear ELMSLAB_POKE_BALL2
+	sjump RivalGetStarter
+RivalGetCyndaquil:
+	applymovement ELMSLAB_RIVAL, RivalGetCyndaquilMovement
+	opentext
+	writetext ElmText_RivalIllTakeThisOne
+	closetext
+	disappear ELMSLAB_POKE_BALL1
+	sjump RivalGetStarter
+	
+RivalGetChikoritaMovement:
+	step DOWN
+	step RIGHT
+	step UP
+	step_end
+RivalGetTotodileMovement:
+	step DOWN
+	step RIGHT
+	step UP
+	step RIGHT
+RivalGetCyndaquilMovement:
+	step RIGHT
+	turn_head UP
+	step_end
+	
+RivalGetStarter:
+	opentext
+	writetext ElmText_RivalGotStarter
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	promptbutton
+	closetext
+	setevent EVENT_GOT_A_POKEMON_FROM_ELM
+	end
 
 DidntChooseStarterScript:
 	writetext DidntChooseStarterText
@@ -729,6 +783,27 @@ AfterChikoritaMovement:
 	step UP
 	turn_head UP
 	step_end
+	
+ElmText_RivalPassive:
+	text "Whatever! I'm not"
+	line "in a hurry."
+	
+	para "Go on, <PLAYER>!"
+	line "Choose your #-"
+	cont "MON!"
+	done
+	
+ElmText_RivalIllTakeThisOne:
+	text "I'll take this one,"
+	line "then!"
+	done
+	
+ElmText_RivalGotStarter:
+	text "<RIVAL> got a"
+	line "@"
+	text_ram wStringBuffer1
+	text "."
+	done
 
 ElmText_Intro:
 	text "OAK: <PLAYER>!"
@@ -744,11 +819,14 @@ ElmText_RivalShowsUp:
 	para "I needed to ask"
 	line "you a favor."
 
-	para "I'm conducting new"
-	line "research into TEAM"
+	para "You see, I'm con-"
+	line "ducting some new"
 
-	para "C. I'm not one to"
-	line "just accept what"
+	para "research into the"
+	line "TEAM C. GOVERNMENT"
+
+	para "you see. I'm not"
+	line "one to accept what"
 	cont "is given to me."
 
 	para "You see…"
@@ -765,12 +843,6 @@ ElmText_RivalShowsUp:
 	para "so they could sell"
 	line "them off to be"
 	cont "richer."
-
-	para "But there are some"
-	line "things I don't"
-
-	para "quite understand"
-	line "yet."
 
 	para "So, I'd like you"
 	line "to raise some"
@@ -874,7 +946,8 @@ ElmText_MissionFromMrPokemon:
 	done
 
 ElmText_ChooseAPokemon:
-	text "I want you to"
+	text "Go on. Pick one!"
+	done
 	line "raise one of the"
 
 	para "#MON contained"
@@ -1249,12 +1322,6 @@ ElmGiveTicketText2:
 
 	para "Give my regards to"
 	line "PROF.OAK in KANTO!"
-	done
-
-ElmsLabMonEggText: ; unreferenced
-	text "It's the #MON"
-	line "EGG being studied"
-	cont "by PROF.ELM."
 	done
 
 AideText_GiveYouPotion:

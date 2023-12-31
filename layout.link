@@ -290,6 +290,8 @@ ROMX $70
 	"Text 2"
 ROMX $71
 	"Text 3"
+ROMX $72
+	"GBC Only"
 ROMX $73
 	"Pokedex Entries 129-192"
 ROMX $74
