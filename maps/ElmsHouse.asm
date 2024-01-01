@@ -41,6 +41,9 @@ ElmsWifeText:
 	para "What's going on"
 	line "in GOLINA has also"
 	cont "made him worry."
+	
+	para "Oh, where is he?"
+	line "He's in KANTO."
 	done
 
 ElmsSonText:

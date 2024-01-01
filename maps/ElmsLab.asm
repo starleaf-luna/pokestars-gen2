@@ -244,41 +244,48 @@ ChikoritaPokeBallScript:
 	givepoke CHIKORITA, 5, BERRY
 	closetext
 	sjump RivalGetCyndaquil
-	applymovement PLAYER, AfterChikoritaMovement
-	sjump ElmDirectionsScript
 
 RivalGetChikorita:
 	applymovement ELMSLAB_RIVAL, RivalGetChikoritaMovement
 	opentext
+	getmonname STRING_BUFFER_3, CHIKORITA
 	writetext ElmText_RivalIllTakeThisOne
 	closetext
 	disappear ELMSLAB_POKE_BALL3
+	applymovement ELMSLAB_RIVAL, ElmsLab_WalkUpToElmAfterChikorita
 	sjump RivalGetStarter
 RivalGetTotodile:
 	applymovement ELMSLAB_RIVAL, RivalGetTotodileMovement
 	opentext
+	getmonname STRING_BUFFER_3, TOTODILE
 	writetext ElmText_RivalIllTakeThisOne
 	closetext
 	disappear ELMSLAB_POKE_BALL2
+	applymovement ELMSLAB_RIVAL, ElmsLab_WalkUpToElmAfterTotodile
 	sjump RivalGetStarter
 RivalGetCyndaquil:
 	applymovement ELMSLAB_RIVAL, RivalGetCyndaquilMovement
 	opentext
+	getmonname STRING_BUFFER_3, CYNDAQUIL
 	writetext ElmText_RivalIllTakeThisOne
 	closetext
 	disappear ELMSLAB_POKE_BALL1
+	applymovement ELMSLAB_RIVAL, ElmsLab_WalkUpToElmAfterCyndaquil
 	sjump RivalGetStarter
 	
 RivalGetChikoritaMovement:
+	step RIGHT
 	step DOWN
+	step RIGHT
 	step RIGHT
 	step UP
 	step_end
 RivalGetTotodileMovement:
 	step DOWN
 	step RIGHT
-	step UP
 	step RIGHT
+	step UP
+	step_end
 RivalGetCyndaquilMovement:
 	step RIGHT
 	turn_head UP
@@ -292,6 +299,7 @@ RivalGetStarter:
 	promptbutton
 	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_ELM
+	sjump ElmDirectionsScript
 	end
 
 DidntChooseStarterScript:
@@ -301,28 +309,14 @@ DidntChooseStarterScript:
 	end
 
 ElmDirectionsScript:
-	turnobject PLAYER, UP
 	opentext
-	writetext ElmDirectionsText1
-	waitbutton
+	writetext ElmText_ResearchAmbitions
+	promptbutton
+	writetext ElmText_GotAnEmail
+	promptbutton
 	closetext
-	addcellnum PHONE_ELM
-	opentext
-	writetext GotElmsNumberText
-	playsound SFX_REGISTER_PHONE_NUMBER
-	waitsfx
-	waitbutton
-	closetext
-	turnobject ELMSLAB_ELM, LEFT
-	opentext
-	writetext ElmDirectionsText2
-	waitbutton
-	closetext
-	turnobject ELMSLAB_ELM, DOWN
-	opentext
-	writetext ElmDirectionsText3
-	waitbutton
-	closetext
+	applymovement ELMSLAB_RIVAL, ElmsLab_BlueLeavesMovement
+	disappear ELMSLAB_RIVAL
 	setevent EVENT_GOT_A_POKEMON_FROM_ELM
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POTION
@@ -659,6 +653,39 @@ ElmsLabTrashcan2: ; unreferenced
 
 ElmsLabBookshelf:
 	jumpstd DifficultBookshelfScript
+	
+ElmsLab_WalkUpToElmAfterTotodile:
+	step DOWN
+	step LEFT
+	step LEFT
+	step UP
+	step UP
+	step_end
+	
+ElmsLab_WalkUpToElmAfterCyndaquil:
+	step LEFT
+	step UP
+	step_end
+	
+ElmsLab_WalkUpToElmAfterChikorita:
+	step LEFT
+	step LEFT
+	step DOWN
+	step LEFT
+	step LEFT
+	step UP
+	step UP
+	step_end
+	
+ElmsLab_BlueLeavesMovement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
 
 ElmsLab_WalkUpToElmMovement:
 	step UP
@@ -799,9 +826,9 @@ ElmText_RivalIllTakeThisOne:
 	done
 	
 ElmText_RivalGotStarter:
-	text "<RIVAL> got a"
+	text "{RIVAL} got a"
 	line "@"
-	text_ram wStringBuffer1
+	text_ram wStringBuffer3
 	text "."
 	done
 
@@ -825,9 +852,9 @@ ElmText_RivalShowsUp:
 	para "research into the"
 	line "TEAM C. GOVERNMENT"
 
-	para "you see. I'm not"
-	line "one to accept what"
-	cont "is given to me."
+	para "because it's fishy."
+	line "It seems to hold"
+	cont "rotten secrets."
 
 	para "You see…"
 
@@ -901,15 +928,14 @@ ElmText_ResearchAmbitions:
 	done
 
 ElmText_GotAnEmail:
-	text "<RIVAL>: Hey! I'm"
+	text "{RIVAL}: Hey! I'm"
 	line "not weak!"
 
-	para "I'll show you"
-	line "that I'm not weak!"
+	para "Whatever, gramps…"
+	line "I'm leaving."
 
-	para "<PLAYER>! Get ready"
-	line "to visit the"
-	cont "#HOSPITAL!"
+	para "As I used to say…"
+	line "Smell you later."
 	done
 
 ElmText_MissionFromMrPokemon:
@@ -1052,13 +1078,14 @@ GotElmsNumberText:
 	done
 
 ElmDescribesMrPokemonText:
-	text "MR.#MON goes"
-	line "everywhere and"
-	cont "finds rarities."
+	text "I wonder what made"
+	line "{RIVAL} so mad…"
 
-	para "Too bad they're"
-	line "just rare and"
-	cont "not very useful…"
+	para "Best not to worry."
+	line "<PLAYER>, train"
+	
+	para "your #MON with"
+	line "{RIVAL}!"
 	done
 
 ElmPokeBallText:
@@ -1513,10 +1540,10 @@ ElmsLab_MapEvents:
 	bg_event  3,  5, BGEVENT_DOWN, ElmsLabPC
 
 	def_object_events
-	object_event  5,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
+	object_event  5,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
 	object_event  2,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElmsAideScript, EVENT_ELMS_AIDE_IN_LAB
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	object_event  5,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CopScript, EVENT_COP_IN_ELMS_LAB
-	object_event  5,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ElmsLabRivalScript, -1
+	object_event  5,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ElmsLabRivalScript,EVENT_SHOW_RIVAL_IN_ELMS_LAB

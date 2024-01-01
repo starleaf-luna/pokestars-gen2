@@ -24,13 +24,16 @@ ChangelogRoom::
 	ld de, ChangelogRoom_Changelog
 	call PlaceString
 .loop:
+	call GetJoypad
 	ld a, [hJoyPressed]
-	cp B_BUTTON
-	jr z, .ok
-	cp A_BUTTON
-	jr z, .ok
-	cp START
-	jr z, .ok
+	and B_BUTTON | A_BUTTON | START
+	jr nz, .ok
+	; cp B_BUTTON
+	; jr z, .ok
+	; cp A_BUTTON
+	; jr z, .ok
+	; cp START
+	; jr z, .ok
 	halt
 	jr .loop
 .ok:
@@ -45,9 +48,10 @@ ChangelogRoom_IsFinalisedString:
 ChangelogRoom_ChangelogStartString:
 	db "-CHANGELOG START-@"
 ChangelogRoom_Changelog:
-	db "- changed title"
-	next "- added JIRACHI"
-	next "- changed starter"
-	next "  event in NEW"
-	next "  BARK TOWN"
-	next "last upd. 31/12/23@"
+	db   "- finalised star-"
+	next "  ter event"
+	next "- finished INICIUM"
+	next "  TOWN"
+	next "- started work on"
+	next "  ROUTE 29"
+	next "last upd. 01/01/24@"

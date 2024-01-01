@@ -2,9 +2,7 @@
 
 This file represents what needs to be done.
 
-- complete starter event (currently softlocks)
-
-- add most of the storyline (currently mirrors Pokemon Crystal, aside from the areas in New Bark Town)
+- add most of the storyline (currently mirrors Pokémon Crystal, aside from the areas in New Bark Town)
 
 - add the Jirachi events (remember: don't make Jirachi talk in English)
 

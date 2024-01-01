@@ -248,11 +248,12 @@ MainMenuJoypadLoop:
 	ld a, [w2DMenuFlags1]
 	set 5, a
 	ld [w2DMenuFlags1], a
-	ld a, [hJoyPressed]
-	cp SELECT
-	jr z, .changelog_menu
+	;ld a, [wMenuJoypad]
 	call GetScrollingMenuJoypad
-	ld a, [wMenuJoypad]
+	ld a, [hJoyDown]
+	;and A_BUTTON + START
+	cp A_BUTTON + START
+	jr z, .changelog_menu
 	cp B_BUTTON
 	jr z, .b_button
 	cp A_BUTTON
