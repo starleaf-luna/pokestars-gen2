@@ -247,46 +247,51 @@ DudeMovementData2b:
 	step_end
 
 CatchingTutorialBoxFullText:
-	text "#MON hide in"
-	line "the grass. Who"
-
-	para "knows when they'll"
-	line "pop out…"
+	text "#MON wait in"
+	line "tall grass for"
+	cont "battle."
 	done
 
 CatchingTutorialIntroText:
-	text "I've seen you a"
-	line "couple times. How"
+	text "Hey, I've seen you!"
+	line "So, how many #-"
 
-	para "many #MON have"
-	line "you caught?"
+	para "MON have you"
+	line "caught by now?"
 
-	para "Would you like me"
-	line "to show you how to"
-	cont "catch #MON?"
+	para "Oh, you don't know"
+	line "how to catch #-"
+	cont "MON… I see."
+
+	para "How about I show"
+	line "you then?"
 	done
 
 CatchingTutorialDebriefText:
-	text "That's how you do"
-	line "it."
+	text "This is how you"
+	line "catch #MON."
 
-	para "If you weaken them"
-	line "first, #MON are"
-	cont "easier to catch."
+	para "They're even easier"
+	line "to catch if weake-"
+	cont "ned."
+	
+	para "Just lower its HP"
+	line "or inflict a sta-"
+	
+	para "tus condition on"
+	line "it."
 	done
 
 CatchingTutorialDeclinedText:
-	text "Oh. Fine, then."
+	text "…Well, alright."
 
-	para "Anyway, if you"
-	line "want to catch"
-
-	para "#MON, you have"
-	line "to walk a lot."
+	para "If you want to"
+	line "catch #MON, you"
+	cont "must walk a lot."
 	done
 
 CatchingTutorialRepeatText:
-	text "Huh? You want me"
+	text "…Eh? You want me"
 	line "to show you how to"
 	cont "catch #MON?"
 	done
@@ -295,31 +300,34 @@ Route29YoungsterText:
 	text "Yo. How are your"
 	line "#MON?"
 
-	para "If they're weak"
-	line "and not ready for"
+	para "Keep out of the"
+	line "grass if they're"
 
-	para "battle, keep out"
-	line "of the grass."
+	para "not ready for"
+	line "battles."
 	done
 
 Route29TeacherText:
-	text "See those ledges?"
-	line "It's scary to jump"
-	cont "off them."
+	text "Do you see those"
+	line "ledges? It's scary"
+	cont "to jump off them."
 
-	para "But you can go to"
-	line "NEW BARK without"
+	para "However it's safer"
+	line "to do so, as you'll"
 
-	para "walking through"
-	line "the grass."
+	para "be able to return"
+	line "to INICIUM without"
+	
+	para "risk of wild #-"
+	line "MON encounters."
 	done
 
 Route29FisherText:
 	text "I wanted to take a"
 	line "break, so I saved"
 
-	para "to record my"
-	line "progress."
+	para "to write a report"
+	line "of my progress."
 	done
 
 Route29CooltrainerMText_WaitingForDay: ; unreferenced
@@ -401,15 +409,15 @@ TuscanyNotTuesdayText:
 Route29Sign1Text:
 	text "ROUTE 29"
 
-	para "CHERRYGROVE CITY -"
-	line "NEW BARK TOWN"
+	para "PRIMARINUM -"
+	line "INICIUM TOWN"
 	done
 
 Route29Sign2Text:
 	text "ROUTE 29"
 
-	para "CHERRYGROVE CITY -"
-	line "NEW BARK TOWN"
+	para "PRIMARINUM -"
+	line "INICIUM TOWN"
 	done
 
 Route29_MapEvents:

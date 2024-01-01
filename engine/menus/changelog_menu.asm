@@ -53,5 +53,5 @@ ChangelogRoom_Changelog:
 	next "- finished INICIUM"
 	next "  TOWN"
 	next "- started work on"
-	next "  ROUTE 29"
+	next "  ROUTE 29 etc."
 	next "last upd. 01/01/24@"

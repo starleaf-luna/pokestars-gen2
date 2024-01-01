@@ -19,19 +19,22 @@ Route29Route46GateOfficerText:
 
 	para "But you can jump"
 	line "down from them to"
-	cont "take a shortcut."
+	
+	para "take a shortcut,"
+	line "or a different"
+	cont "route."
 	done
 
 Route29Route46GateYoungsterText:
-	text "Different kinds of"
-	line "#MON appear"
-	cont "past here."
+	text "Different #MON"
+	line "species appear"
+	cont "in ROUTE 46.
 
-	para "If you want to"
-	line "catch them all,"
+	para "You have to look"
+	line "absolutely every-"
 
-	para "you have to look"
-	line "everywhere."
+	para "where to catch"
+	line "them all!"
 	done
 
 Route29Route46Gate_MapEvents:

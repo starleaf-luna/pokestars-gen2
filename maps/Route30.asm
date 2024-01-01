@@ -261,91 +261,100 @@ Route30_MikeysRattataAttacksMovement:
 	step_end
 
 Text_UseTackle:
-	text "Go, RATTATA!"
-
-	para "TACKLE!"
+	text "RATTATA! Use"
+	line "TACKLE!"
 	done
 
 Text_ThisIsABigBattle:
-	text "What? This is a"
-	line "big battle!"
-	cont "Leave me alone!"
+	text "…What do you want?"
+	line "Leave me alone!"
 	done
 
 YoungsterJoey1SeenText:
-	text "I just lost, so"
-	line "I'm trying to find"
-	cont "more #MON."
+	text "I just lost a"
+	line "battle, so I'm"
+	
+	para "trying to get"
+	line "more #MON."
 
-	para "Wait! You look"
-	line "weak! Come on,"
-	cont "let's battle!"
+	para "Hey! You look"
+	line "weak too!"
+	cont "Let's battle!"
 	done
 
 YoungsterJoey1BeatenText:
-	text "Ack! I lost again!"
-	line "Doggone it!"
+	text "My losing streak"
+	line "is now two…"
 	done
 
 YoungsterJoey1AfterText:
-	text "Do I have to have"
-	line "more #MON in"
+	text "Must I have more"
+	line "#MON in order"
 
-	para "order to battle"
-	line "better?"
+	para "to battle even"
+	line "better…?"
 
-	para "No! I'm sticking"
-	line "with this one no"
-	cont "matter what!"
+	para "No I don't! I'm"
+	line "sticking with
+	cont "these!"
 	done
 
 YoungsterMikeySeenText:
 	text "You're a #MON"
-	line "trainer, right?"
+	line "trainer, no?"
 
-	para "Then you have to"
-	line "battle!"
+	para "Well then, get"
+	line "'em ready!"
 	done
 
 YoungsterMikeyBeatenText:
-	text "That's strange."
-	line "I won before."
+	text "No! My streak!"
 	done
 
 YoungsterMikeyAfterText:
-	text "Becoming a good"
-	line "trainer is really"
-	cont "tough."
+	text "Being a good"
+	line "trainer's really"
+	cont "hard."
 
-	para "I'm going to bat-"
-	line "tle other people"
-	cont "to get better."
+	para "I'll battle other"
+	line "people to get"
+	cont "better at it."
 	done
 
 BugCatcherDonSeenText:
 	text "Instead of a bug"
-	line "#MON, I found"
-	cont "a trainer!"
+	line "I found a trai-"
+	cont "ner!"
 	done
 
 BugCatcherDonBeatenText:
-	text "Argh! You're too"
-	line "strong!"
+	text "Hey! You're mean!"
 	done
 
 BugCatcherDonAfterText:
-	text "I ran out of #"
-	line "BALLS while I was"
+	text "I run out of #"
+	line "BALLs while I was"
 	cont "catching #MON."
 
-	para "I should've bought"
-	line "some more…"
+	para "I should've had"
+	line "backups…"
 	done
 
 Route30YoungsterText_DirectionsToMrPokemonsHouse:
-	text "MR.#MON's"
-	line "house? It's a bit"
-	cont "farther ahead."
+	text "The house up ahead"
+	line "is abandoned."
+	
+	para "However, it's"
+	line "rumored that it's"
+	
+	para "where JIRACHI"
+	line "lives."
+	
+	para "JIRACHI is a wish"
+	line "#MON allegedly."
+	
+	para "Do you believe in"
+	line "such fairytales?"
 	done
 
 Route30YoungsterText_EveryoneIsBattling:
@@ -366,16 +375,21 @@ Route30SignText:
 	text "ROUTE 30"
 
 	para "VIOLET CITY -"
-	line "CHERRYGROVE CITY"
+	line "PRIMARINUM"
 	done
 
 MrPokemonsHouseDirectionsSignText:
-	text "MR.#MON'S HOUSE"
-	line "STRAIGHT AHEAD!"
+	text "The sign has"
+	line "scribbles on it."
+	
+	para "It reads JIRACHI."
 	done
 
 MrPokemonsHouseSignText:
-	text "MR.#MON'S HOUSE"
+	text "The sign has"
+	line "scribbles on it."
+	
+	para "It reads JIRACHI."
 	done
 
 Route30TrainerTipsText:
@@ -384,9 +398,8 @@ Route30TrainerTipsText:
 	para "No stealing other"
 	line "people's #MON!"
 
-	para "# BALLS are to"
-	line "be thrown only at"
-	cont "wild #MON!"
+	para "Catch only wild"
+	line "#MON!"
 	done
 
 YoungsterJoeyText_GiveHPUpAfterBattle:
