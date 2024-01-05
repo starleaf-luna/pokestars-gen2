@@ -28,12 +28,6 @@ ChangelogRoom::
 	ld a, [hJoyPressed]
 	and B_BUTTON | A_BUTTON | START
 	jr nz, .ok
-	; cp B_BUTTON
-	; jr z, .ok
-	; cp A_BUTTON
-	; jr z, .ok
-	; cp START
-	; jr z, .ok
 	halt
 	jr .loop
 .ok:
@@ -48,10 +42,9 @@ ChangelogRoom_IsFinalisedString:
 ChangelogRoom_ChangelogStartString:
 	db "-CHANGELOG START-@"
 ChangelogRoom_Changelog:
-	db   "- finalised star-"
-	next "  ter event"
-	next "- finished INICIUM"
-	next "  TOWN"
-	next "- started work on"
-	next "  ROUTE 29 etc."
-	next "last upd. 01/01/24@"
+	db   "- added WISH move"
+	next "- added - type"
+	next "- fixed some #"
+	next "  BALL bugs"
+	next "last upd. 05.01.24"
+	next "          DD.MM.YY@"		; added 05 jan 24

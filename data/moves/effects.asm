@@ -2077,3 +2077,10 @@ DefenseCurl:
 	statupmessage
 	statupfailtext
 	endmove
+	
+Wish:
+	checkobedience
+	usedmovetext
+	ohko
+	heal
+	endmove

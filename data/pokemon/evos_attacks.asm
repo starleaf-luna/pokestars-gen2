@@ -3358,7 +3358,8 @@ CelebiEvosAttacks:
 	
 JirachiEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, CONFUSION
+	db 1, WISH
+	db 2, CONFUSION
 	db 5, REST
 	db 10, SWIFT
 	db 20, PSYCHIC_M

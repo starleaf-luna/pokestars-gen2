@@ -17,6 +17,7 @@ DEF PHYSICAL EQU const_value
 	const BUG
 	const GHOST
 	const STEEL
+	const NONE
 
 DEF UNUSED_TYPES EQU const_value
 	const_next 19

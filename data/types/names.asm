@@ -12,6 +12,7 @@ TypeNames:
 	dw Bug
 	dw Ghost
 	dw Steel
+	dw NoType
 	assert_table_length UNUSED_TYPES
 
 rept UNUSED_TYPES_END - UNUSED_TYPES - 1 ; discount CURSE_TYPE
@@ -49,3 +50,4 @@ Ghost:     db "GHOST@"
 Steel:     db "STEEL@"
 Dragon:    db "DRAGON@"
 Dark:      db "DARK@"
+NoType:	   db "-@"

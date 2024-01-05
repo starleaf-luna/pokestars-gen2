@@ -295,7 +295,7 @@ YoungsterJoey1AfterText:
 	line "better…?"
 
 	para "No I don't! I'm"
-	line "sticking with
+	line "sticking with"
 	cont "these!"
 	done
 

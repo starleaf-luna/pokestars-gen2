@@ -28,7 +28,7 @@ Route29Route46GateOfficerText:
 Route29Route46GateYoungsterText:
 	text "Different #MON"
 	line "species appear"
-	cont "in ROUTE 46.
+	cont "in ROUTE 46."
 
 	para "You have to look"
 	line "absolutely every-"

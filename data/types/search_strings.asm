@@ -19,4 +19,5 @@ PokedexTypeSearchStrings:
 	db " DRAGON @"
 	db "  DARK  @"
 	db " STEEL  @"
-	assert_table_length NUM_TYPES + 1
+	assert_table_length NUM_TYPES
+	db "NO TYPE @" ; no Pokémon has this type
