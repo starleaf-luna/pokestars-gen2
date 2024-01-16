@@ -687,8 +687,8 @@ ENDM
 	map_attributes Route5UndergroundPathEntrance, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, $00, 0
 	map_attributes Route5SaffronGate, ROUTE_5_SAFFRON_GATE, $00, 0
 	map_attributes Route5CleanseTagHouse, ROUTE_5_CLEANSE_TAG_HOUSE, $00, 0
-	map_attributes CherrygroveMart, CHERRYGROVE_MART, $00, 0
-	map_attributes CherrygrovePokecenter1F, CHERRYGROVE_POKECENTER_1F, $00, 0
+	;map_attributes CherrygroveMart, CHERRYGROVE_MART, $00, 0
+	map_attributes CherrygrovePCM, CHERRYGROVE_PCM, $00, 0
 	map_attributes CherrygroveGymSpeechHouse, CHERRYGROVE_GYM_SPEECH_HOUSE, $00, 0
 	map_attributes GuideGentsHouse, GUIDE_GENTS_HOUSE, $00, 0
 	map_attributes CherrygroveEvolutionSpeechHouse, CHERRYGROVE_EVOLUTION_SPEECH_HOUSE, $00, 0

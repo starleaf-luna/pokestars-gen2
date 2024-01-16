@@ -37,11 +37,6 @@ Credits::
 	lb bc, BANK(CreditsBorderGFX), 9
 	call Request2bpp
 
-	ld de, CopyrightGFX
-	ld hl, vTiles2 tile $60
-	lb bc, BANK(CopyrightGFX), 29
-	call Request2bpp
-
 	ld de, TheEndGFX
 	ld hl, vTiles2 tile $40
 	lb bc, BANK(TheEndGFX), 16
@@ -256,7 +251,7 @@ ParseCredits:
 	cp CREDITS_END
 	jp z, .end
 	cp CREDITS_WAIT
-	jr z, .wait
+	jp z, .wait
 	cp CREDITS_SCENE
 	jr z, .scene
 	cp CREDITS_CLEAR
@@ -284,7 +279,11 @@ ParseCredits:
 ; Strings spanning multiple lines have special cases.
 
 	cp COPYRIGHT
+	IF DEF(_DEBUG)
+	jr .copyright
+	ELSE
 	jr z, .copyright
+	ENDC
 
 	cp STAFF
 	jr c, .staff
@@ -295,6 +294,14 @@ ParseCredits:
 	jr .print
 
 .copyright
+	push de
+	push bc
+	ld de, CopyrightGFX
+	ld hl, vTiles1
+	lb bc, BANK(CopyrightGFX), $2c
+	call Request2bpp
+	pop bc
+	pop de
 	hlcoord 2, 6
 	jr .print
 
@@ -376,10 +383,14 @@ ParseCredits:
 ; Get byte wCreditsPos from CreditsScript
 	push hl
 	push de
+	IF DEF(_DEBUG)
+	ld de, COPYRIGHT
+	ELSE
 	ld a, [wCreditsPos]
 	ld e, a
 	ld a, [wCreditsPos + 1]
 	ld d, a
+	ENDC
 	ld hl, CreditsScript
 	add hl, de
 

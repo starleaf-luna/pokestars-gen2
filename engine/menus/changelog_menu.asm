@@ -42,9 +42,14 @@ ChangelogRoom_IsFinalisedString:
 ChangelogRoom_ChangelogStartString:
 	db "-CHANGELOG START-@"
 ChangelogRoom_Changelog:
-	db   "- added WISH move"
-	next "- added - type"
-	next "- fixed some #"
-	next "  BALL bugs"
-	next "last upd. 05.01.24"
-	next "          DD.MM.YY@"		; added 05 jan 24
+	db   "- PCM in PRIMARI-<LF>"
+	db   "  NUM CITY<LF>"
+	db   "- finalised PRIMA-<LF>"
+	db   "  RINUM CITY<LF>"
+	db   "- edited tileset<LF>"
+	db   "- fixed some bugs<LF>"
+	db   "- start work on<LF>"
+	db   "  R30<LF>"
+	db   "- moved to BETA<LF>"
+	db   "last upd. 16.01.24<LF>"
+	db   "          DD.MM.YY@"		; added 05 jan 24

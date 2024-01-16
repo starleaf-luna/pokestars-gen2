@@ -1045,3 +1045,9 @@ BetaBlank_Blocks: ; unreferenced
 
 GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.blk"
+
+SECTION "Map Blocks 4", ROMX
+
+
+CherrygrovePCM_Blocks:
+	INCBIN "maps/PokecenterAndMart.blk"

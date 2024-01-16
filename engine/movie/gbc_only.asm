@@ -1,4 +1,8 @@
 GBCOnlyScreen:
+IF DEF(_DEBUG)
+	call LoadStandardFont
+	farcall Credits
+ENDC
 	ldh a, [hCGB]
 	and a
 	ret nz

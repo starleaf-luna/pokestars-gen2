@@ -27,11 +27,13 @@ _TitleScreen:
 	ld de, vTiles1
 	call Decompress
 	
-	ld c, 14
+IF TITLE_SHOWVER
+	ld c, 27
 	ld de, TitleVersionFontGFX
 	ld b, BANK(TitleVersionFontGFX)
 	ld hl, $8a40
 	call Get1bpp
+ENDC
 
 ; Clear screen palettes
 	hlbgcoord 0, 0
@@ -463,9 +465,10 @@ endr
 	jr nz, .loop
 
 	ret
-
+	
+IF TITLE_SHOWVER
 DisplayVersionText:
-	hlbgcoord 1, $13, vBGMap0
+	hlbgcoord 2, $13, vBGMap0
 	ld de, VersionText
 .loop:
 	ld a, [de]
@@ -488,18 +491,33 @@ pushc
 	charmap "H",	$a9
 	charmap "I",	$aa
 	charmap "L",	$ab
-	charmap "N",	$ac
-	charmap "P",	$ad
-	charmap "R",	$ae
-	charmap "S",	$af
-	charmap "T",	$b0
-	charmap "V",	$b1
-	charmap " ",	$b2
+	charmap "M",	$ac
+	charmap "N",	$ad
+	charmap "O",	$ae
+	charmap "P",	$af
+	charmap "R",	$b0
+	charmap "S",	$b1
+	charmap "T",	$b2
+	charmap "V",	$b3
+	charmap "0",	$b4
+	charmap "1",	$b5
+	charmap "2",	$b6
+	charmap "3",	$b7
+	charmap "4",	$b8
+	charmap "5",	$b9
+	charmap "6",	$ba
+	charmap "7",	$bb
+	charmap "8",	$bc
+	charmap "9",	$bd
+	charmap ".",	$be
+	charmap " ",	$bf
 	charmap "@",	$50
 	
+
 VersionText:
-	db "{STARS_STATUS} VER@"
+	db "{STARS_STATUS} VER {STARS_VERSION}@"
 popc
+ENDC
 
 TitleJirachiGFX:
 INCBIN "gfx/title/suicune.2bpp.lz"
@@ -510,8 +528,10 @@ INCBIN "gfx/title/logo.2bpp.lz"
 TitleCrystalGFX:
 INCBIN "gfx/title/crystal.2bpp.lz"
 
+IF TITLE_SHOWVER
 TitleVersionFontGFX:
 INCBIN "gfx/title/version_font.1bpp"
+ENDC
 
 TitleScreenPalettes:
 INCLUDE "gfx/title/title.pal"

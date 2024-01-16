@@ -687,6 +687,7 @@ SECTION "Changelog Room", ROMX
 
 INCLUDE "engine/menus/changelog_menu.asm"
 
+
 SECTION "GBC Only", ROMX
 
 INCLUDE "engine/movie/gbc_only.asm"

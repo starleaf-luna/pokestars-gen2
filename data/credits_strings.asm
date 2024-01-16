@@ -214,6 +214,19 @@ CreditsStringsPointers:
 .PaadTesting:         db "    PAAD TESTING@"
 
 .Copyright:
+	db   $80, $81, $82, $83, $84, $85, $86, $87, $88, $89, $8a, $8b, $8c
+
+	; ©1995-2001 Creatures inc.
+	next $80, $81, $82, $83, $84, $85, $86, $8d, $8e, $8f, $90, $91, $92, $9a, $9b, $9c
+
+	; ©1995-2001 GAME FREAK inc.
+	next $80, $81, $82, $83, $84, $85, $86, $93, $94, $95, $96, $97, $98, $99, $9a, $9b, $9c
+	
+	; ©2023-2024 CRYSTALMOON
+	next $80, $9d, $9e, $9f, $a0, $a1, $a2, $a3, $a4, $a5, $a6, $a7, $a8, $a9, $aa, $ab
+
+	db "@"
+
 	;    (C) 1  9  9  5 - 2  0  0  1     N  i  n  t  e  n  d  o
 	db   $60,$61,$62,$63,$64,$65,$66,$67,$68,$69,$6a,$6b,$6c
 	;    (C) 1  9  9  5 - 2  0  0  1    C  r  e  a  t  u  r  e  s     i  n  c .

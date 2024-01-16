@@ -315,8 +315,8 @@ NewBarkTownPokeCentreSignText:
 	line "mandates."
 	
 	para "Please go to the"
-	line "#HOSPITAL in"
-	cont "PRIMA CITY."
+	line "#MON CENTER in"
+	cont "PRIMARINUM."
 	done
 
 NewBarkTown_MapEvents:

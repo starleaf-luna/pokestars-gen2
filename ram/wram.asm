@@ -141,7 +141,6 @@ wUnusedScriptByte:: db
 wMapTimeOfDay:: db
 
 	ds 3
-
 wPrinterConnectionOpen:: db
 wPrinterOpcode:: db
 wPrevDexEntry:: db
@@ -361,18 +360,20 @@ wBattleMonNickname:: ds MON_NAME_LENGTH
 
 wBattleMon:: battle_struct wBattleMon
 
-	ds 2
+	dw
 
 wWildMon:: db
-	ds 1
+	db
 
 wEnemyTrainerItem1:: db
 wEnemyTrainerItem2:: db
 wEnemyTrainerBaseReward:: db
 wEnemyTrainerAIFlags:: ds 3
-wOTClassName:: ds TRAINER_CLASS_NAME_LENGTH
 
 wCurOTMon:: db
+
+wOTClassName:: ds TRAINER_CLASS_NAME_LENGTH
+
 
 wBattleParticipantsNotFainted::
 ; Bit array.  Bits 0 - 5 correspond to party members 1 - 6.
