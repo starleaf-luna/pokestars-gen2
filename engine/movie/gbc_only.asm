@@ -1,12 +1,9 @@
 GBCOnlyScreen:
-IF DEF(_DEBUG)
-	call LoadStandardFont
-	farcall Credits
-ENDC
 	ldh a, [hCGB]
 	and a
 	ret nz
-
+	
+.skip
 	ld de, MUSIC_KOUKAN
 	call PlayMusic
 
@@ -53,13 +50,8 @@ DrawGBCOnlyScreen:
 	lb bc, SCREEN_HEIGHT - 2, SCREEN_WIDTH - 2
 	call Textbox
 	
-	ld a, [wOptions]
-	set 1, a
-	res 4, a
-	ld [wOptions], a
-	
-	hlcoord 1, 2
 	ld de, GBCOnlyString
+	hlcoord 1, 2
 	push hl
 .loop:
 	ld a, [de]

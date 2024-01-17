@@ -325,9 +325,9 @@ ReloadSpritesNoPalettes::
 	ret
 
 SwapTextboxPalettes::
-	homecall _SwapTextboxPalettes
+	; homecall _SwapTextboxPalettes
 	ret
 
 ScrollBGMapPalettes::
-	homecall _ScrollBGMapPalettes
+	; homecall _ScrollBGMapPalettes
 	ret

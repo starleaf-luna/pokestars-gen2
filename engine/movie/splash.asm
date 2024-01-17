@@ -32,6 +32,9 @@ SplashScreen:
 
 ; Stop here if not in GBC mode
 	farcall GBCOnlyScreen
+	
+; Check emulator MBC30 compatibility
+	farcall MBC30Screen
 
 ; Play GameFreak logo animation
 	call GameFreakPresentsInit

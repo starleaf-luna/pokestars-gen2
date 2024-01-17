@@ -46,11 +46,12 @@ CherrygroveMartYoungsterScript:
 	jumptextfaceplayer CherrygroveMartYoungsterText
 
 CherrygroveMartCooltrainerMText:
-	text "They're fresh out"
-	line "of # BALLS!"
+	text "Oh, you don't know"
+	line "what the PCM is?"
 
-	para "When will they get"
-	line "more of them?"
+	para "PCM stands for"
+	line "#MON CENTER AND"
+	cont "MART!"
 	done
 
 CherrygroveMartCooltrainerMText_PokeBallsInStock:

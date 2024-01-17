@@ -318,6 +318,10 @@ ROMX $7d
 	"Mobile News Data"
 ROMX $7e
 	"Crystal Events"
+ROMX $7f
+	"MBC30 Support Check"
+ROMX $80
+	"MBC30 Support Test Data"
 WRAM0
 	"Stack"
 	"Audio RAM"
@@ -341,6 +345,7 @@ WRAMX 1
 	"Party"
 WRAMX 2
 	"Pic Animations"
+	"Surrounding Data"
 WRAMX 3
 	"Battle Tower RAM"
 WRAMX 4

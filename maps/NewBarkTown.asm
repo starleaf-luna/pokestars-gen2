@@ -260,12 +260,12 @@ Text_ElmDiscoveredNewMon:
 	line "health began to"
 	cont "falter."
 	
-	para "Shame that..."
-	line "...well..."
+	para "Shame that…"
+	line "…well…"
 	
 	para "It's too dangerous"
 	line "to say what I"
-	cont "mean..."
+	cont "mean…"
 	done
 
 NewBarkTownRivalText1:
@@ -315,8 +315,8 @@ NewBarkTownPokeCentreSignText:
 	line "mandates."
 	
 	para "Please go to the"
-	line "#MON CENTER in"
-	cont "PRIMARINUM."
+	line "new PCM building"
+	cont "in PRIMARINUM."
 	done
 
 NewBarkTown_MapEvents:

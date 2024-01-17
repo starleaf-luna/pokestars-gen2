@@ -192,8 +192,8 @@ INCLUDE "engine/events/buena_menu.asm"
 
 SECTION "bank13", ROMX
 
-INCLUDE "engine/tilesets/map_palettes.asm"
-INCLUDE "gfx/tileset_palette_maps.asm"
+; INCLUDE "engine/tilesets/map_palettes.asm"
+; INCLUDE "gfx/tileset_palette_maps.asm"
 INCLUDE "data/collision/collision_permissions.asm"
 INCLUDE "engine/menus/empty_sram.asm"
 INCLUDE "engine/menus/savemenu_copytilemapatonce.asm"
@@ -691,3 +691,13 @@ INCLUDE "engine/menus/changelog_menu.asm"
 SECTION "GBC Only", ROMX
 
 INCLUDE "engine/movie/gbc_only.asm"
+
+
+SECTION "MBC30 Support Check", ROMX
+
+INCLUDE "engine/movie/mbc30.asm"
+
+
+SECTION "MBC30 Support Test Data", ROMX
+
+INCLUDE "data/mbc30_compat_data.asm"

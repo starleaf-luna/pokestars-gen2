@@ -230,7 +230,7 @@ GuideGentsHouseSign:
 	jumptext GuideGentsHouseSignText
 
 CherrygroveCityPokecenterSign:
-	jumpstd PokecenterSignScript
+	;jumptext PokecenterSignText
 
 CherrygroveCityMartSign:
 	jumpstd MartSignScript
@@ -534,14 +534,37 @@ MysticWaterGuyTextAfter:
 	done
 
 CherrygroveCitySignText:
-	text "CHERRYGROVE CITY"
+	text "PRIMARINUM CITY"
 
-	para "The City of Cute,"
-	line "Fragrant Flowers"
+	para "The City by the"
+	line "Sea"
 	done
 
 GuideGentsHouseSignText:
 	text "GUIDE GENT'S HOUSE"
+	done
+	
+GuardText1:
+	text "Hier geht es lei-"
+	line "der nicht weiter."
+	done
+	
+GuardText2:
+	text "Uh, why's that"
+	line "guy speaking Ger-"
+	cont "man?"
+	
+	para "Not like I know!"
+	line "Don't ask me!"
+	
+	para "What I do know,"
+	line "though…"
+	
+	para "Is that you can't"
+	line "go further!"
+	
+	para "This is the end"
+	line "of the demo."
 	done
 
 CherrygroveCity_MapEvents:
