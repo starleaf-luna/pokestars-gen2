@@ -99,7 +99,7 @@ VBlank0::
 	call UpdateBGMap
 
 	; These have their own timing checks.
-
+	
 	call Serve2bppRequest
 	call Serve1bppRequest
 	call AnimateTileset
@@ -419,3 +419,4 @@ VBlank6::
 	ldh a, [hROMBankBackup]
 	rst Bankswitch
 	ret
+	

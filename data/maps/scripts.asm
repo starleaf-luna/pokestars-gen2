@@ -485,3 +485,7 @@ SECTION "Map Scripts 25", ROMX
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
 INCLUDE "maps/CherrygrovePCM.asm"
+INCLUDE "maps/CherrygroveHouse1.asm"
+INCLUDE "maps/CherrygroveHouse2.asm"
+INCLUDE "maps/CherrygroveHouse3.asm"
+INCLUDE "maps/CherrygroveHouse4.asm"

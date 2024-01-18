@@ -1226,9 +1226,12 @@ ENDC
 	ld a, [hl]
 	and START | A_BUTTON
 	jr nz, .incave
+	ld a, [hl]
 	ret
 
 .incave
+	ld e, 0
+	rst SetupPCM
 	ld a, TITLESCREENOPTION_MAIN_MENU
 	jr .done
 

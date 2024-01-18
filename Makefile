@@ -78,6 +78,9 @@ clean: tidy
 	        -o -name "front.animated.tilemap" \
 	        -o -name "front.dimensions" \) \
 	     -delete
+	find audio/pcm \
+	     \( -iname '*.pcm' \) \
+	     -delete
 
 tidy:
 	$(RM) $(roms) \
@@ -322,3 +325,10 @@ gfx/mobile/stadium2_n64.2bpp: tools/gfx += --trim-whitespace
 
 %.dimensions: %.png
 	tools/png_dimensions $< $@
+
+### Catch-all audio rules
+
+%.wav: ;
+
+%.pcm: %.wav
+	tools/pcm $< $@

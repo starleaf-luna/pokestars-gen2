@@ -701,3 +701,13 @@ INCLUDE "engine/movie/mbc30.asm"
 SECTION "MBC30 Support Test Data", ROMX
 
 INCLUDE "data/mbc30_compat_data.asm"
+
+
+SECTION "Stars Version Intro", ROMX
+
+INCLUDE "engine/movie/stars_intro.asm"
+
+
+SECTION "PCM Engine", ROMX
+
+INCLUDE "audio/pcm_play.asm"

@@ -322,6 +322,9 @@ ROMX $7f
 	"MBC30 Support Check"
 ROMX $80
 	"MBC30 Support Test Data"
+	"Stars Version Intro"
+	"PCM Engine"
+	"PCM Data 1"
 WRAM0
 	"Stack"
 	"Audio RAM"

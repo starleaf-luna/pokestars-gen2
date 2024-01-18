@@ -1526,16 +1526,20 @@ _MayRegisterItemText::
 	done
 
 _OakText1::
-	text "Hello! Sorry to"
-	line "keep you waiting!"
+	text "Hi there, sorry"
+	line "for the wait!"
 
 	para "Welcome to the"
-	line "world of #MON!"
-
+	line "world of #MON"
+	cont "STARS."
+	
 	para "My name is OAK."
 
+IF STARS_ISDEMO
+ELSE
 	para "People call me the"
 	line "#MON PROF."
+ENDC
 	prompt
 
 _OakText2::
@@ -1552,6 +1556,25 @@ _OakText3::
 	text_end ; unreferenced
 
 _OakText4::
+IF STARS_ISDEMO
+	text "In this demo, you"
+	line "won't be able to"
+	
+	para "experience all of"
+	line "it unfortunately,"
+	
+	para "the demo is short"
+	line "and is meant to be"
+	
+	para "a proof-of-"
+	line "concept."
+	
+	para "However, this demo"
+	line "isn't the whole"
+	
+	para "game. Please be"
+	line "patient for it."
+ELSE
 	text "People and #MON"
 	line "live together by"
 
@@ -1561,9 +1584,21 @@ _OakText4::
 	para "Some people play"
 	line "with #MON, some"
 	cont "battle with them."
+ENDC
 	prompt
 
 _OakText5::
+IF STARS_ISDEMO
+	text "The demo IS short,"
+	line "but again, I want"
+	
+	para "to reassure you"
+	line "that the full game"
+	
+	para "will come soon."
+	line "Thanks for pla-"
+	cont "ying!"
+ELSE
 	text "But we don't know"
 	line "everything about"
 	cont "#MON yet."
@@ -1574,4 +1609,5 @@ _OakText5::
 
 	para "That's why I study"
 	line "#MON every day."
+ENDC
 	prompt

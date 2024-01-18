@@ -18,16 +18,19 @@ CherrygroveGymSpeechHouseBookshelf:
 
 CherrygroveGymSpeechHousePokefanMText:
 	text "You're trying to"
-	line "see how good you"
+	line "defeat TEAM C.?"
 
-	para "are as a #MON"
-	line "trainer?"
+	para "…Yeah, don't count"
+	line "on it, kiddo."
 
-	para "You better visit"
-	line "the #MON GYMS"
+	para "They're WAY stron-"
+	line "ger than you."
 
-	para "all over JOHTO and"
-	line "collect BADGES."
+	para "…Huh? You think I"
+	line "work for them?"
+	
+	para "What gave you THAT"
+	line "idea?!"
 	done
 
 CherrygroveGymSpeechHouseBugCatcherText:
@@ -38,7 +41,7 @@ CherrygroveGymSpeechHouseBugCatcherText:
 	para "I make my #MON"
 	line "battle with my"
 
-	para "friend's to make"
+	para "friends' to make"
 	line "them tougher!"
 	done
 

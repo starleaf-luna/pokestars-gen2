@@ -1501,6 +1501,7 @@ UNION
 wOtherPlayerLinkMode:: db
 wOtherPlayerLinkAction:: db
 	ds 3
+	
 wPlayerLinkAction:: db
 wUnusedLinkAction:: db
 	ds 3
@@ -1517,7 +1518,7 @@ wCurSpecies:: db
 
 wNamedObjectType:: db
 
-	ds 1
+wPaletteUpdate:: db
 
 wJumptableIndex::
 wBattleTowerBattleEnded::

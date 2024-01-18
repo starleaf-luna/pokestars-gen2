@@ -513,9 +513,12 @@ pushc
 	charmap " ",	$bf
 	charmap "@",	$50
 	
-
 VersionText:
+IF STARS_ISDEMO
+	db "{STARS_STATUS} {STARS_DEMONUM}@"
+ELSE
 	db "{STARS_STATUS} VER {STARS_VERSION}@"
+ENDC
 popc
 ENDC
 

@@ -36,18 +36,20 @@ ChangelogRoom::
 ChangelogRoom_GameString:
 	db "{STARS_PRODNAME}@" ; POKéMON STARS
 ChangelogRoom_VersionString:
-	db "ver {STARS_VERSION} {STARS_STATUS}@" ; ver 1.0 PRE-ALPHA
+	db "ver {STARS_VERSION} {STARS_STATUS}/{STARS_DEMONUM}@" ; ver 1.0 PRE-ALPHA
 ChangelogRoom_IsFinalisedString:
 	db "is finalised?: {STARS_ISCMPLETE}@" ; is finalised?: NO
 ChangelogRoom_ChangelogStartString:
 	db "-CHANGELOG START-@"
 ChangelogRoom_Changelog:
-	db "- updated tilesets<LF>"
-	db "- updated palettes<LF>"
-	db "- updated scripts<LF>"
-	db "- begin work on<LF>"
-	db "  new intro movie<LF>"
+	db "- update tilesets<LF>"
+	db "- update palettes<LF>"
+	db "- update scripts<LF>"
+	db "- remove intro mo-<LF>"
+	db "  vie<LF>"
 	db "- add MBC30<LF>"
 	db "  detection<LF>"
-	db "last upd. 17.01.24<LF>"
+	db "- add surprise on<LF>"
+	db "  the title screen<LF>"
+	db "last upd. 18.01.24<LF>"
 	db "          DD.MM.YY@"		; added 05 jan 24

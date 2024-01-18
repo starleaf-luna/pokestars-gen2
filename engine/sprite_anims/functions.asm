@@ -222,8 +222,57 @@ SpriteAnimFunc_MailCursor:
 	ret
 
 SpriteAnimFunc_GameFreakLogo:
-	callfar GameFreakLogoSpriteAnim
+	ld hl, SPRITEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z, .delete
+
+	dec [hl]
+	dec [hl]
+	ld d, a
+	and $1f
+	jr nz, .stay
+	ld hl, SPRITEANIMSTRUCT_VAR2
+	add hl, bc
+	dec [hl]
+
+.stay
+	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
+	add hl, bc
+	ld a, [hl]
+	push af
+	push de
+	call AnimSeqs_Sine
+
+	ld hl, SPRITEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	pop de
+	pop af
+	call AnimSeqs_Cosine
+
+	ld hl, SPRITEANIMSTRUCT_XOFFSET
+	add hl, bc
+	ld [hl], a
+
+	ld hl, SPRITEANIMSTRUCT_VAR2
+	add hl, bc
+	ld a, [hl]
+
+	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
+	add hl, bc
+	add [hl]
+	ld [hl], a
 	ret
+
+.delete
+	ld a, 1
+	ld [wIntroSceneFrameCounter], a
+	call DeinitializeSprite
+	ret
+	; callfar GameFreakLogoSpriteAnim
+	; ret
 
 SpriteAnimFunc_GSGameFreakLogoStar:
 	ld hl, SPRITEANIMSTRUCT_VAR1

@@ -6,7 +6,24 @@ _OakText6::
 _OakText7::
 	text "<PLAYER>, are you"
 	line "ready?"
-
+IF STARS_ISDEMO
+	para "Your very own"
+	line "adventure in"
+	
+	para "the region of"
+	line "BULONIA is about"
+	cont "to unfold!"
+	
+	para "The region like"
+	line "no other before"
+	cont "or after it!"
+	
+	para "A world of dreams"
+	line "and adventures"
+	
+	para "with #MON"
+	line "awaits! Let's go!"
+ELSE
 	para "Your very own"
 	line "#MON story is"
 	cont "about to unfold."
@@ -23,6 +40,7 @@ _OakText7::
 
 	para "I'll be seeing you"
 	line "later!"
+ENDC
 	done
 
 _ClockTimeMayBeWrongText::

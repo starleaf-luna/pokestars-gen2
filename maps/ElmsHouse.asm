@@ -27,7 +27,7 @@ ElmsWifeText:
 	line "sad to see his"
 	
 	para "sickness finally"
-	line "getting to him..."
+	line "getting to him…"
 
 	para "When he's caught"
 	line "up in his #MON"
@@ -39,8 +39,10 @@ ElmsWifeText:
 	line "he fell so sick."
 	
 	para "What's going on"
-	line "in GOLINA has also"
-	cont "made him worry."
+	line "in BULONIA has"
+	
+	para "made him worry,"
+	line "too…"
 	
 	para "Oh, where is he?"
 	line "He's in KANTO."
@@ -54,12 +56,6 @@ ElmsSonText:
 	para "I'm going to be a"
 	line "great #MON"
 	cont "professor!"
-	
-	para "What's more? I'll"
-	line "even go down in"
-	
-	para "history as the"
-	line "#MON MESSIAH!"
 	done
 
 ElmsHouseLabFoodText: ; unreferenced
@@ -97,7 +93,7 @@ ElmsHousePCText:
 	cont "here. He said no."
 	
 	para "Well, how's life"
-	line "in GOLINA? I'll"
+	line "in BULONIA? I'll"
 	cont "see you soon!"
 	
 	para "      ELM"

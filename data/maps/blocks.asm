@@ -1048,6 +1048,18 @@ GoldenrodDeptStoreRoof_Blocks:
 
 SECTION "Map Blocks 4", ROMX
 
-
 CherrygrovePCM_Blocks:
 	INCBIN "maps/PokecenterAndMart.ablk"
+	
+CherrygroveHouse1_Blocks:
+	INCBIN "maps/CherrygroveHouse1.ablk"
+	
+CherrygroveHouse2_Blocks:
+	INCBIN "maps/CherrygroveHouse2.ablk"
+	
+CherrygroveHouse3_Blocks:
+	INCBIN "maps/CherrygroveHouse3.ablk"
+	
+CherrygroveHouse4_Blocks:
+	INCBIN "maps/CherrygroveHouse4.ablk"
+	
