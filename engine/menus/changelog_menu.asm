@@ -42,14 +42,7 @@ ChangelogRoom_IsFinalisedString:
 ChangelogRoom_ChangelogStartString:
 	db "-CHANGELOG START-@"
 ChangelogRoom_Changelog:
-	db "- update tilesets<LF>"
-	db "- update palettes<LF>"
-	db "- update scripts<LF>"
-	db "- remove intro mo-<LF>"
-	db "  vie<LF>"
-	db "- add MBC30<LF>"
-	db "  detection<LF>"
-	db "- add surprise on<LF>"
-	db "  the title screen<LF>"
-	db "last upd. 18.01.24<LF>"
+	db "- add É<LF>"
+	db "- add é<LF>"
+	db "last upd. 20.01.24<LF>"
 	db "          DD.MM.YY@"		; added 05 jan 24

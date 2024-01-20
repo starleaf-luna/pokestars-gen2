@@ -220,6 +220,7 @@ ENDM
 	dict "<ROUTE>",   PlaceJPRoute
 	dict "<WATASHI>", PlaceWatashi
 	dict "<KOKO_WA>", PlaceKokoWa
+	dict "É",		  PlaceDiacriticE
 	dict "<RED>",     PrintRedsName
 	dict "<GREEN>",   PrintGreensName
 	dict "#",         PlacePOKe
@@ -245,7 +246,7 @@ ENDM
 	dict "<DELAY>",	  DelayText
 	; dict "ﾟ",         .place ; should be .diacritic
 	; dict "ﾞ",         .place ; should be .diacritic
-	; jr .not_diacritic
+	;jr .not_diacritic
 
 ; .diacritic ; unreferenced
 	; ld b, a
@@ -285,7 +286,7 @@ ENDM
 	; ld b, "ﾟ" ; handakuten
 	; call Diacritic
 
-; .place
+.place
 	ld [hli], a
 	call PrintLetterDelay
 	jp NextChar
@@ -326,6 +327,15 @@ PlaceJPRoute: print_name PlaceJPRouteText
 PlaceWatashi: print_name PlaceWatashiText
 PlaceKokoWa:  print_name PlaceKokoWaText
 
+PlaceDiacriticE::
+	push hl
+	ld bc, -SCREEN_WIDTH
+	add hl, bc
+	ld [hl], "`"
+	pop hl
+	ld a, "E"
+	jp CheckDict.place
+	
 PlaceMoveTargetsName::
 	ldh a, [hBattleTurn]
 	xor 1
@@ -395,7 +405,6 @@ PlaceGenderedPlayerName::
 	ld de, KunSuffixText
 	jr z, PlaceCommandCharacter
 	ld de, ChanSuffixText
-	jr PlaceCommandCharacter
 
 PlaceCommandCharacter::
 	call PlaceString
@@ -408,7 +417,7 @@ TMCharText::      db "TM@"
 TrainerCharText:: db "TRAINER@"
 PCCharText::      db "PC@"
 RocketCharText::  db "ROCKET@"
-PlacePOKeText::   db "POKé@"
+PlacePOKeText::   db "POKÉ@"
 KougekiText::     db "こうげき@"
 SixDotsCharText:: db "……@"
 EnemyText::       db "Enemy @"
@@ -496,8 +505,8 @@ Paragraph::
 .linkbattle
 	call Text_WaitBGMap
 	call PromptButton
-	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
-	lb bc, TEXTBOX_INNERH - 1, TEXTBOX_INNERW
+	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY - 1
+	lb bc, TEXTBOX_INNERH, TEXTBOX_INNERW
 	call ClearBox
 	call UnloadBlinkingCursor
 	ld c, 20
