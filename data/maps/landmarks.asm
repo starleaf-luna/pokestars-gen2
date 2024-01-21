@@ -108,9 +108,9 @@ Landmarks:
 
 NewBarkTownName:     db "INICIUM<BSP>TOWN@"
 CherrygroveCityName: db "PRIMARINUM<BSP>CITY@"
-VioletCityName:      db "ALABASTIA CITY@"
-AzaleaTownName:      db "ORANIA TOWN@"
-GoldenrodCityName:   db "SILVERST<BSP>CITY@"
+VioletCityName:      db "SILBERNIUM<BSP>CITY@"
+AzaleaTownName:      db "NAME TBD@"
+GoldenrodCityName:   db "NAME TBD@"
 EcruteakCityName:    db "NAME TBD@"
 OlivineCityName:     db "NAME TBD@"
 CianwoodCityName:    db "NAME TBD@"
@@ -131,7 +131,7 @@ WhirlIslandsName:    db "NAME TBD@"
 MtMortarName:        db "NAME TBD@"
 DragonsDenName:      db "NAME TBD@"
 IcePathName:         db "NAME TBD@"
-NotApplicableName:   db "NAME TBD@" ; unreferenced ; "オバケやしき" ("HAUNTED HOUSE") in Japanese
+NotApplicableName:   db "HAUNTED<BSP>HOUSE@" ; unreferenced ; "オバケやしき" ("HAUNTED HOUSE") in Japanese
 PalletTownName:      db "PALLET TOWN@"
 ViridianCityName:    db "VIRIDIAN<BSP>CITY@"
 PewterCityName:      db "PEWTER CITY@"

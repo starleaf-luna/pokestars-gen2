@@ -42,7 +42,12 @@ ChangelogRoom_IsFinalisedString:
 ChangelogRoom_ChangelogStartString:
 	db "-CHANGELOG START-@"
 ChangelogRoom_Changelog:
-	db "- add É<LF>"
-	db "- add é<LF>"
-	db "last upd. 20.01.24<LF>"
+	db "- finish ROUTE 30<LF>"
+	db "- add PRIMARINUM<LF>"
+	db "  CAVE<LF>"
+	db "- add several<LF>"
+	db "  beta songs<LF>"
+	db "  from #MON<LF>"
+	db "  GEN 1 & GEN 2<LF>"
+	db "last upd. 21.01.24<LF>"
 	db "          DD.MM.YY@"		; added 05 jan 24

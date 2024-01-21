@@ -129,7 +129,7 @@ SpeechTextbox::
 	jp Textbox
 
 GameFreakText:: ; unreferenced
-	text "ゲームフりーク！" ; "GAMEFREAK!"
+	text "CRYSTALMOON！" ; "GAMEFREAK!"
 	done
 
 RadioTerminator::
@@ -331,10 +331,17 @@ PlaceDiacriticE::
 	push hl
 	ld bc, -SCREEN_WIDTH
 	add hl, bc
+	ld a, [hl]
+	cp " " ; don't overwrite any tiles
+	jr nz, .notBlank ; other than space
 	ld [hl], "`"
 	pop hl
 	ld a, "E"
 	jp CheckDict.place
+.notBlank:
+	pop hl
+	ld a, "é" ; use the lowercase
+	jp CheckDict.place ; variant instead
 	
 PlaceMoveTargetsName::
 	ldh a, [hBattleTurn]

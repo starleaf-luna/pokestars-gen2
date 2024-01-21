@@ -137,6 +137,8 @@ INCLUDE "audio/music/suicunebattle.asm"
 INCLUDE "audio/music/battletowerlobby.asm"
 INCLUDE "audio/music/mobilecenter.asm"
 INCLUDE "audio/music/mus_koukan.asm"
+INCLUDE "audio/music/m_title3.asm"
+INCLUDE "audio/music/digda01.asm"
 
 
 SECTION "Extra Songs 1", ROMX

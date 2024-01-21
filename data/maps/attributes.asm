@@ -699,3 +699,4 @@ ENDM
 	map_attributes CherrygroveHouse2, CHERRYGROVE_HOUSE2, $00, 0
 	map_attributes CherrygroveHouse3, CHERRYGROVE_HOUSE3, $00, 0
 	map_attributes CherrygroveHouse4, CHERRYGROVE_HOUSE4, $00, 0
+	map_attributes CherrygroveCave, CHERRYGROVE_CAVE, $09, 0

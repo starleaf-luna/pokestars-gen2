@@ -316,7 +316,7 @@ GuideGentTourText1:
 	line "#!"
 	
 	para "I'll also give your"
-	line "PKGR a map card."
+	line "PKGR as a map card"
 	done
 
 GuideGentPokecenterText:
@@ -467,9 +467,17 @@ CherrygroveTeacherText_HaveMapCard:
 	done
 
 CherrygroveYoungsterText_NoPokedex:
-	text "MR.#MON's house"
-	line "is still farther"
-	cont "up ahead."
+	text "The PRIMARINUM"
+	line "CAVE is SO BIG…"
+	
+	para "It's a natural ma-"
+	line "ze! No one dug it!"
+	
+	para "But, it's essential"
+	line "to pass it if you"
+	
+	para "want to pass thru"
+	line "to ROUTE 31."
 	done
 
 CherrygroveYoungsterText_HavePokedex:
@@ -564,5 +572,6 @@ CherrygroveCity_MapEvents:
 	object_event 23,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveYoungsterScript, -1
 	object_event  6,  7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MysticWaterGuy, -1
 	object_event 21, 14, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCityGuideGent, EVENT_GUIDE_GENT_IN_HIS_HOUSE
-	object_event 16,  0, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCityGermanGuardText, -1
-	object_event 17,  0, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCityNormalGuardText, -1
+	; these two went home now, their job's complete so they went
+	;object_event 16,  0, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCityGermanGuardText, -1
+	;object_event 17,  0, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCityNormalGuardText, -1

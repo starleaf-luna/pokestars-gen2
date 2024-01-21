@@ -1063,3 +1063,6 @@ CherrygroveHouse3_Blocks:
 CherrygroveHouse4_Blocks:
 	INCBIN "maps/CherrygroveHouse4.ablk"
 	
+CherrygroveCave_Blocks:
+	INCBIN "maps/CherrygroveCave.ablk"
+	

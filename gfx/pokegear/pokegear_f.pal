@@ -11,12 +11,12 @@
 ; mountain
 	RGB 28, 31, 20
 	RGB 00, 31, 00
-	RGB 15, 07, 00
 	RGB 00, 00, 00
+	RGB 15, 07, 00
 ; city (girl)
-	RGB 28, 31, 20
-	RGB 10, 18, 31
-	RGB 13, 06, 31
+	RGB 31, 31, 31
+	RGB 29, 22, 12
+	RGB 14, 06, 00
 	RGB 00, 00, 00
 ; point of interest
 	RGB 28, 31, 20
