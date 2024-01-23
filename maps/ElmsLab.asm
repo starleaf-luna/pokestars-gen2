@@ -786,7 +786,6 @@ ElmsLab_ElmToDefaultPositionMovement1:
 ElmsLab_ElmToDefaultPositionMovement2:
 	step RIGHT
 	step RIGHT
-	step UP
 	turn_head DOWN
 	step_end
 
@@ -850,7 +849,7 @@ ElmText_RivalShowsUp:
 	line "ducting some new"
 
 	para "research into the"
-	line "TEAM C. GOVERNMENT"
+	line "Team C. government"
 
 	para "because it's fishy."
 	line "It seems to hold"
@@ -859,7 +858,7 @@ ElmText_RivalShowsUp:
 	para "You see…"
 
 	para "It turns out that"
-	line "TEAM C. doesn't"
+	line "Team C. doesn't"
 
 	para "care about the"
 	line "safety of your"
@@ -876,7 +875,7 @@ ElmText_RivalShowsUp:
 	
 	para "#MON as a line"
 	line "of defense, and"
-	cont "destroy TEAM C."
+	cont "destroy Team C."
 	done
 
 ElmText_Accepted:
@@ -903,7 +902,7 @@ ElmText_ResearchAmbitions:
 	line "the inside."
 	
 	para "I don't mean to"
-	line "join TEAM C., but"
+	line "join Team C., but"
 	
 	para "masquerade as a"
 	line "supporter, to gain"
@@ -979,8 +978,10 @@ ElmText_ChooseAPokemon:
 	para "#MON contained"
 	line "in these BALLS."
 
-	para "You'll be that"
-	line "#MON's first"
+	para "Go on. Pick one!"
+	done
+	
+	db	 "#MON's first"
 	cont "partner, <PLAY_G>!"
 
 	para "Go on. Pick one!"
@@ -993,30 +994,31 @@ ElmText_LetYourMonBattleIt:
 	done
 
 LabWhereGoingText:
-	text "ELM: Wait! Where"
-	line "are you going?"
+	text "OAK: <PLAYER>!"
+	line "This isn't the"
+	cont "time to leave!"
 	done
 
 TakeCyndaquilText:
-	text "ELM: You'll take"
+	text "OAK: You'll take"
 	line "CYNDAQUIL, the"
 	cont "fire #MON?"
 	done
 
 TakeTotodileText:
-	text "ELM: Do you want"
+	text "OAK: You'll take"
 	line "TOTODILE, the"
 	cont "water #MON?"
 	done
 
 TakeChikoritaText:
-	text "ELM: So, you like"
+	text "OAK: You'll take"
 	line "CHIKORITA, the"
 	cont "grass #MON?"
 	done
 
 DidntChooseStarterText:
-	text "ELM: Think it over"
+	text "OAK: Think it over"
 	line "carefully."
 
 	para "Your partner is"
@@ -1024,7 +1026,7 @@ DidntChooseStarterText:
 	done
 
 ChoseStarterText:
-	text "ELM: I think"
+	text "OAK: I think"
 	line "that's a great"
 	cont "#MON too!"
 	done
@@ -1091,7 +1093,7 @@ ElmDescribesMrPokemonText:
 ElmPokeBallText:
 	text "It contains a"
 	line "#MON caught by"
-	cont "PROF.ELM."
+	cont "PROF.OAK."
 	done
 
 ElmsLabHealingMachineText1:

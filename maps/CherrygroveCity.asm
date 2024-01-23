@@ -377,7 +377,7 @@ GuideGentGiftText:
 
 GotMapCardText:
 	text "<PLAYER>'s #GEAR"
-	line "now has a MAP!"
+	line "now has a map!"
 	done
 
 GuideGentPokegearText:
@@ -455,8 +455,8 @@ CherrygroveTeacherText_NoMapCard:
 	line "the old man to the"
 	cont "left?"
 
-	para "He'll put a MAP of"
-	line "BULONIA on your"
+	para "He'll put a map of"
+	line "Bulonia on your"
 	cont "#GEAR."
 	done
 
@@ -467,8 +467,8 @@ CherrygroveTeacherText_HaveMapCard:
 	done
 
 CherrygroveYoungsterText_NoPokedex:
-	text "The PRIMARINUM"
-	line "CAVE is SO BIG…"
+	text "The Primarinum"
+	line "Cave is SO BIG…"
 	
 	para "It's a natural ma-"
 	line "ze! No one dug it!"
@@ -477,7 +477,7 @@ CherrygroveYoungsterText_NoPokedex:
 	line "to pass it if you"
 	
 	para "want to pass thru"
-	line "to ROUTE 31."
+	line "to Route 31."
 	done
 
 CherrygroveYoungsterText_HavePokedex:
@@ -489,7 +489,7 @@ CherrygroveYoungsterText_HavePokedex:
 	line "They're a mess! I"
 
 	para "must take them to"
-	line "a #MON CENTER."
+	line "the PCM."
 	done
 
 MysticWaterGuyTextBefore:
@@ -509,14 +509,14 @@ MysticWaterGuyTextAfter:
 	done
 
 CherrygroveCitySignText:
-	text "PRIMARINUM CITY"
+	text "Primarinum City"
 
 	para "The City by the"
 	line "Sea"
 	done
 
 GuideGentsHouseSignText:
-	text "GUIDE GENT'S HOUSE"
+	text "Guide Gent's house"
 	done
 	
 GuardText1:

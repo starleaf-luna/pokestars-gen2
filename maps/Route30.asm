@@ -310,7 +310,7 @@ YoungsterJoey1SeenText:
 	line "strongest, so"
 	
 	para "I can destroy"
-	line "TEAM C.!"
+	line "Team C.!"
 
 	para "Hey! You look"
 	line "weak! I can use"
@@ -321,7 +321,7 @@ YoungsterJoey1SeenText:
 
 YoungsterJoey1BeatenText:
 	text "…I guess I can't"
-	line "defeat TEAM C.…"
+	line "defeat Team C.…"
 	done
 
 YoungsterJoey1AfterText:
@@ -372,14 +372,14 @@ Route30YoungsterText_DirectionsToMrPokemonsHouse:
 	line "is abandoned."
 	
 	para "everyone's talking"
-	line "about it in PRIMA-"
-	cont "RINUM."
+	line "about it in Prima-"
+	cont "rinum."
 	
 	para "But allegedly,"
 	line "that house hides"
 	
 	para "a mythical WISH"
-	line "#MON-- JIRACHI."
+	line "#MON— JIRACHI."
 	
 	para "It's a shame that"
 	line "no one knows how"
@@ -408,7 +408,7 @@ Route30CooltrainerFText:
 Route30SignText:
 	text "ROUTE 30"
 
-	para "VIOLET CITY -"
+	para "SILBERNIUM -"
 	line "PRIMARINUM"
 	done
 

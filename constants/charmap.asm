@@ -17,6 +17,7 @@
 	charmap "<RED>",     $38 ; wRedsName
 	charmap "<GREEN>",   $39 ; wGreensName
 	charmap "<ENEMY>",   $3f
+	charmap "—", 		 $40 ; em dash
 	charmap "<MOM>",     $49 ; wMomsName
 	charmap "<PKMN>",    $4a ; "<PK><MN>"
 	charmap "<_CONT>",   $4b ; implements "<CONT>"
@@ -195,8 +196,8 @@
 	charmap "<BOLD_S>",  $db
 	charmap "<COLON>",   $9c ; colon with tinier dots than ":"
 	charmap "é",		 $dc
-	charmap "“",         $dd ; opening quote
-	charmap "”",         $de ; closing quote
+	charmap "<EM1>",     $dd ; opening quote
+	charmap "<EM2>",     $de ; closing quote
 
 	charmap "←",         $df
 	charmap "'",         $e0

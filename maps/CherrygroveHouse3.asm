@@ -17,7 +17,7 @@ CherrygroveHouse3Bookshelf:
 
 CherrygroveHouse3PokefanMText:
 	text "I'm looking at the"
-	line "#MON WEBPAGE on"
+	line "#MON webpage on"
 	cont "my computer."
 
 	para "There's nothing I'd"

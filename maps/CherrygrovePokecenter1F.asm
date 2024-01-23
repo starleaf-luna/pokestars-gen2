@@ -35,35 +35,52 @@ CherrygrovePokecenter1FTeacherScript:
 	end
 
 CherrygrovePokecenter1FFisherText:
-	text "It's great. I can"
-	line "store any number"
+	text "Lorem ipsum dolor"
+	line "sit amet, conse-"
 
-	para "of #MON, and"
-	line "it's all free."
+	para "quitur adipiscing"
+	line "elit."
 	done
 
 CherrygrovePokecenter1FGentlemanText:
-	text "That PC is free"
-	line "for any trainer"
-	cont "to use."
+	text "What's the rele-"
+	line "vant command to"
+	cont "fix the channel?" ; he's talking aobout the title screen music
 	done
 
 CherrygrovePokecenter1FTeacherText:
-	text "The COMMUNICATION"
-	line "CENTER upstairs"
-	cont "was just built."
-
-	para "But they're still"
-	line "finishing it up."
+	text "Iunno. Don't ask."
 	done
 
 CherrygrovePokecenter1FTeacherText_CommCenterOpen:
-	text "The COMMUNICATION"
-	line "CENTER upstairs"
-	cont "was just built."
+	text "Above the image,"
+	line "there appears to"
+	
+	para "be some text,"
+	line "reading:"
+	
+	para "LEFT TO RIGHT:"
+	line "MOTHER, ME, SON,"
+	
+	para "FATHER. THE EGG"
+	line "LIES ON THE GROUND"
+	
+	para "BETWEEN ME AND"
+	line "MOTHER."
+	
+	para "PLEASE REMEMBER"
+	line "NEXT TIME YOU"
+	
+	para "VISIT FAMILY"
+	line "NO. 314905."
+	
+	para "SIGNED, DAUGHTER"
+	line "NO. 54980641"
+	cont "JAN 23<……>"
 
-	para "I traded #MON"
-	line "there already!"
+	para "The rest of the"
+	line "text is ripped"
+	cont "off."
 	done
 
 CherrygrovePokecenter1F_MapEvents:

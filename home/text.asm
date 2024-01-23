@@ -238,6 +238,7 @@ ENDM
 	dict "<POKE>",    PlacePOKE
 	dict "<WBR>",     NextChar
 	dict "<BSP>",     " "
+	dict "—",		  PlaceEmDash
 	dict "<DEXEND>",  PlaceDexEnd
 	dict "<TARGET>",  PlaceMoveTargetsName
 	dict "<USER>",    PlaceMoveUsersName
@@ -326,6 +327,7 @@ PlacePOKE:    print_name PlacePOKEText
 PlaceJPRoute: print_name PlaceJPRouteText
 PlaceWatashi: print_name PlaceWatashiText
 PlaceKokoWa:  print_name PlaceKokoWaText
+PlaceEmDash:  print_name PlaceEmDashText
 
 PlaceDiacriticE::
 	push hl
@@ -421,21 +423,22 @@ PlaceCommandCharacter::
 	jp NextChar
 
 TMCharText::      db "TM@"
-TrainerCharText:: db "TRAINER@"
+TrainerCharText:: db "Trainer@"
 PCCharText::      db "PC@"
-RocketCharText::  db "ROCKET@"
+RocketCharText::  db "Rocket@"
 PlacePOKeText::   db "POKÉ@"
 KougekiText::     db "こうげき@"
 SixDotsCharText:: db "……@"
-EnemyText::       db "Enemy @"
+EnemyText::       db "Foe @"
 PlacePKMNText::   db "<PK><MN>@"
 PlacePOKEText::   db "<PO><KE>@"
 String_Space::    db " @"
+PlaceEmDashText:: db "<EM1><EM2>"
 ; These strings have been dummied out.
 PlaceJPRouteText::
 PlaceWatashiText::
-PlaceKokoWaText:: db "@"
-KunSuffixText::   db "@"
+PlaceKokoWaText::
+KunSuffixText::
 ChanSuffixText::  db "@"
 
 NextLineChar::

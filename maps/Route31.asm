@@ -181,16 +181,7 @@ TrainerBugCatcherWade1:
 	end
 
 Route31MailRecipientScript:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_TM50_NIGHTMARE
-	iftrue .DescribeNightmare
-	checkevent EVENT_GOT_KENYA
-	iftrue .TryGiveKenya
-	writetext Text_Route31SleepyMan
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer Route31MailRecipientText
 
 .TryGiveKenya:
 	writetext Text_Route31SleepyManGotMail
@@ -414,26 +405,41 @@ Route31SignText:
 DarkCaveSignText:
 	text "DARK CAVE"
 	done
+	
+Route31MailRecipientText:
+	text "Primarinum and"
+	line "Silbernium resi-"
+	
+	para "dents hate each-"
+	line "other."
+	
+	para "It began with the"
+	line "Route 30-31 cave."
+	
+	para "Researchers from"
+	line "both Towns were"
+	cont "sent out there."
+	done
 
 Route31_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4,  6, ROUTE_31_VIOLET_GATE, 3
-	warp_event  4,  7, ROUTE_31_VIOLET_GATE, 4
+	warp_event  4,  6, CHERRYGROVE_CAVE, 1
+	warp_event  2,  1, ROUTE_31_VIOLET_GATE, 4
 	warp_event 34,  5, DARK_CAVE_VIOLET_ENTRANCE, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  7,  5, BGEVENT_READ, Route31Sign
-	bg_event 31,  5, BGEVENT_READ, DarkCaveSign
+	bg_event 37,  9, BGEVENT_READ, Route31Sign
+	bg_event  6,  5, BGEVENT_READ, DarkCaveSign
 
 	def_object_events
-	object_event 17,  7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31MailRecipientScript, -1
-	object_event  9,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31YoungsterScript, -1
-	object_event 21, 13, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherWade1, -1
-	object_event 33,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31CooltrainerMScript, -1
-	object_event 16,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31FruitTree, -1
+	object_event  8, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31MailRecipientScript, -1
+	object_event 10,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31YoungsterScript, -1
+	object_event 25,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherWade1, -1
+	object_event 21, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31CooltrainerMScript, -1
+	object_event 16,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31FruitTree, -1
 	object_event 29,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31Potion, EVENT_ROUTE_31_POTION
-	object_event 19, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31PokeBall, EVENT_ROUTE_31_POKE_BALL
+	object_event 20,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31PokeBall, EVENT_ROUTE_31_POKE_BALL
