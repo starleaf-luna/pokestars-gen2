@@ -10,10 +10,7 @@ Music_Title3:
 	dw title2_34
 	
 title2_31:
-	volume 7, 7
-	duty_cycle 3
-	pitch_offset 2
-	vibrato 16, 1, 2
+	pitch_sweep 0, 8
 	db	$da,$00,$90
 	db	$e5,$77
 	db	$e6,$00,$01
