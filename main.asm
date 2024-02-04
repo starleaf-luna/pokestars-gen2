@@ -711,3 +711,8 @@ INCLUDE "engine/movie/stars_intro.asm"
 SECTION "PCM Engine", ROMX
 
 INCLUDE "audio/pcm_play.asm"
+
+
+SECTION "Minigame Engine 1", ROMX
+
+INCLUDE "engine/menus/minigame_test.asm"

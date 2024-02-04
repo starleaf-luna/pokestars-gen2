@@ -228,7 +228,11 @@ NEXTU
 ; mobile data
 wMobileWRAM::
 wMobileErrorCodeBuffer:: ds 3
+UNION
 wc303:: ds 2
+NEXTU
+wMinigameCoins:: dw
+ENDU
 wc305:: ds 1
 wc306:: ds 1
 wc307:: ds 1
@@ -279,7 +283,26 @@ wGlobalAnimXOffset:: db
 
 wSpriteAnimDataEnd::
 
-	ds 11
+;	ds 11
+
+UNION
+; section relating to Flappy Bird,
+; which was scrapped :p
+wBirdX:: 		db
+wBirdY::		db
+wBirdYV:: 		db
+wBirdScore:: 	dw
+wBirdGamemode:: db ; 0 - title, 1 - game over, 2 - in game, 3 - game over (max points)
+	ds 5 ; padding
+NEXTU
+; section relating to Blue Sphere Clone
+wSphereHowMany::	db ; amount of spheres @ gen time
+wSphereCollected::	db ; amount of spheres collected
+wSphereSCX::		db ; rSCX/wSCX for Blue Sphere Clone
+wSphereSCY::		db ; rSCY/wSCY for Blue Sphere Clone
+wSphereGamemode::	db
+	ds 6 ; padding
+ENDU
 
 ; mobile data
 wc3cc:: ds 1
@@ -851,7 +874,9 @@ NEXTU
 wPuzzlePieces:: ds 6 * 6
 
 NEXTU
-; mobile data
+UNION
+; mobile data…too bad it's unused!
+; so it can safely be union'd.
 wc6d0:: ds 56
 wc708:: db
 wc709:: db
@@ -871,6 +896,9 @@ wc7ba:: ds 1
 wc7bb:: ds 2
 wc7bd:: ds 19
 wc7d0:: ds 1
+NEXTU
+wSphereMapBuffer:: ds SPHERE_MAPHEIGHT * SPHERE_MAPWIDTH ; 16x16
+ENDU
 wc7d1:: ds 1
 wc7d2:: ds 1
 wc7d3:: ds 2
