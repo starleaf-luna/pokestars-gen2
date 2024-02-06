@@ -105,7 +105,7 @@ ENDM
 	connection north, Route30, ROUTE_30, 5
 	connection east, Route29, ROUTE_29, 0
 
-	map_attributes VioletCity, VIOLET_CITY, $05, SOUTH | WEST | EAST
+	map_attributes VioletCity, VIOLET_CITY, $05, SOUTH | WEST; | EAST
 	connection south, Route32, ROUTE_32, 0
 	;connection west, Route36, ROUTE_36, 0
 	connection west, Route31, ROUTE_31, 0
@@ -164,7 +164,7 @@ ENDM
 	connection north, Route31, ROUTE_31, -10
 	connection south, CherrygroveCity, CHERRYGROVE_CITY, -5
 
-	map_attributes Route31, ROUTE_31, $05, SOUTH | WEST
+	map_attributes Route31, ROUTE_31, $05, SOUTH | EAST
 	connection south, Route30, ROUTE_30, 10
 	connection east, VioletCity, VIOLET_CITY, 0
 

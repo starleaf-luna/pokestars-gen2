@@ -425,7 +425,7 @@ Route31_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4,  6, CHERRYGROVE_CAVE, 1
+	warp_event  4,  5, CHERRYGROVE_CAVE, 1
 	warp_event  2,  1, ROUTE_31_VIOLET_GATE, 4
 	warp_event 34,  5, DARK_CAVE_VIOLET_ENTRANCE, 1
 
@@ -433,10 +433,10 @@ Route31_MapEvents:
 
 	def_bg_events
 	bg_event 37,  9, BGEVENT_READ, Route31Sign
-	bg_event  6,  5, BGEVENT_READ, DarkCaveSign
+	bg_event  7,  1, BGEVENT_READ, DarkCaveSign
 
 	def_object_events
-	object_event  8, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31MailRecipientScript, -1
+	object_event 10, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31MailRecipientScript, -1
 	object_event 10,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31YoungsterScript, -1
 	object_event 25,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherWade1, -1
 	object_event 21, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31CooltrainerMScript, -1

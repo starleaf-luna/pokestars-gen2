@@ -42,7 +42,8 @@ ChangelogRoom_IsFinalisedString:
 ChangelogRoom_ChangelogStartString:
 	db "-CHANGELOG START-@"
 ChangelogRoom_Changelog:
+	db "- fix R31-SIL. bug<LF>"
 	db "- begin work on<LF>"
-	db "  minigame system<LF>"
-	db "last upd. 24.01.24<LF>"
+	db "  SILBERNIUM N<LF>"
+	db "last upd. 06.02.24<LF>"
 	db "          DD.MM.YY@"		; added 05 jan 24
