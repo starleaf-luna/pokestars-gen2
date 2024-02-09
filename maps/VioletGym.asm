@@ -111,48 +111,41 @@ VioletGymStatue:
 	jumpstd GymStatue2Script
 
 FalknerIntroText:
-	text "I'm FALKNER, the"
-	line "VIOLET #MON GYM"
+	text "I'm SOPHIA, the"
+	line "Silbernium Gym"
 	cont "leader!"
+	
+	para "My Ghost #MON…"
 
-	para "People say you can"
-	line "clip flying-type"
+	para "They join me!"
+	line "I don't catch 'em!"
 
-	para "#MON's wings"
-	line "with a jolt of"
-	cont "electricity…"
-
-	para "I won't allow such"
-	line "insults to bird"
-	cont "#MON!"
-
-	para "I'll show you the"
-	line "real power of the"
-
-	para "magnificent bird"
-	line "#MON!"
+	para "Oh, you're here for"
+	line "a #MON battle."
+	
+	para "Fine then. Show me"
+	line "your best!"
 	done
 
 FalknerWinLossText:
-	text "…Darn! My dad's"
-	line "cherished bird"
-	cont "#MON…"
+	text "Oh no… My poor"
+	line "Ghost #MON…"
 
-	para "All right."
-	line "Take this."
+	para "I guess I'll"
+	line "give you this."
 
 	para "It's the official"
 	line "#MON LEAGUE"
-	cont "ZEPHYRBADGE."
+	cont "SOULBADGE."
 	done
 
 ReceivedZephyrBadgeText:
 	text "<PLAYER> received"
-	line "ZEPHYRBADGE."
+	line "SOULBADGE!"
 	done
 
 FalknerZephyrBadgeText:
-	text "ZEPHYRBADGE"
+	text "The SOULBADGE"
 	line "raises the attack"
 	cont "power of #MON."
 
@@ -162,7 +155,7 @@ FalknerZephyrBadgeText:
 	para "FLASH, if they"
 	line "have it, anytime."
 
-	para "Here--take this"
+	para "Here—take this"
 	line "too."
 	done
 
@@ -177,34 +170,39 @@ FalknerTMMudSlapText:
 	line "act--a TM can be"
 	cont "used only once."
 
-	para "TM31 contains"
-	line "MUD-SLAP."
+	para "TM03 is CURSE."
+	line "If the user is"
 
-	para "It reduces the"
-	line "enemy's accuracy"
-
-	para "while it causes"
-	line "damage."
+	para "a Ghost-type, it"
+	line "will lose half its"
+	
+	para "HP, while making"
+	line "the enemy lose a"
+	
+	para "quarter of its"
+	line "health per turn."
 
 	para "In other words, it"
-	line "is both defensive"
-	cont "and offensive."
+	line "makes you take da-"
+	
+	para "mage, but it's ac-"
+	line "tually worth it!"
 	done
 
 FalknerFightDoneText:
 	text "There are #MON"
-	line "GYMS in cities and"
-	cont "towns ahead."
+	line "Gyms in Cities and"
+	cont "Towns ahead."
 
 	para "You should test"
 	line "your skills at"
-	cont "these GYMS."
+	cont "these Gyms."
 
 	para "I'm going to train"
 	line "harder to become"
 
-	para "the greatest bird"
-	line "master!"
+	para "the greatest Ghost"
+	line "trainer!"
 	done
 
 BirdKeeperRodSeenText:
@@ -214,8 +212,8 @@ BirdKeeperRodSeenText:
 	para "Those here are"
 	line "training night and"
 
-	para "day to become bird"
-	line "#MON masters."
+	para "day to become the"
+	line "Ghost-type master."
 
 	para "Come on!"
 	done
@@ -225,7 +223,7 @@ BirdKeeperRodBeatenText:
 	done
 
 BirdKeeperRodAfterBattleText:
-	text "FALKNER's skills"
+	text "SOPHIA's skills"
 	line "are for real!"
 
 	para "Don't get cocky"
@@ -234,48 +232,36 @@ BirdKeeperRodAfterBattleText:
 	done
 
 BirdKeeperAbeSeenText:
-	text "Let me see if you"
-	line "are good enough to"
-	cont "face FALKNER!"
+	text "SOPHIA won't have"
+	line "to be bothered."
 	done
 
 BirdKeeperAbeBeatenText:
-	text "This can't be"
-	line "true!"
+	text "Oh… no…"
 	done
 
 BirdKeeperAbeAfterBattleText:
 	text "This is pathetic,"
-	line "losing to some"
-	cont "rookie trainer…"
+	line "losing to YOU…"
 	done
 
 VioletGymGuideText:
-	text "Hey! I'm no train-"
-	line "er but I can give"
-	cont "some advice!"
+	text "Hey! I'm not a"
+	line "trainer, but lis-"
+	cont "ten!"
+	
+	para "The Normal-type"
+	line "has no effect on"
 
-	para "Believe me!"
-	line "If you believe, a"
-
-	para "championship dream"
-	line "can come true."
-
-	para "You believe?"
-	line "Then listen."
-
-	para "The grass-type is"
-	line "weak against the"
-
-	para "flying-type. Keep"
-	line "this in mind."
+	para "Ghost #MON."
+	line "Keep this in mind."
 	done
 
 VioletGymGuideWinText:
 	text "Nice battle! Keep"
 	line "it up, and you'll"
 
-	para "be the CHAMP in no"
+	para "be the champ in no"
 	line "time at all!"
 	done
 

@@ -19,16 +19,9 @@ VioletCityFlypointCallback:
 	endcallback
 
 VioletCityEarlScript:
-	applymovement VIOLETCITY_EARL, VioletCitySpinningEarl_MovementData
 	faceplayer
 	opentext
 	writetext Text_EarlAsksIfYouBeatFalkner
-	yesorno
-	iffalse .FollowEarl
-	sjump .PointlessJump
-
-.PointlessJump:
-	writetext Text_VeryNiceIndeed
 	waitbutton
 	closetext
 	end
@@ -178,11 +171,16 @@ VioletCitySpinningEarl_MovementData:
 	step_end
 
 Text_EarlAsksIfYouBeatFalkner:
-	text "Hello!"
-	line "You are trainer?"
+	text "My CHANSEY died…"
+	line "I'm grieving her…"
 
-	para "Battle GYM LEADER,"
-	line "win you did?"
+	para "She is in the"
+	line "grave site out"
+	cont "east…"
+	
+	para "But, I can't visit"
+	line "her grave… Sob…"
+	cont "It's too dangerous…"
 	done
 
 Text_VeryNiceIndeed:
@@ -203,77 +201,85 @@ Text_HereTeacherIAm:
 	done
 
 VioletCityLassText:
-	text "Ghosts are rumored"
-	line "to appear in"
-	cont "SPROUT TOWER."
+	text "The Game Center on"
+	line "the west is what"
+	
+	para "makes Silbernium"
+	line "so famous."
 
-	para "They said normal-"
-	line "type #MON moves"
+	para "Well, except for"
+	line "the Old City…"
 
-	para "had no effect on"
-	line "ghosts."
+	para "It's dangerous to"
+	line "visit there, but"	
+	cont "lots of people do."
 	done
 
 VioletCitySuperNerdText:
-	text "Hey, you're a"
+	text "So, you're a"
 	line "#MON trainer?"
 
 	para "If you beat the"
 	line "GYM LEADER here,"
 
-	para "you'll be ready"
-	line "for prime time!"
+	para "you will prove"
+	line "your worthiness!"
+	
+	para "Team C. will glad-"
+	line "ly take you in!"
 	done
 
 VioletCityGrampsText:
-	text "FALKNER, from the"
-	line "VIOLET #MON"
+	text "SOPHIA, from the"
+	line "Silbernium Gym…"
 
-	para "GYM, is a fine"
-	line "trainer!"
+	para "She's a really"
+	line "good trainer!"
 
-	para "He inherited his"
-	line "father's gym and"
+	para "She has started"
+	line "just recently,"
 
-	para "has done a great"
-	line "job with it."
+	para "but no one had"
+	line "beaten her yet!"
 	done
 
 VioletCityYoungsterText:
-	text "I saw a wiggly"
-	line "tree up ahead!"
+	text "Whatever you do…"
+	line "DON'T visit the"
+	cont "Old City!"
 
-	para "If you touch it,"
-	line "it squirms and"
-	cont "dances! Cool!"
+	para "It's dangerous to"
+	line "do so. Trust me!"
 	done
 
 VioletCitySignText:
-	text "VIOLET CITY"
+	text "SILBERNIUM CITY"
 
-	para "The City of"
-	line "Nostalgic Scents"
+	para "The City of Silver"
+	line "and Prosperity"
 	done
 
 VioletGymSignText:
-	text "VIOLET CITY"
+	text "SILBERNIUM CITY"
 	line "#MON GYM"
-	cont "LEADER: FALKNER"
+	cont "LEADER: SOPHIA"
 
-	para "The Elegant Master"
-	line "of Flying #MON"
+	para "The Playful Ghost"
+	line "#MON Leader"
 	done
 
 SproutTowerSignText:
-	text "SPROUT TOWER"
-
-	para "Experience the"
-	line "Way of #MON"
+	text "SILBERNIUM CITY"
+	line "GAME CENTER"
 	done
 
 EarlsPokemonAcademySignText:
-	text "EARL'S #MON"
-	line "ACADEMY"
+	text "EAST: SILBERNIUM"
+	line "#MON GRAVE SITE"
+	cont "SILBERN. OLD CITY"
+	
+	para "KEEP OUT! DANGER"
+	line "RISK!"
 	done
 
 VioletCity_MapEvents:
@@ -281,32 +287,32 @@ VioletCity_MapEvents:
 
 	def_warp_events
 	warp_event 18,  7, VIOLET_MART, 2
-	warp_event  5, 30, VIOLET_GYM, 1
-	warp_event 25, 15, EARLS_POKEMON_ACADEMY, 1
-	warp_event 21, 15, VIOLET_NICKNAME_SPEECH_HOUSE, 1
+	warp_event 27, 22, VIOLET_GYM, 1
+	warp_event 27, 15, EARLS_POKEMON_ACADEMY, 1
+	warp_event 23, 15, VIOLET_NICKNAME_SPEECH_HOUSE, 1
 	warp_event 22,  7, VIOLET_POKECENTER_1F, 1
-	warp_event 29, 15, VIOLET_KYLES_HOUSE, 1
-	warp_event  6, 21, SPROUT_TOWER_1F, 1
-	warp_event 33, 15, ROUTE_31_VIOLET_GATE, 1
-	warp_event 21, 23, ROUTE_31_VIOLET_GATE, 2
+	warp_event 31, 15, VIOLET_KYLES_HOUSE, 1
+	warp_event  6, 23, SPROUT_TOWER_1F, 1
+	warp_event 35, 15, ROUTE_31_VIOLET_GATE, 1
+	warp_event 11, 31, ROUTE_31_VIOLET_GATE, 2
 
 	def_coord_events
 
 	def_bg_events
 	bg_event  9,  5, BGEVENT_READ, VioletCitySign
-	bg_event 10, 31, BGEVENT_READ, VioletGymSign
-	bg_event 10, 21, BGEVENT_READ, SproutTowerSign
+	bg_event 32, 22, BGEVENT_READ, VioletGymSign
+	bg_event 10, 23, BGEVENT_READ, SproutTowerSign
 	bg_event 37,  5, BGEVENT_READ, EarlsPokemonAcademySign
-	bg_event 32, 25, BGEVENT_READ, VioletCityPokecenterSign
-	bg_event 17,  7, BGEVENT_READ, VioletCityMartSign
-	bg_event 33, 10, BGEVENT_ITEM, VioletCityHiddenHyperPotion
+	bg_event -1,  0, BGEVENT_READ, VioletCityPokecenterSign
+	bg_event -1,  0, BGEVENT_READ, VioletCityMartSign
+	bg_event 35, 11, BGEVENT_ITEM, VioletCityHiddenHyperPotion
 
 	def_object_events
 	object_event 13, 16, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityEarlScript, EVENT_VIOLET_CITY_EARL
 	object_event 28, 28, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityLassScript, -1
 	object_event 27, 11, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletCitySuperNerdScript, -1
 	object_event 17, 20, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityGrampsScript, -1
-	object_event  5, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityYoungsterScript, -1
-	object_event 14, 29, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1
+	object_event 13,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityYoungsterScript, -1
+	object_event 15, 32, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1
 	object_event 14,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityPPUp, EVENT_VIOLET_CITY_PP_UP
 	object_event 35,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityRareCandy, EVENT_VIOLET_CITY_RARE_CANDY

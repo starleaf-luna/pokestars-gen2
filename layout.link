@@ -314,6 +314,7 @@ ROMX $80
 	"PCM Engine"
 	"PCM Data 1"
 	"Minigame Engine 1"
+	"Tileset Data 12"
 WRAM0
 	"Stack"
 	"Audio RAM"

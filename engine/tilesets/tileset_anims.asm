@@ -906,6 +906,69 @@ AnimateWaterPalette:
 ; Transition between color values 0-2 for color 0 in palette 3.
 
 ; Don't update the palette on DMG
+	; ldh a, [hCGB]
+	; and a
+	ret ;z
+
+; Don't update a non-standard palette order
+	; ldh a, [rBGP]
+	; cp %11100100
+	; ret nz
+
+; Only update on even ticks
+	; ld a, [wTileAnimationTimer]
+	; ld l, a
+	; and 1 ; odd
+	; ret nz
+
+; Ready for BGPD input
+	; ld a, (1 << rBGPI_AUTO_INCREMENT) palette PAL_BG_WATER color 0
+	; ldh [rBGPI], a
+
+	; ldh a, [rSVBK]
+	; push af
+	; ld a, BANK(wBGPals1)
+	; ldh [rSVBK], a
+
+; A cycle of 4 colors (0 1 2 1), updating every other tick
+	; ld a, l
+	; and %110
+	; jr z, .color0
+	; cp %100
+	; jr z, .color2
+
+; Copy one color from hl to rBGPI via rBGPD
+
+; color1
+	; ld hl, wBGPals1 palette PAL_BG_WATER color 1
+	; ld a, [hli]
+	; ldh [rBGPD], a
+	; ld a, [hli]
+	; ldh [rBGPD], a
+	; jr .end
+
+; .color0
+	; ld hl, wBGPals1 palette PAL_BG_WATER color 0
+	; ld a, [hli]
+	; ldh [rBGPD], a
+	; ld a, [hli]
+	; ldh [rBGPD], a
+	; jr .end
+
+; .color2
+	; ld hl, wBGPals1 palette PAL_BG_WATER color 2
+	; ld a, [hli]
+	; ldh [rBGPD], a
+	; ld a, [hli]
+	; ldh [rBGPD], a
+
+; .end
+	; pop af
+	; ldh [rSVBK], a
+	; ret
+
+FlickeringCaveEntrancePalette:
+; Don't update the palette on DMG
 	ldh a, [hCGB]
 	and a
 	ret z
@@ -915,105 +978,42 @@ AnimateWaterPalette:
 	cp %11100100
 	ret nz
 
-; Only update on even ticks
-	ld a, [wTileAnimationTimer]
-	ld l, a
-	and 1 ; odd
+; We only want to be here if we're in a dark cave.
+	ld a, [wTimeOfDayPalset]
+	cp DARKNESS_PALSET
 	ret nz
-
-; Ready for BGPD input
-	ld a, (1 << rBGPI_AUTO_INCREMENT) palette PAL_BG_WATER color 0
-	ldh [rBGPI], a
 
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBGPals1)
 	ldh [rSVBK], a
 
-; A cycle of 4 colors (0 1 2 1), updating every other tick
-	ld a, l
-	and %110
-	jr z, .color0
-	cp %100
-	jr z, .color2
+; Ready for BGPD input
+	ld a, (1 << rBGPI_AUTO_INCREMENT) palette PAL_BG_YELLOW color 0
+	ldh [rBGPI], a
+
+; A cycle of 2 colors (0 2), updating every other vblank
+	ldh a, [hVBlankCounter]
+	and %10
+	jr nz, .color1
 
 ; Copy one color from hl to rBGPI via rBGPD
 
-; color1
-	ld hl, wBGPals1 palette PAL_BG_WATER color 1
-	ld a, [hli]
-	ldh [rBGPD], a
-	ld a, [hli]
-	ldh [rBGPD], a
-	jr .end
+; color0
+	ld hl, wBGPals1 palette PAL_BG_YELLOW color 0
+	jr .okay
 
-.color0
-	ld hl, wBGPals1 palette PAL_BG_WATER color 0
-	ld a, [hli]
-	ldh [rBGPD], a
-	ld a, [hli]
-	ldh [rBGPD], a
-	jr .end
+.color1
+	ld hl, wBGPals1 palette PAL_BG_YELLOW color 1
 
-.color2
-	ld hl, wBGPals1 palette PAL_BG_WATER color 2
+.okay
 	ld a, [hli]
 	ldh [rBGPD], a
 	ld a, [hli]
 	ldh [rBGPD], a
 
-.end
 	pop af
 	ldh [rSVBK], a
-	ret
-
-FlickeringCaveEntrancePalette:
-; Don't update the palette on DMG
-	; ldh a, [hCGB]
-	; and a
-	; ret z
-
-; ; Don't update a non-standard palette order
-	; ldh a, [rBGP]
-	; cp %11100100
-	; ret nz
-
-; ; We only want to be here if we're in a dark cave.
-	; ld a, [wTimeOfDayPalset]
-	; cp DARKNESS_PALSET
-	; ret nz
-
-	; ldh a, [rSVBK]
-	; push af
-	; ld a, BANK(wBGPals1)
-	; ldh [rSVBK], a
-
-; ; Ready for BGPD input
-	; ld a, (1 << rBGPI_AUTO_INCREMENT) palette PAL_BG_YELLOW color 0
-	; ldh [rBGPI], a
-
-; ; A cycle of 2 colors (0 2), updating every other vblank
-	; ldh a, [hVBlankCounter]
-	; and %10
-	; jr nz, .color1
-
-; ; Copy one color from hl to rBGPI via rBGPD
-
-; ; color0
-	; ld hl, wBGPals1 palette PAL_BG_YELLOW color 0
-	; jr .okay
-
-; .color1
-	; ld hl, wBGPals1 palette PAL_BG_YELLOW color 1
-
-; .okay
-	; ld a, [hli]
-	; ldh [rBGPD], a
-	; ld a, [hli]
-	; ldh [rBGPD], a
-
-	; pop af
-	; ldh [rSVBK], a
 	ret
 
 TowerPillarTilePointer1:  dw vTiles2 tile $2d, TowerPillarTile1

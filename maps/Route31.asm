@@ -384,26 +384,26 @@ Text_Route31CantTakeLastMon:
 
 Route31YoungsterText:
 	text "I found a good"
-	line "#MON in DARK"
-	cont "CAVE."
+	line "#MON in the"
+	cont "grass!"
 
 	para "I'm going to raise"
-	line "it to take on"
-	cont "FALKNER."
+	line "it and take on"
+	cont "SOPHIA!"
 
-	para "He's the leader of"
-	line "VIOLET CITY's GYM."
+	para "She's the Silber-"
+	line "nium Gym leader!"
 	done
 
 Route31SignText:
 	text "ROUTE 31"
 
-	para "VIOLET CITY -"
-	line "CHERRYGROVE CITY"
+	para "(The sign is"
+	line "vandalised.)"
 	done
 
 DarkCaveSignText:
-	text "DARK CAVE"
+	text "PRIMARIUNM CAVE"
 	done
 	
 Route31MailRecipientText:
@@ -425,7 +425,7 @@ Route31_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4,  5, CHERRYGROVE_CAVE, 1
+	warp_event  4,  5, CHERRYGROVE_CAVE, 2
 	warp_event  2,  1, ROUTE_31_VIOLET_GATE, 4
 	warp_event 34,  5, DARK_CAVE_VIOLET_ENTRANCE, 1
 

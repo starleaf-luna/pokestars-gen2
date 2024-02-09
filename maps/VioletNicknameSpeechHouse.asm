@@ -24,18 +24,27 @@ VioletNicknameSpeechHouseBirdScript:
 	end
 
 VioletNicknameSpeechHouseTeacherText:
-	text "She uses the names"
-	line "of her favorite"
-	cont "things to eat."
+	text "One day, when she"
+	line "was out training,"
+	
+	para "my daughter's PICHU"
+	line "fainted."
+	
+	para "It took too long"
+	line "to heal it."
+	
+	para "It passed. My"
+	line "daughter's been"
 
-	para "For the nicknames"
-	line "she gives to her"
-	cont "#MON, I mean."
+	para "in constant dis-"
+	line "tress ever since."
 	done
 
 VioletNicknameSpeechHouseLassText:
-	text "I call my PIDGEY"
-	line "STRAWBERRY!"
+	text "Sob… Snivel… Sob…"
+	
+	para "(She's crying un-"
+	line "controllably.)"
 	done
 
 VioletNicknameSpeechHouseBirdText:
@@ -56,4 +65,4 @@ VioletNicknameSpeechHouse_MapEvents:
 	def_object_events
 	object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletNicknameSpeechHouseTeacherScript, -1
 	object_event  6,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletNicknameSpeechHouseLassScript, -1
-	object_event  5,  2, SPRITE_BIRD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VioletNicknameSpeechHouseBirdScript, -1
+	;object_event  5,  2, SPRITE_BIRD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VioletNicknameSpeechHouseBirdScript, -1 ; no bird the pokemon is dead and is not even a pidgey :P
