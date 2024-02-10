@@ -30,6 +30,7 @@ OutdoorSprites:
 	dw NewBarkGroupSprites
 	dw SaffronGroupSprites
 	dw CherrygroveGroupSprites
+	dw VioletGroupSprites
 	assert_table_length NUM_MAP_GROUPS
 
 PalletGroupSprites:

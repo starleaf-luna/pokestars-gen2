@@ -250,6 +250,8 @@ ENDM
 	map_const ROUTE_35_NATIONAL_PARK_GATE,                  4,  4 ; 15
 	map_const ROUTE_36_RUINS_OF_ALPH_GATE,                  5,  4 ; 16
 	map_const ROUTE_36_NATIONAL_PARK_GATE,                  5,  4 ; 17
+	map_const VIOLET_HOUSE1,	 							5,  4 ; 18
+	map_const VIOLET_HOUSE2,								4,  5 ; 19
 	endgroup
 
 	newgroup GOLDENROD                                            ; 11
@@ -490,7 +492,7 @@ ENDM
 
 	newgroup CHERRYGROVE                                          ; 26
 	map_const ROUTE_30,                                    10, 27 ;  1
-	map_const ROUTE_31,                                    20,  9 ;  2
+	map_const ROUTE_31,                                    20, 11 ;  2
 	map_const CHERRYGROVE_CITY,                            20,  9 ;  3
 	map_const CHERRYGROVE_PCM,                             10,  4 ;  4
 	map_const CHERRYGROVE_GYM_SPEECH_HOUSE,                 4,  4 ;  5
@@ -503,6 +505,10 @@ ENDM
 	map_const CHERRYGROVE_HOUSE2,							4,  5 ; 12
 	map_const CHERRYGROVE_HOUSE3,							3,  4 ; 13
 	map_const CHERRYGROVE_HOUSE4,							6,  4 ; 14
+	endgroup
+	
+	newgroup SILBERNIUM_OLD										  ; 27
+	map_const SILBERNIUM_OLD_CITY,						   20, 13 ;  1
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 26

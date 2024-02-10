@@ -1563,17 +1563,17 @@ IF STARS_ISDEMO
 	para "experience all of"
 	line "it unfortunately,"
 	
-	para "the demo is short"
-	line "and is meant to be"
+	para "the demo is longer"
+	line "than the last, but"
 	
-	para "a proof-of-"
-	line "concept."
+	para "it's not the final"
+	line "build."
 	
-	para "However, this demo"
-	line "isn't the whole"
+	para "Please be patient"
+	line "for it."
 	
-	para "game. Please be"
-	line "patient for it."
+	para "Thank you for"
+	line "playing!"
 ELSE
 	text "People and #MON"
 	line "live together by"
@@ -1589,15 +1589,12 @@ ENDC
 
 _OakText5::
 IF STARS_ISDEMO
-	text "The demo IS short,"
-	line "but again, I want"
+	text "Well, not every"
+	line "part of the new"
 	
-	para "to reassure you"
-	line "that the full game"
-	
-	para "will come soon."
-	line "Thanks for pla-"
-	cont "ying!"
+	para "city is fully com-"
+	line "plete. For example"
+	cont "the Game Center."
 ELSE
 	text "But we don't know"
 	line "everything about"

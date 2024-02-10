@@ -7,6 +7,10 @@
 	const VIOLETCITY_FRUIT_TREE
 	const VIOLETCITY_POKE_BALL1
 	const VIOLETCITY_POKE_BALL2
+	const VIOLETCITY_DEMO_GUARD1
+	const VIOLETCITY_DEMO_GUARD2
+	const VIOLETCITY_DEMO_GUARD3
+	const VIOLETCITY_DEMO_GUARD4
 
 VioletCity_MapScripts:
 	def_scene_scripts
@@ -48,6 +52,12 @@ VioletCityEarlScript:
 	clearevent EVENT_EARLS_ACADEMY_EARL
 	waitsfx
 	end
+	
+VioletCityDemoGuardScript:
+	jumptextfaceplayer VioletCityDemoGuardText
+	
+VioletCityBuildingClosedScript:
+	jumptextfaceplayer VioletCityBuildingClosedText
 
 VioletCityLassScript:
 	jumptextfaceplayer VioletCityLassText
@@ -239,8 +249,9 @@ VioletCityGrampsText:
 	para "She has started"
 	line "just recently,"
 
-	para "but no one had"
-	line "beaten her yet!"
+	para "but everyone is"
+	line "talking about her"
+	cont "pure skill!"
 	done
 
 VioletCityYoungsterText:
@@ -281,6 +292,24 @@ EarlsPokemonAcademySignText:
 	para "KEEP OUT! DANGER"
 	line "RISK!"
 	done
+	
+VioletCityDemoGuardText:
+	text "Oh… You want to"
+	line "continue…?"
+	
+	para "Well…"
+	
+	para "See you next demo!"
+	line "Love,  CRYSTALMOON"
+	
+	para "PS. Did you replay"
+	line "the beginning?"
+	done
+	
+VioletCityBuildingClosedText:
+	text "This building is"
+	line "closed."
+	done
 
 VioletCity_MapEvents:
 	db 0, 0 ; filler
@@ -288,12 +317,12 @@ VioletCity_MapEvents:
 	def_warp_events
 	warp_event 18,  7, VIOLET_MART, 2
 	warp_event 27, 22, VIOLET_GYM, 1
-	warp_event 27, 15, EARLS_POKEMON_ACADEMY, 1
+	warp_event 27, 15, VIOLET_HOUSE2, 1
 	warp_event 23, 15, VIOLET_NICKNAME_SPEECH_HOUSE, 1
 	warp_event 22,  7, VIOLET_POKECENTER_1F, 1
 	warp_event 31, 15, VIOLET_KYLES_HOUSE, 1
 	warp_event  6, 23, SPROUT_TOWER_1F, 1
-	warp_event 35, 15, ROUTE_31_VIOLET_GATE, 1
+	warp_event 35, 15, VIOLET_HOUSE1, 1
 	warp_event 11, 31, ROUTE_31_VIOLET_GATE, 2
 
 	def_coord_events
@@ -316,3 +345,13 @@ VioletCity_MapEvents:
 	object_event 15, 32, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1
 	object_event 14,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityPPUp, EVENT_VIOLET_CITY_PP_UP
 	object_event 35,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityRareCandy, EVENT_VIOLET_CITY_RARE_CANDY
+	object_event 38,  6, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityDemoGuardScript, -1
+	object_event 38,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityDemoGuardScript, -1
+	object_event 38,  8, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityDemoGuardScript, -1
+IF !DEF(_DEBUG)
+	object_event 38,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityDemoGuardScript, -1
+ENDC
+	object_event  6, 24, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityBuildingClosedScript, -1
+	; object_event 27, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityBuildingClosedScript, -1
+	; object_event 35, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityBuildingClosedScript, -1
+	

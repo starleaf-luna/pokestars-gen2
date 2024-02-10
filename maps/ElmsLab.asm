@@ -194,8 +194,8 @@ TotodilePokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	refreshscreen
-	pokepic TOTODILE
-	cry TOTODILE
+	pokepic CUBONE
+	cry CUBONE
 	waitbutton
 	closepokepic
 	opentext
@@ -207,12 +207,12 @@ TotodilePokeBallScript:
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
-	getmonname STRING_BUFFER_3, TOTODILE
+	getmonname STRING_BUFFER_3, CUBONE
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke TOTODILE, 5, BERRY
+	givepoke CUBONE, 5, BERRY
 	closetext
 	sjump RivalGetChikorita
 	applymovement PLAYER, AfterTotodileMovement
@@ -223,8 +223,8 @@ ChikoritaPokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	refreshscreen
-	pokepic CHIKORITA
-	cry CHIKORITA
+	pokepic DRATINI
+	cry DRATINI
 	waitbutton
 	closepokepic
 	opentext
@@ -236,19 +236,19 @@ ChikoritaPokeBallScript:
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
-	getmonname STRING_BUFFER_3, CHIKORITA
+	getmonname STRING_BUFFER_3, DRATINI
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke CHIKORITA, 5, BERRY
+	givepoke DRATINI, 5, BERRY
 	closetext
 	sjump RivalGetCyndaquil
 
 RivalGetChikorita:
 	applymovement ELMSLAB_RIVAL, RivalGetChikoritaMovement
 	opentext
-	getmonname STRING_BUFFER_3, CHIKORITA
+	getmonname STRING_BUFFER_3, DRATINI
 	writetext ElmText_RivalIllTakeThisOne
 	closetext
 	disappear ELMSLAB_POKE_BALL3
@@ -257,7 +257,7 @@ RivalGetChikorita:
 RivalGetTotodile:
 	applymovement ELMSLAB_RIVAL, RivalGetTotodileMovement
 	opentext
-	getmonname STRING_BUFFER_3, TOTODILE
+	getmonname STRING_BUFFER_3, CUBONE
 	writetext ElmText_RivalIllTakeThisOne
 	closetext
 	disappear ELMSLAB_POKE_BALL2
@@ -278,13 +278,13 @@ RivalGetChikoritaMovement:
 	step DOWN
 	step RIGHT
 	step RIGHT
-	step UP
+	turn_head UP
 	step_end
 RivalGetTotodileMovement:
 	step DOWN
 	step RIGHT
 	step RIGHT
-	step UP
+	turn_head UP
 	step_end
 RivalGetCyndaquilMovement:
 	step RIGHT
@@ -684,7 +684,6 @@ ElmsLab_BlueLeavesMovement:
 	step DOWN
 	step DOWN
 	step DOWN
-	step DOWN
 	step_end
 
 ElmsLab_WalkUpToElmMovement:
@@ -791,14 +790,14 @@ ElmsLab_ElmToDefaultPositionMovement2:
 
 AfterCyndaquilMovement:
 	step LEFT
-	step UP
+	;step UP
 	turn_head UP
 	step_end
 
 AfterTotodileMovement:
 	step LEFT
 	step LEFT
-	step UP
+	;step UP
 	turn_head UP
 	step_end
 
@@ -806,7 +805,7 @@ AfterChikoritaMovement:
 	step LEFT
 	step LEFT
 	step LEFT
-	step UP
+	;step UP
 	turn_head UP
 	step_end
 	
@@ -835,7 +834,7 @@ ElmText_Intro:
 	text "OAK: <PLAYER>!"
 	line "There you are!"
 
-	para "Let's wait..."
+	para "Let's wait…"
 	done
 	
 ElmText_RivalShowsUp:
@@ -973,19 +972,6 @@ ElmText_MissionFromMrPokemon:
 ElmText_ChooseAPokemon:
 	text "Go on. Pick one!"
 	done
-	line "raise one of the"
-
-	para "#MON contained"
-	line "in these BALLS."
-
-	para "Go on. Pick one!"
-	done
-	
-	db	 "#MON's first"
-	cont "partner, <PLAY_G>!"
-
-	para "Go on. Pick one!"
-	done
 
 ElmText_LetYourMonBattleIt:
 	text "If a wild #MON"
@@ -1002,19 +988,19 @@ LabWhereGoingText:
 TakeCyndaquilText:
 	text "OAK: You'll take"
 	line "CYNDAQUIL, the"
-	cont "fire #MON?"
+	cont "Dark-type #MON?"
 	done
 
 TakeTotodileText:
 	text "OAK: You'll take"
-	line "TOTODILE, the"
-	cont "water #MON?"
+	line "CUBONE, the"
+	cont "Ground #MON?"
 	done
 
 TakeChikoritaText:
 	text "OAK: You'll take"
-	line "CHIKORITA, the"
-	cont "grass #MON?"
+	line "DRATINI, the"
+	cont "Dragon #MON?"
 	done
 
 DidntChooseStarterText:

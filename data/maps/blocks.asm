@@ -1051,9 +1051,11 @@ SECTION "Map Blocks 4", ROMX
 CherrygrovePCM_Blocks:
 	INCBIN "maps/PokecenterAndMart.ablk"
 	
+VioletHouse1_Blocks:
 CherrygroveHouse1_Blocks:
 	INCBIN "maps/CherrygroveHouse1.ablk"
 	
+VioletHouse2_Blocks:
 CherrygroveHouse2_Blocks:
 	INCBIN "maps/CherrygroveHouse2.ablk"
 	
@@ -1065,4 +1067,10 @@ CherrygroveHouse4_Blocks:
 	
 CherrygroveCave_Blocks:
 	INCBIN "maps/CherrygroveCave.ablk"
+	
+SilberniumOld_Blocks:
+	INCBIN "maps/SilberniumOld.ablk"
+	
+UnusedBlocks:
+	INCBIN "maps/SilberniumNew.ablk"
 	

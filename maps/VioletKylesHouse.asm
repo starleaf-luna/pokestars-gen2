@@ -19,15 +19,14 @@ Kyle:
 	end
 
 VioletKylesHousePokefanMText:
-	text "A #MON you get"
-	line "in a trade grows"
-	cont "quickly."
+	text "Everyone's talking"
+	line "about it."
 
-	para "But if you don't"
-	line "have the right GYM"
+	para "You probably heard"
+	line "it, too."
 
-	para "BADGE, they may"
-	line "disobey you."
+	para "Our grave site's"
+	line "closed."
 	done
 
 VioletKylesHouse_MapEvents:

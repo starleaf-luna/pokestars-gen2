@@ -105,10 +105,9 @@ ENDM
 	connection north, Route30, ROUTE_30, 5
 	connection east, Route29, ROUTE_29, 0
 
-	map_attributes VioletCity, VIOLET_CITY, $05, SOUTH | WEST; | EAST
-	connection south, Route32, ROUTE_32, 0
-	;connection west, Route36, ROUTE_36, 0
-	connection west, Route31, ROUTE_31, 0
+	map_attributes VioletCity, VIOLET_CITY, $05, WEST | EAST
+	connection west, Route31, ROUTE_31, -2
+	connection east, SilberniumOld, SILBERNIUM_OLD_CITY, 0
 
 	map_attributes AzaleaTown, AZALEA_TOWN, $05, WEST | EAST
 	connection west, Route34, ROUTE_34, -18
@@ -160,13 +159,12 @@ ENDM
 	connection west, CherrygroveCity, CHERRYGROVE_CITY, 0
 	connection east, NewBarkTown, NEW_BARK_TOWN, 0
 
-	map_attributes Route30, ROUTE_30, $05, NORTH | SOUTH
-	connection north, Route31, ROUTE_31, -10
+	map_attributes Route30, ROUTE_30, $05, SOUTH
 	connection south, CherrygroveCity, CHERRYGROVE_CITY, -5
 
 	map_attributes Route31, ROUTE_31, $05, SOUTH | EAST
 	connection south, Route30, ROUTE_30, 10
-	connection east, VioletCity, VIOLET_CITY, 0
+	connection east, VioletCity, VIOLET_CITY, 2
 
 	map_attributes Route32, ROUTE_32, $05, NORTH | SOUTH
 	connection north, VioletCity, VIOLET_CITY, 0
@@ -374,6 +372,9 @@ ENDM
 	map_attributes Route10South, ROUTE_10_SOUTH, $2c, NORTH | SOUTH
 	connection north, Route10North, ROUTE_10_NORTH, 0
 	connection south, LavenderTown, LAVENDER_TOWN, 0
+	
+	map_attributes SilberniumOld, SILBERNIUM_OLD_CITY, $05, WEST
+	connection west, VioletCity, VIOLET_CITY, 0
 
 	map_attributes Route23, ROUTE_23, $0f, 0
 	map_attributes SproutTower1F, SPROUT_TOWER_1F, $00, 0
@@ -700,3 +701,5 @@ ENDM
 	map_attributes CherrygroveHouse3, CHERRYGROVE_HOUSE3, $00, 0
 	map_attributes CherrygroveHouse4, CHERRYGROVE_HOUSE4, $00, 0
 	map_attributes CherrygroveCave, CHERRYGROVE_CAVE, $09, 0
+	map_attributes VioletHouse1, VIOLET_HOUSE1, $00, 0
+	map_attributes VioletHouse2, VIOLET_HOUSE2, $00, 0

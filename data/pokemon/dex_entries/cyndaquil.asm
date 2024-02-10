@@ -1,10 +1,10 @@
-	db "FIRE MOUSE@" ; species name
+	db "FIRE MOUSE@"; species name
 	dw 108, 170 ; height, weight
 
-	db   "The fire that"
+	db   "The gas that"
 	next "spouts from its"
-	next "back burns hottest"
+	next "back poisons e-"
 
-	page "when it is angry."
-	next "The flaring flames"
-	next "intimidate foes.@"
+	page "veryone that tou-"
+	next "ches it. The gas"
+	next "intimidates foes.@"

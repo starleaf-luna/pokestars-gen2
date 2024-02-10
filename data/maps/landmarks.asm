@@ -14,6 +14,7 @@ Landmarks:
 	landmark 100,  80, Route30Name
 	landmark  96,  60, Route31Name
 	landmark  84,  60, VioletCityName
+	landmark 100,  60, Silbernium2CityName
 	landmark  85,  58, SproutTowerName
 	landmark  84,  92, Route32Name
 	landmark  76,  76, RuinsOfAlphName
@@ -109,6 +110,7 @@ Landmarks:
 NewBarkTownName:     db "INICIUM<BSP>TOWN@"
 CherrygroveCityName: db "PRIMARINUM<BSP>CITY@"
 VioletCityName:      db "SILBERNIUM<BSP>CITY@"
+Silbernium2CityName: db "SILBERNIUM<BSP>OLD@"
 AzaleaTownName:      db "NAME TBD@"
 GoldenrodCityName:   db "NAME TBD@"
 EcruteakCityName:    db "NAME TBD@"
