@@ -2,9 +2,6 @@
 
 Pokémon Stars is a hack of the Pokémon Crystal engine. It introduces a whole new storyline, characters, and a new Pokémon (Jirachi), as well as various bugfixes.
 
-# NOTICE
-As of March 15, 2024, the project has been cancelled (temporarily? we'll see) due to an unfortunate lack of access to pokecommunity, making it impossible for me to push updates there.
-
 To set up the repository, see [INSTALL.md](INSTALL.md).
 
 To see what still needs to be done, see [WIP.md](WIP.md).
