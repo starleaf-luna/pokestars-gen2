@@ -109,6 +109,7 @@
 	const MUSIC_MTITLE3						 ; 68
 	const MUSIC_DIGDA01						 ; 69
 	const MUSIC_OLDCITY						 ; 6A
+	const MUSIC_PRIMARINUM_CAVE				 ; 6B
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for this value (see home/map.asm)

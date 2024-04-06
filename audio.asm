@@ -140,6 +140,7 @@ INCLUDE "audio/music/mus_koukan.asm"
 INCLUDE "audio/music/m_title3.asm"
 INCLUDE "audio/music/digda01.asm"
 INCLUDE "audio/music/silbernium_oldcity.asm"
+INCLUDE "audio/music/cherrygrovecave.asm"
 
 
 SECTION "Extra Songs 1", ROMX

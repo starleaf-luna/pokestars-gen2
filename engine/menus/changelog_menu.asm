@@ -46,7 +46,5 @@ ChangelogRoom_Changelog:
 	db "  SILBERNIUM<LF>"
 	db "- tidy up for DEMO2<LF>"
 	db "  release<LF>"
-	;db "- begin work on<LF>"
-	;db "  samorkod project<LF>"
-	db "last upd. 10.02.24<LF>"
+	db "last upd. 29.03.24<LF>"
 	db "          DD.MM.YY@"		; added 05 jan 24

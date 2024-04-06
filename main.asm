@@ -716,3 +716,9 @@ INCLUDE "audio/pcm_play.asm"
 SECTION "Minigame Engine 1", ROMX
 
 INCLUDE "engine/menus/minigame_test.asm"
+
+
+SECTION "Crafting Engine 1", ROMX
+
+INCLUDE "engine/crafting/core.asm"
+INCLUDE "engine/crafting/menu.asm"

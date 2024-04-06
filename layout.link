@@ -44,7 +44,6 @@ ROMX $06
 ROMX $07
 	"Roofs"
 	"Tileset Data 2"
-	"Extra Songs 1"
 ROMX $08
 	"Clock Reset"
 	"Tileset Data 3"
@@ -181,6 +180,7 @@ ROMX $43
 ROMX $44
 	"Events"
 ROMX $45
+	"Extra Songs 1"
 ROMX $47
 	"Battle Tower"
 ROMX $48
@@ -315,6 +315,8 @@ ROMX $80
 	"PCM Data 1"
 	"Minigame Engine 1"
 	"Tileset Data 12"
+ROMX $81
+	"Crafting Engine 1"
 WRAM0
 	"Stack"
 	"Audio RAM"

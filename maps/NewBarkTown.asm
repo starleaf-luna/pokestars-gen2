@@ -269,18 +269,7 @@ Text_ElmDiscoveredNewMon:
 	done
 
 NewBarkTownRivalText1:
-	text "<……>"
-
-	para "So this is the"
-	line "famous ELM #MON"
-	cont "LAB…"
-	done
-
 NewBarkTownRivalText2:
-	text "…What are you"
-	line "staring at?"
-	done
-
 NewBarkTownSignText:
 	text "Inicium Town"
 
@@ -294,7 +283,8 @@ NewBarkTownPlayersHouseSignText:
 	done
 
 NewBarkTownElmsLabSignText:
-	text "ELM #MON LAB"
+	text "OAK #MON" 
+	line "RESEARCH LAB"
 	done
 
 NewBarkTownElmsHouseSignText:

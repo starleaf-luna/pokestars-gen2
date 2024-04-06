@@ -56,7 +56,7 @@ RGBLINK ?= $(RGBDS)rgblink
 .PRECIOUS:
 .SECONDARY:
 
-all: crystal11 crystal11_debug
+all: crystal11_debug crystal11
 crystal:         pokecrystal.gbc
 crystal11:       pokecrystal11.gbc
 crystal_au:      pokecrystal_au.gbc

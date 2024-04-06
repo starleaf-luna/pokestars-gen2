@@ -111,4 +111,5 @@ Music:
 	dba Music_Title3
 	dba Music_Digda01
 	dba Music_Lavender ; OldCity Silbernium
+	dba Music_PrimarinumCave
 	assert_table_length NUM_MUSIC_SONGS

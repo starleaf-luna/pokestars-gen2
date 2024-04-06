@@ -28,9 +28,8 @@ _TitleScreen:
 	call Decompress
 	
 IF TITLE_SHOWVER
-	ld c, 27
+	lb bc, BANK(TitleVersionFontGFX), 27
 	ld de, TitleVersionFontGFX
-	ld b, BANK(TitleVersionFontGFX)
 	ld hl, $8a40
 	call Get1bpp
 ENDC
@@ -93,8 +92,8 @@ ENDC
 	call ByteFill
 
 ; 'CRYSTAL VERSION'
-	hlbgcoord 6, 9
-	ld bc, 10 ; length of version text
+	hlbgcoord 5, 9
+	ld bc, 11 ; length of version text
 	ld a, 1
 	call ByteFill
 
@@ -515,7 +514,7 @@ pushc
 	
 VersionText:
 IF STARS_ISDEMO
-	db "{STARS_STATUS} {STARS_DEMONUM}@"
+	db "DEMO {STARS_DEMONUM}@"
 ELSE
 	db "{STARS_STATUS} VER {STARS_VERSION}@"
 ENDC
