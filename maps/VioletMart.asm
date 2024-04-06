@@ -21,29 +21,32 @@ VioletMartCooltrainerMScript:
 	jumptextfaceplayer VioletMartCooltrainerMText
 
 VioletMartGrannyText:
-	text "When you first"
-	line "catch a #MON,"
-	cont "it may be weak."
+	text "The Old City to"
+	line "the east is too"
+	
+	para "dangerous to vi-"
+	line "sit."
 
-	para "But it will even-"
-	line "tually grow to be"
-	cont "strong."
+	para "It was polluted by"
+	line "a Team C. experi-"
+	cont "ment gone wrong."
 
-	para "It's important to"
-	line "treat #MON with"
-	cont "love."
+	para "It's blocked until"
+	line "a certain time."
 	done
 
 VioletMartCooltrainerMText:
-	text "#MON can hold"
-	line "items like POTION"
-	cont "and ANTIDOTE."
+	text "#MON who pass"
+	line "are buried in the"
+	
+	para "grave site to the"
+	line "east."
 
-	para "But they don't"
-	line "appear to know how"
+	para "Well, they were."
+	line "Now it's blocked."
 
-	para "to use manmade"
-	line "items."
+	para "That's thanks to"
+	line "Team C. of course."
 	done
 
 VioletMart_MapEvents:

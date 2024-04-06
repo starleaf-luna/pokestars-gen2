@@ -13,9 +13,11 @@
 	charmap "<DELAY>",	 $2a ; delay char
 	charmap "<WAIT>",	 $2b ; wait for btn press
 	charmap "<SCRL>",	 $2c ; "para" for gbc_only.asm
+	charmap "É",		 $34 ; control character, uses diacritic
 	charmap "<RED>",     $38 ; wRedsName
 	charmap "<GREEN>",   $39 ; wGreensName
 	charmap "<ENEMY>",   $3f
+	charmap "—", 		 $40 ; em dash
 	charmap "<MOM>",     $49 ; wMomsName
 	charmap "<PKMN>",    $4a ; "<PK><MN>"
 	charmap "<_CONT>",   $4b ; implements "<CONT>"
@@ -192,9 +194,10 @@
 	charmap "☎",        $d9
 	charmap "<BOLD_V>",  $da
 	charmap "<BOLD_S>",  $db
-	charmap "<COLON>",   $dc ; colon with tinier dots than ":"
-	charmap "“",         $dd ; opening quote
-	charmap "”",         $de ; closing quote
+	charmap "<COLON>",   $9c ; colon with tinier dots than ":"
+	charmap "é",		 $dc
+	charmap "<EM1>",     $dd ; opening quote
+	charmap "<EM2>",     $de ; closing quote
 
 	charmap "←",         $df
 	charmap "'",         $e0
@@ -211,7 +214,7 @@
 	charmap "<DOT>",     $e8 ; decimal point; same as "."
 	charmap "&",         $e9
 
-	charmap "é",         $ea
+	charmap "`",         $ea
 	charmap "→",         $eb
 	charmap "▷",         $ec
 	charmap "▶",         $ed

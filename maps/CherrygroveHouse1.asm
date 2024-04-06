@@ -17,7 +17,7 @@ CherrygroveHouse1Bookshelf:
 	jumpstd PictureBookshelfScript
 
 CherrygroveHouse1PokefanMText:
-	text "On ROUTE 30, there"
+	text "On Route 30, there"
 	line "is an abandoned"
 	cont "house."
 
@@ -30,7 +30,7 @@ CherrygroveHouse1PokefanMText:
 	para "Others say it used"
 	line "to be a facility"
 
-	para "where TEAM C. used"
+	para "where Team C. used"
 	line "to experiment with"
 	cont "combining #MON."
 	
@@ -51,7 +51,7 @@ CherrygroveHouse1BugCatcherText:
 	para "I have a dream"
 	line "of catching the"
 
-	para "WISH #MON,"
+	para "Wish #MON,"
 	line "JIRACHI!"
 	
 	para "Although I know"

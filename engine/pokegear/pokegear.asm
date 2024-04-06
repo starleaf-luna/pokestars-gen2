@@ -2535,11 +2535,11 @@ Pokedex_GetArea:
 	ld [hli], a ; tile id
 	inc de
 	push bc
-	ld c, PAL_OW_RED
+	ld c, PAL_OW_PINK
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr z, .male
-	inc c ; PAL_OW_BLUE
+	ld c, PAL_OW_BLUE
 .male
 	ld a, c
 	ld [hli], a ; attributes

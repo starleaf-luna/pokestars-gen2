@@ -749,17 +749,17 @@ SpriteAnimOAMData:
 
 .OAMData_BlueWalk:
 	db 4
-	dbsprite -1, -1,  0,  0, $00, PAL_OW_BLUE
-	dbsprite  0, -1,  0,  0, $01, PAL_OW_BLUE
-	dbsprite -1,  0,  0,  0, $02, PAL_OW_BLUE
-	dbsprite  0,  0,  0,  0, $03, PAL_OW_BLUE
+	dbsprite -1, -1,  0,  0, $00, PAL_OW_PINK
+	dbsprite  0, -1,  0,  0, $01, PAL_OW_PINK
+	dbsprite -1,  0,  0,  0, $02, PAL_OW_PINK
+	dbsprite  0,  0,  0,  0, $03, PAL_OW_PINK
 
 .OAMData_MagnetTrainBlue:
 	db 4
-	dbsprite -1, -1,  0,  0, $00, PAL_OW_BLUE | PRIORITY
-	dbsprite  0, -1,  0,  0, $01, PAL_OW_BLUE | PRIORITY
-	dbsprite -1,  0,  0,  0, $02, PAL_OW_BLUE | PRIORITY
-	dbsprite  0,  0,  0,  0, $03, PAL_OW_BLUE | PRIORITY
+	dbsprite -1, -1,  0,  0, $00, PAL_OW_PINK | PRIORITY
+	dbsprite  0, -1,  0,  0, $01, PAL_OW_PINK | PRIORITY
+	dbsprite -1,  0,  0,  0, $02, PAL_OW_PINK | PRIORITY
+	dbsprite  0,  0,  0,  0, $03, PAL_OW_PINK | PRIORITY
 
 .OAMData_MobileTradeCableBulge:
 	db 1

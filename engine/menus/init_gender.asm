@@ -10,11 +10,6 @@ InitCrystalData:
 	ld [wd478], a
 	ld [wd002], a
 	ld [wd003], a
-	ld a, [wd479]
-	res 0, a ; ???
-	ld [wd479], a
-	ld a, [wd479]
-	res 1, a ; ???
 	ld [wd479], a
 	ret
 
@@ -49,8 +44,8 @@ InitGender:
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_WRAP | STATICMENU_DISABLE_B ; flags
 	db 2 ; items
-	db "Boy@"
-	db "Girl@"
+	db "BOY@"
+	db "GIRL@"
 
 AreYouABoyOrAreYouAGirlText:
 	text_far _AreYouABoyOrAreYouAGirlText

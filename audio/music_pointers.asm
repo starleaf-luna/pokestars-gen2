@@ -108,4 +108,7 @@ Music:
 	dba Music_BattleTowerLobby
 	dba Music_MobileCenter
 	dba Music_UnusedSong
+	dba Music_Title3
+	dba Music_Digda01
+	dba Music_Lavender ; OldCity Silbernium
 	assert_table_length NUM_MUSIC_SONGS

@@ -619,13 +619,13 @@ _CGB_TrainerCard:
 	xor a ; CHRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, FALKNER ; KRIS
+	ld a, KRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, BUGSY
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, WHITNEY
+	ld a, FALKNER
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, MORTY
@@ -651,7 +651,7 @@ _CGB_TrainerCard:
 	and a
 	ld a, $1 ; kris
 	jr z, .got_gender
-	ld a, $0 ; chris
+	xor a
 .got_gender
 	call ByteFill
 	; fill trainer sprite area with same-gender palette
@@ -664,12 +664,9 @@ _CGB_TrainerCard:
 	ld a, $1 ; kris
 .got_gender2
 	call FillBoxCGB
-	; top-right corner still uses the border's palette
-	hlcoord 18, 1, wAttrmap
-	ld [hl], $1
 	hlcoord 2, 11, wAttrmap
 	lb bc, 2, 4
-	ld a, $1 ; falkner
+	ld a, $3 ; falkner
 	call FillBoxCGB
 	hlcoord 6, 11, wAttrmap
 	lb bc, 2, 4
@@ -695,23 +692,17 @@ _CGB_TrainerCard:
 	lb bc, 2, 4
 	ld a, $7 ; pryce
 	call FillBoxCGB
-	; clair uses kris's palette
-	ld a, [wPlayerGender]
-	and a
-	push af
-	jr z, .got_gender3
 	hlcoord 14, 14, wAttrmap
 	lb bc, 2, 4
-	ld a, $1
+	ld a, $3
 	call FillBoxCGB
-.got_gender3
-	pop af
-	ld c, $0
-	jr nz, .got_gender4
-	inc c
-.got_gender4
-	ld a, c
 	hlcoord 18, 1, wAttrmap
+	ld a, [wPlayerGender]
+	and a
+	ld a, $1 ; kris
+	jr z, .got_gender3
+	xor a ; chris
+.got_gender3
 	ld [hl], a
 	call ApplyAttrmap
 	call ApplyPals

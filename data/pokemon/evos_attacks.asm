@@ -2107,26 +2107,30 @@ CyndaquilEvosAttacks:
 	db EVOLVE_LEVEL, 14, QUILAVA
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, LEER
+	db 1, BITE
+	db 1, LICK
 	db 6, SMOKESCREEN
 	db 12, EMBER
+	db 13, BEAT_UP
 	db 19, QUICK_ATTACK
 	db 27, FLAME_WHEEL
 	db 36, SWIFT
 	db 46, FLAMETHROWER
+	db 50, DESTINY_BOND
 	db 0 ; no more level-up moves
 
 QuilavaEvosAttacks:
 	db EVOLVE_LEVEL, 36, TYPHLOSION
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, LEER
-	db 1, SMOKESCREEN
-	db 6, SMOKESCREEN
-	db 12, EMBER
+	db 1, BITE
+	db 1, LICK
+	db 1, BEAT_UP
+	db 20, CRUNCH
 	db 21, QUICK_ATTACK
 	db 31, FLAME_WHEEL
 	db 42, SWIFT
+	db 53, DESTINY_BOND
 	db 54, FLAMETHROWER
 	db 0 ; no more level-up moves
 
@@ -2136,12 +2140,11 @@ TyphlosionEvosAttacks:
 	db 1, LEER
 	db 1, SMOKESCREEN
 	db 1, EMBER
-	db 6, SMOKESCREEN
-	db 12, EMBER
 	db 21, QUICK_ATTACK
-	db 31, FLAME_WHEEL
 	db 45, SWIFT
+	db 55, DESTINY_BOND
 	db 60, FLAMETHROWER
+	db 75, FAINT_ATTACK
 	db 0 ; no more level-up moves
 
 TotodileEvosAttacks:

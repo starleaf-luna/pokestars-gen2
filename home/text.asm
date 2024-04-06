@@ -129,7 +129,7 @@ SpeechTextbox::
 	jp Textbox
 
 GameFreakText:: ; unreferenced
-	text "ゲームフりーク！" ; "GAMEFREAK!"
+	text "CRYSTALMOON！" ; "GAMEFREAK!"
 	done
 
 RadioTerminator::
@@ -220,6 +220,7 @@ ENDM
 	dict "<ROUTE>",   PlaceJPRoute
 	dict "<WATASHI>", PlaceWatashi
 	dict "<KOKO_WA>", PlaceKokoWa
+	dict "É",		  PlaceDiacriticE
 	dict "<RED>",     PrintRedsName
 	dict "<GREEN>",   PrintGreensName
 	dict "#",         PlacePOKe
@@ -237,6 +238,7 @@ ENDM
 	dict "<POKE>",    PlacePOKE
 	dict "<WBR>",     NextChar
 	dict "<BSP>",     " "
+	dict "—",		  PlaceEmDash
 	dict "<DEXEND>",  PlaceDexEnd
 	dict "<TARGET>",  PlaceMoveTargetsName
 	dict "<USER>",    PlaceMoveUsersName
@@ -245,7 +247,7 @@ ENDM
 	dict "<DELAY>",	  DelayText
 	; dict "ﾟ",         .place ; should be .diacritic
 	; dict "ﾞ",         .place ; should be .diacritic
-	; jr .not_diacritic
+	;jr .not_diacritic
 
 ; .diacritic ; unreferenced
 	; ld b, a
@@ -285,7 +287,7 @@ ENDM
 	; ld b, "ﾟ" ; handakuten
 	; call Diacritic
 
-; .place
+.place
 	ld [hli], a
 	call PrintLetterDelay
 	jp NextChar
@@ -325,7 +327,24 @@ PlacePOKE:    print_name PlacePOKEText
 PlaceJPRoute: print_name PlaceJPRouteText
 PlaceWatashi: print_name PlaceWatashiText
 PlaceKokoWa:  print_name PlaceKokoWaText
+PlaceEmDash:  print_name PlaceEmDashText
 
+PlaceDiacriticE::
+	push hl
+	ld bc, -SCREEN_WIDTH
+	add hl, bc
+	ld a, [hl]
+	cp " " ; don't overwrite any tiles
+	jr nz, .notBlank ; other than space
+	ld [hl], "`"
+	pop hl
+	ld a, "E"
+	jp CheckDict.place
+.notBlank:
+	pop hl
+	ld a, "é" ; use the lowercase
+	jp CheckDict.place ; variant instead
+	
 PlaceMoveTargetsName::
 	ldh a, [hBattleTurn]
 	xor 1
@@ -395,7 +414,6 @@ PlaceGenderedPlayerName::
 	ld de, KunSuffixText
 	jr z, PlaceCommandCharacter
 	ld de, ChanSuffixText
-	jr PlaceCommandCharacter
 
 PlaceCommandCharacter::
 	call PlaceString
@@ -405,21 +423,22 @@ PlaceCommandCharacter::
 	jp NextChar
 
 TMCharText::      db "TM@"
-TrainerCharText:: db "TRAINER@"
+TrainerCharText:: db "Trainer@"
 PCCharText::      db "PC@"
-RocketCharText::  db "ROCKET@"
-PlacePOKeText::   db "POKé@"
+RocketCharText::  db "Rocket@"
+PlacePOKeText::   db "POKÉ@"
 KougekiText::     db "こうげき@"
 SixDotsCharText:: db "……@"
-EnemyText::       db "Enemy @"
+EnemyText::       db "Foe @"
 PlacePKMNText::   db "<PK><MN>@"
 PlacePOKEText::   db "<PO><KE>@"
 String_Space::    db " @"
+PlaceEmDashText:: db "<EM1><EM2>"
 ; These strings have been dummied out.
 PlaceJPRouteText::
 PlaceWatashiText::
-PlaceKokoWaText:: db "@"
-KunSuffixText::   db "@"
+PlaceKokoWaText::
+KunSuffixText::
 ChanSuffixText::  db "@"
 
 NextLineChar::
@@ -496,8 +515,8 @@ Paragraph::
 .linkbattle
 	call Text_WaitBGMap
 	call PromptButton
-	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
-	lb bc, TEXTBOX_INNERH - 1, TEXTBOX_INNERW
+	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY - 1
+	lb bc, TEXTBOX_INNERH, TEXTBOX_INNERW
 	call ClearBox
 	call UnloadBlinkingCursor
 	ld c, 20

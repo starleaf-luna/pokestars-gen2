@@ -39,13 +39,13 @@ ElmsWifeText:
 	line "he fell so sick."
 	
 	para "What's going on"
-	line "in BULONIA has"
+	line "in Bulonia has"
 	
 	para "made him worry,"
 	line "too…"
 	
 	para "Oh, where is he?"
-	line "He's in KANTO."
+	line "He's in Kanto."
 	done
 
 ElmsSonText:
@@ -81,8 +81,8 @@ ElmsHousePCText:
 	line "How are you?"
 
 	para "I'm currently in"
-	line "KANTO at PROF.OAK's"
-	cont "LAB."
+	line "Kanto at PROF.OAK's"
+	cont "Lab."
 
 	para "I'm talking with"
 	line "PROF.OAK. He's so"
@@ -93,7 +93,7 @@ ElmsHousePCText:
 	cont "here. He said no."
 	
 	para "Well, how's life"
-	line "in BULONIA? I'll"
+	line "in Bulonia? I'll"
 	cont "see you soon!"
 	
 	para "      ELM"
@@ -103,7 +103,7 @@ ElmsHousePCText:
 
 	para "It's a mail to"
 	line "ELM's wife,"
-	cont "dated MARCH."
+	cont "dated March."
 	done
 
 ElmsHouse_MapEvents:

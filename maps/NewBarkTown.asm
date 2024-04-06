@@ -219,7 +219,7 @@ Text_ItsDangerousToGoAlone:
 	para "grass on the way"
 	line "to the next town!"
 	
-	para "Besides, TEAM C."
+	para "Besides, Team C."
 	line "is on the lookout"
 	cont "for #MON!"
 	done
@@ -282,7 +282,7 @@ NewBarkTownRivalText2:
 	done
 
 NewBarkTownSignText:
-	text "INICIUM TOWN"
+	text "Inicium Town"
 
 	para "The Town of"
 	line "the Overcomers"
@@ -308,7 +308,7 @@ NewBarkTownPokeCentreSignText:
 	para "NOTICE: The"
 	line "#MON CENTER"
 	
-	para "in INICIUM TOWN"
+	para "in Inicium Town"
 	line "has been closed"
 	
 	para "due to government"
@@ -316,7 +316,7 @@ NewBarkTownPokeCentreSignText:
 	
 	para "Please go to the"
 	line "new PCM building"
-	cont "in PRIMARINUM."
+	cont "in Primarinum."
 	done
 
 NewBarkTown_MapEvents:

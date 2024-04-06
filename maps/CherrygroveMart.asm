@@ -41,32 +41,32 @@ CherrygroveMartYoungsterScript:
 	jumptextfaceplayer CherrygroveMartYoungsterText
 
 CherrygroveMartCooltrainerMText:
-	text "They're fresh out"
-	line "of # BALLS!"
+	text "I got of Poke ball"
+	line "of Poke Ball!"
 
-	para "When will they get"
-	line "more of them?"
+	para "When get they more"
+	line "of Poke Ball!"
 	done
 
 CherrygroveMartCooltrainerMText_PokeBallsInStock:
-	text "# BALLS are in"
-	line "stock! Now I can"
-	cont "catch #MON!"
+	text "Poke Ball Get!"
+	line "I now catch then"
+	cont "Poke Mon !!"
 	done
 
 CherrygroveMartYoungsterText:
-	text "When I was walking"
-	line "in the grass, a"
+	text "When I walk on"
+	line "grass, "
 
-	para "bug #MON poi-"
-	line "soned my #MON!"
+	para "bug Poke Mon poison"
+	line "on my Poke !"
 
-	para "I just kept going,"
-	line "but then my"
-	cont "#MON fainted."
+	para "I keep go, but my"
+	line "Poke died !!"
+	cont "             "
 
-	para "You should keep an"
-	line "ANTIDOTE with you."
+	para "You keep Anti Dote"
+	line "with !"
 	done
 
 CherrygroveMart_MapEvents:

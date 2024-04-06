@@ -64,7 +64,7 @@ PrintLetterDelay::
 	jr z, .wait
 
 .delay
-	call DelayFrame
+	;call DelayFrame
 	jr .end
 
 .wait

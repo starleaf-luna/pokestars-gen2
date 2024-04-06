@@ -18,7 +18,7 @@ CherrygroveGymSpeechHouseBookshelf:
 
 CherrygroveGymSpeechHousePokefanMText:
 	text "You're trying to"
-	line "defeat TEAM C.?"
+	line "defeat Team C.?"
 
 	para "…Yeah, don't count"
 	line "on it, kiddo."
@@ -36,7 +36,7 @@ CherrygroveGymSpeechHousePokefanMText:
 CherrygroveGymSpeechHouseBugCatcherText:
 	text "When I get older,"
 	line "I'm going to be a"
-	cont "GYM LEADER!"
+	cont "GYM leader!"
 
 	para "I make my #MON"
 	line "battle with my"

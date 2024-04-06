@@ -1,5 +1,5 @@
 MBC30Screen::
-	ld c, 13
+	;ld c, 13
 	ld hl, MBC30CompatTestData
 	; ld de, MBC30CompatTestDataDuplicate
 	ld a, BANK(MBC30CompatTestData)

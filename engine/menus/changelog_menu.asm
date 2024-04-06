@@ -42,14 +42,11 @@ ChangelogRoom_IsFinalisedString:
 ChangelogRoom_ChangelogStartString:
 	db "-CHANGELOG START-@"
 ChangelogRoom_Changelog:
-	db "- update tilesets<LF>"
-	db "- update palettes<LF>"
-	db "- update scripts<LF>"
-	db "- remove intro mo-<LF>"
-	db "  vie<LF>"
-	db "- add MBC30<LF>"
-	db "  detection<LF>"
-	db "- add surprise on<LF>"
-	db "  the title screen<LF>"
-	db "last upd. 18.01.24<LF>"
+	db "- begin work on<LF>"
+	db "  SILBERNIUM<LF>"
+	db "- tidy up for DEMO2<LF>"
+	db "  release<LF>"
+	;db "- begin work on<LF>"
+	;db "  samorkod project<LF>"
+	db "last upd. 10.02.24<LF>"
 	db "          DD.MM.YY@"		; added 05 jan 24
