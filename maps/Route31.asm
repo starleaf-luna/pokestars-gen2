@@ -425,7 +425,7 @@ Route31_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4,  9, CHERRYGROVE_CAVE, 1
+	warp_event  4,  9, CHERRYGROVE_CAVE, 2
 	warp_event  2,  5, ROUTE_31_VIOLET_GATE, 4
 	warp_event  2,  5, DARK_CAVE_VIOLET_ENTRANCE, 1
 
