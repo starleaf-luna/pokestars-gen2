@@ -145,23 +145,19 @@ Options_TextSpeed:
 	ld [wOptions], a
 
 .NonePressed:
-	ld b, 0
+	ld a, c
 	ld hl, .Strings
-	add hl, bc
-	add hl, bc
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
+	call IndexByteTable
+	ld d, h
+	ld e, l
 	hlcoord 11, 3
 	call PlaceString
 	and a
 	ret
 
-.Strings:
+.Strings: ; refactor to use Table
 ; entries correspond to OPT_TEXT_SPEED_* constants
-	dw .Fast
-	dw .Mid
-	dw .Slow
+	offset_table .Fast, .Mid, .Slow
 
 .Fast: db "FAST@"
 .Mid:  db "MID @"
@@ -352,25 +348,19 @@ Options_Print:
 	ld [wGBPrinterBrightness], a
 
 .NonePressed:
-	ld b, 0
+	ld a, c
 	ld hl, .Strings
-	add hl, bc
-	add hl, bc
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
+	call IndexByteTable
+	ld d, h
+	ld e, l
 	hlcoord 11, 11
 	call PlaceString
 	and a
 	ret
 
-.Strings:
+.Strings: ; refactor to use Table
 ; entries correspond to OPT_PRINT_* constants
-	dw .Lightest
-	dw .Lighter
-	dw .Normal
-	dw .Darker
-	dw .Darkest
+	offset_table .Lightest, .Lighter, .Normal, .Darker, .Darkest
 
 .Lightest: db "LIGHTEST@"
 .Lighter:  db "LIGHTER @"

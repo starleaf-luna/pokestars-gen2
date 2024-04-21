@@ -16,12 +16,12 @@ Bankswitch::
 
 SECTION "rst18", ROM0[$0018]
 SetupPCM::
-	callfar PlayPCMSoundClip
+	farcall PlayPCMSoundClip
 	ret
 
 SECTION "rst20", ROM0[$0020]
 	rst $38
-
+	
 SECTION "rst28", ROM0[$0028]
 JumpTable::
 	push de

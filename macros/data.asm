@@ -98,3 +98,10 @@ MACRO sine_table
 		dw sin(x * 0.5 / (\1))
 	endr
 ENDM
+
+MACRO offset_table
+    REPT _NARG
+        db \1 - @
+        shift
+    ENDR
+ENDM
